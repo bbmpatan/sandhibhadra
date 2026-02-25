@@ -1,0 +1,100 @@
+/** Reset and Box Sizing * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile-first approach */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #333;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('your-image-url.jpg');
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 48px;
+}
+
+/* Pain Cards */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Reviews Section */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 90%;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+    .navbar {
+        justify-content: flex-start;
+    }
+    
+    .hamburger {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .reviews {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .review {
+        flex: 1 1 30%;
+    }
+}
