@@ -3,59 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced UI/UX</title>
+    <title>Sandhibhadra Ghrita</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
 </head>
 <body>
     <header>
-        <div class="logo">MyApp</div>
-        <div class="hamburger" onclick="toggleMenu()">
-            &#9776;
-        </div>
-        <nav id="menu" class="menu">
-            <ul>
+        <nav>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <section class="hero">
-        <h1>Welcome to Our Enhanced App</h1>
-        <p>Experience the best user interface and user experience.</p>
-    </section>
-
-    <section class="pain-cards">
-        <h2>Pain Points</h2>
-        <div class="card">Pain Point 1</div>
-        <div class="card">Pain Point 2</div>
-        <div class="card">Pain Point 3</div>
-    </section>
-
-    <section class="application">
-        <h2>Applications</h2>
-        <div class="app">Application 1</div>
-        <div class="app">Application 2</div>
-        <div class="app">Application 3</div>
-    </section>
-
-    <section class="reviews">
-        <h2>Reviews</h2>
-        <div class="review">Review 1</div>
-        <div class="review">Review 2</div>
-        <div class="review">Review 3</div>
-    </section>
-
+    <main>
+        <section class="hero">
+            <h1>Welcome to Sandhibhadra Ghrita</h1>
+            <p>Preserving the original content while enhancing user experience.</p>
+        </section>
+        <section class="products">
+            <h2>Our Products</h2>
+            <p>Details about products will be displayed here.</p>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2026 MyApp. All Rights Reserved.</p>
+        <p>&copy; 2026 Sandhibhadra. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
