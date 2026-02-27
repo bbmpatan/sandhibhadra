@@ -25,7 +25,6 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(229, 231, 235, 0.5);
         }
-        /* Fallback for browsers that don't support backdrop-filter */
         @supports not (backdrop-filter: blur(1px)) {
             .glass-nav {
                 background: rgba(255, 255, 255, 0.97) !important;
@@ -107,7 +106,6 @@
             overflow-y: auto;
         }
 
-        /* Touch target minimum size */
         a, button {
             min-height: 44px;
             min-width: 44px;
@@ -116,7 +114,6 @@
             loading: lazy;
         }
 
-        /* Small screen adjustments */
         @media (max-width: 640px) {
             .hero-gradient {
                 padding-top: 6rem !important;
@@ -153,7 +150,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav h-16 md:h-24">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-full flex justify-between items-center">
-            <a href="#"><img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="header-logo"></a>
+            <a href="#"><img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Sandhibhadra Ghrita Logo" class="header-logo"></a>
             
             <div class="hidden lg:flex space-x-10 text-sm font-bold uppercase tracking-widest text-gray-700">
                 <a href="#about" class="hover:text-amber-700 transition">About Us</a>
@@ -180,7 +177,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="pt-20 md:pt-40 lg:pt-48 pb-12 md:pb-24 hero-gradient px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div class="space-y-6 md:space-y-10 text-center md:text-left order-2 md:order-1">
@@ -194,7 +191,7 @@
 
             <div class="flex flex-col items-center justify-center order-1 md:order-2">
                 <div class="relative group w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto px-4">
-                    <img src="product image.jpg" alt="Ghrita Product" class="floating w-full h-auto max-h-[420px] sm:max-h-[500px] object-contain drop-shadow-2xl rounded-[2rem] md:rounded-[3rem]">
+                    <img src="product image.jpg" alt="Sandhibhadra Ghrita Product" class="floating w-full h-auto max-h-[420px] sm:max-h-[500px] object-contain drop-shadow-2xl rounded-[2rem] md:rounded-[3rem]">
                     
                     <div class="price-badge absolute -bottom-12 sm:-bottom-14 md:-bottom-16 right-6 sm:right-10 md:right-12 p-4 sm:p-6 rounded-2xl shadow-xl min-w-[140px] sm:min-w-[180px] text-center">
                         <span class="text-[10px] sm:text-xs text-amber-600 font-extrabold uppercase tracking-[0.2em] mb-2 block">Special Price</span>
@@ -217,14 +214,14 @@
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about" class="py-16 sm:py-20 lg:py-24 bg-white px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div class="relative group order-2 lg:order-1">
                     <div class="absolute -inset-4 bg-amber-100 rounded-[2.5rem] -z-10 transform rotate-2"></div>
                     <div class="overflow-hidden rounded-3xl shadow-2xl">
-                        <img src="aboutus.png" alt="Herbal Processing" class="w-full h-[380px] sm:h-[450px] lg:h-[500px] object-cover hover:scale-105 transition duration-700">
+                        <img src="aboutus.png" alt="Traditional Ayurvedic Preparation" class="w-full h-[380px] sm:h-[450px] lg:h-[500px] object-cover hover:scale-105 transition duration-700">
                     </div>
                 </div>
                 <div class="space-y-6 order-1 lg:order-2">
@@ -248,13 +245,156 @@
         </div>
     </section>
 
-    <!-- Rest of your sections remain the same -->
-    <!-- You can copy-paste the remaining sections (#problem, #apply, #reviews, footer) from your original code -->
-    <!-- They are mostly fine after the CSS fixes above -->
+    <!-- Pain Relief Section -->
+    <section id="problem" class="py-16 md:py-28 bg-[#faf9f6] px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-20">
+                <h2 class="serif text-3xl md:text-5xl mb-6 text-[#1a2e26]">Is Pain Stopping Your Life?</h2>
+                <p class="text-gray-500 text-base md:text-lg">Don't let age dictate your movement. We provide targeted relief for the most vulnerable joints.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+                <div class="pain-card group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
+                    <img src="backpain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Lower Back Pain Relief">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
+                        <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Lower Backache</h3>
+                        <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">Restores flexibility and relieves spinal stiffness.</p>
+                    </div>
+                </div>
+                
+                <div class="pain-card group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
+                    <img src="knee joint pain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Knee Joint Pain Relief">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
+                        <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Severe Knee Pain</h3>
+                        <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">The perfect solution for age-related joint wear and tear.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer (example - insert your original footer here) -->
-    <footer class="footer-gradient text-white pt-16 pb-8 px-4 md:px-8">
-        <!-- ... your footer content ... -->
+    <!-- Application Method Section -->
+    <section id="apply" class="py-12 md:py-16 lg:py-28 bg-[#1a2e26] text-white px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+            <div class="space-y-6 md:space-y-8 lg:space-y-10 order-2 md:order-1">
+                <h2 class="serif text-3xl md:text-4xl lg:text-5xl text-amber-400">Application Method</h2>
+                <div class="space-y-4 md:space-y-6 lg:space-y-8">
+                    <div class="flex gap-3 md:gap-4 lg:gap-6">
+                        <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">1</div>
+                        <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Massage the front and back of the knees for about <strong>10 minutes</strong> every night before bed.</p>
+                    </div>
+                    <div class="flex gap-3 md:gap-4 lg:gap-6">
+                        <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">2</div>
+                        <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Regular use nourishes tired muscles and restores their original strength within days.</p>
+                    </div>
+                </div>
+                <div class="p-4 md:p-6 lg:p-8 bg-white/5 border border-white/10 rounded-xl md:rounded-[1.5rem] text-xs md:text-sm text-gray-400 italic">
+                    <p class="text-amber-500 font-bold mb-2 uppercase text-[9px] md:text-xs">Safety Note:</p>
+                    Not for small children. For sensitive skin, mix with lukewarm plain ghee before use.
+                </div>
+            </div>
+            <div class="relative order-1 md:order-2">
+                <img src="howtoapply.png" class="rounded-2xl md:rounded-3xl lg:rounded-[4rem] shadow-xl md:shadow-2xl relative z-10 w-full" alt="How to Apply Sandhibhadra Ghrita">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 md:py-28 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+                <h2 class="serif text-3xl md:text-5xl mb-4 text-[#1a2e26]">Voices of Relief</h2>
+                <p class="text-gray-500 text-base">See why hundreds of families trust Sandhibhadra Ghrita.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+                <div class="bg-[#faf9f6] p-6 md:p-8 lg:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-5 text-amber-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"My mother was struggling with knee pain for 5 years. After using this Ghrit for just 15 days, she can now walk comfortably around the house."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-amber-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26]">JV</div>
+                        <div>
+                            <p class="font-bold text-[#1a2e26]">Jigar Vanza</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#faf9f6] p-6 md:p-8 lg:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-5 text-amber-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"Excellent for lower back stiffness. I use it every night before sleeping. The aroma is very authentic and the relief is almost immediate."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26]">PS</div>
+                        <div>
+                            <p class="font-bold text-[#1a2e26]">Pankaj Sutariya</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#faf9f6] p-6 md:p-8 lg:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-1 mb-5 text-amber-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"Being a doctor, I'm picky about Ayurvedic products. This Ghrit has the right balance of herbs. It nourishes the joints without being sticky."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26]">MS</div>
+                        <div>
+                            <p class="font-bold text-[#1a2e26]">Dr. Mansi Shah</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Medical Professional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white pt-16 pb-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12 text-center sm:text-left">
+                <div class="sm:col-span-2 lg:col-span-2 space-y-6">
+                    <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Sandhibhadra Ghrita Logo" class="footer-logo mx-auto sm:mx-0">
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto sm:mx-0">
+                        Combining the purity of ancient Ayurveda with modern care to help you live a life without joint discomfort.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-amber-500 font-bold uppercase tracking-widest text-sm">Visit Our Store</h4>
+                    <p class="text-gray-300 text-base font-light">
+                        Jalaram Mandir Road,<br> Patan, Gujarat.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-amber-500 font-bold uppercase tracking-widest text-sm">Contact Us</h4>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm uppercase font-bold">Direct WhatsApp Order</p>
+                        <a href="https://wa.me/919428686034" class="text-xl md:text-2xl font-bold text-white hover:text-amber-400 transition">+91 9428686034</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs uppercase tracking-wider font-medium text-center">
+                <p>© 2026 Shree Narayan Ayurveda. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -266,7 +406,6 @@
             document.body.classList.toggle('overflow-hidden');
         });
 
-        // Close menu when clicking links
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
@@ -274,7 +413,6 @@
             });
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
