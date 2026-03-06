@@ -657,8 +657,8 @@
 // ⚠️  SETUP — Replace these 2 values before going live
 // ============================================================
 const MERCHANT = {
-    upiId:   'parulpathar@okhdfcbank',  // e.g.  9428686034@paytm  or  ramesh@okicici
-    name:    'SandhibhadraGhrita',
+    upiId:   'parulpathar@okhdfcbank',
+    name:    'Shree Narayan Ayurveda',
     waPhone: '919428686034',
 };
 const PRICE = 300;
@@ -743,28 +743,77 @@ function syncAmounts() {
     document.getElementById('app-amount').textContent  = total;
     document.getElementById('upi-id-text').textContent = MERCHANT.upiId;
 
-    // QR code via free API — replace with your own static QR image for best results
-    const upiStr = `upi://pay?pa=${encodeURIComponent(MERCHANT.upiId)}&pn=${encodeURIComponent(MERCHANT.name)}&am=${total}&cu=INR&tn=SandhibhadraOrder`;
+    // QR code — encodes a valid UPI deep link
+    const upiStr = `upi://pay?pa=${encodeURIComponent(MERCHANT.upiId)}&pn=${encodeURIComponent(MERCHANT.name)}&am=${total}&cu=INR&tn=${encodeURIComponent('Sandhibhadra Ghrita Order')}`;
     document.getElementById('upi-qr-img').src =
-        `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiStr)}`;
+        `https://api.qrserver.com/v1/create-qr-code/?size=220x220&ecc=M&data=${encodeURIComponent(upiStr)}`;
 
     buildAppButtons(total);
 }
 
 function buildAppButtons(total) {
-    const upiStr = `upi://pay?pa=${encodeURIComponent(MERCHANT.upiId)}&pn=${encodeURIComponent(MERCHANT.name)}&am=${total}&cu=INR&tn=SandhibhadraOrder`;
+    const pa  = encodeURIComponent(MERCHANT.upiId);
+    const pn  = encodeURIComponent(MERCHANT.name);
+    const tn  = encodeURIComponent('Sandhibhadra Ghrita Order');
+
+    // Each app's verified deep-link scheme
     const apps = [
-        { label:'Google Pay',  bg:'bg-blue-600',   letter:'G' },
-        { label:'PhonePe',     bg:'bg-purple-700', letter:'P' },
-        { label:'Paytm',       bg:'bg-sky-500',    letter:'PT' },
-        { label:'BHIM',        bg:'bg-green-700',  letter:'B' },
+        {
+            label: 'Google Pay',
+            bg: 'bg-blue-600',
+            letter: 'G',
+            // GPay uses tez:// on Android; falls back to upi:// on iOS
+            href: `tez://upi/pay?pa=${pa}&pn=${pn}&am=${total}&cu=INR&tn=${tn}`
+        },
+        {
+            label: 'PhonePe',
+            bg: 'bg-purple-700',
+            letter: 'P',
+            href: `phonepe://pay?pa=${pa}&pn=${pn}&am=${total}&cu=INR&tn=${tn}`
+        },
+        {
+            label: 'Paytm',
+            bg: 'bg-sky-500',
+            letter: 'PT',
+            href: `paytmmp://pay?pa=${pa}&pn=${pn}&am=${total}&cu=INR&tn=${tn}`
+        },
+        {
+            label: 'BHIM',
+            bg: 'bg-green-700',
+            letter: 'B',
+            href: `upi://pay?pa=${pa}&pn=${pn}&am=${total}&cu=INR&tn=${tn}`
+        },
     ];
-    document.getElementById('app-buttons').innerHTML = apps.map(a =>
-        `<a href="${upiStr}" class="${a.bg} text-white rounded-xl py-3 flex flex-col items-center gap-1 font-bold text-xs hover:opacity-90 transition">
+
+    document.getElementById('app-buttons').innerHTML = apps.map(a => `
+        <a href="${a.href}"
+           onclick="handleAppPay(event, '${a.href}')"
+           class="${a.bg} text-white rounded-xl py-3 flex flex-col items-center gap-1 font-bold text-xs hover:opacity-90 transition active:scale-95">
             <span class="text-xl font-black">${a.letter}</span>
             <span>${a.label}</span>
         </a>`
     ).join('');
+}
+
+// Graceful fallback: if the app-specific scheme fails, try generic upi://
+function handleAppPay(e, appHref) {
+    // Extract params from app-specific URL and build generic upi:// fallback
+    const url   = new URL(appHref);
+    const params = url.search; // e.g. ?pa=...&pn=...
+    const fallback = 'upi://pay' + params;
+
+    // On mobile, attempt to open app. After 1.5s if page is still visible, open fallback
+    const start = Date.now();
+    window.location.href = appHref;
+
+    setTimeout(() => {
+        // If user is still on page (app didn't open), try generic upi://
+        if (Date.now() - start < 2000) {
+            window.location.href = fallback;
+        }
+    }, 1500);
+
+    e.preventDefault();
 }
 
 function showModalStep(n) {
