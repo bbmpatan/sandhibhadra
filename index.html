@@ -99,7 +99,7 @@
 <body class="antialiased">
 
 <!-- ===== WHATSAPP FLOAT ===== -->
-<a href="https://wa.me/919428686034?text=Hello! I want to order Sandhibhadra Ghrita."
+<a href="https://wa.me/919428686034?text=Welcome%20to%20Shree%20Narayan%20Ayurveda%20-%20Patan.%20How%20we%20can%20help%20you%3F"
    target="_blank"
    class="fixed bottom-5 right-5 z-[100] bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl flex items-center justify-center pulse-green hover:bg-green-600 transition-all">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 16 16">
@@ -137,8 +137,8 @@
                 </svg>
             </button>
 
-            <a href="https://wa.me/919428686034"
-               class="hidden md:block bg-[#1a2e26] text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-[10px] md:text-sm font-bold hover:bg-black transition shadow-lg">ORDER NOW</a>
+            <button onclick="addToCart()"
+               class="hidden md:block bg-[#1a2e26] text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-[10px] md:text-sm font-bold hover:bg-black transition shadow-lg cursor-pointer">ORDER NOW</button>
         </div>
     </div>
 
@@ -148,8 +148,8 @@
             <a href="#problem" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Pain Relief</a>
             <a href="#apply"   class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Usage</a>
             <a href="#reviews" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Reviews</a>
-            <a href="https://wa.me/919428686034"
-               class="block w-full bg-[#1a2e26] text-white px-4 py-2 rounded-full text-center font-bold hover:bg-black transition">ORDER NOW</a>
+            <button onclick="addToCart()"
+               class="block w-full bg-[#1a2e26] text-white px-4 py-2 rounded-full text-center font-bold hover:bg-black transition cursor-pointer">ORDER NOW</button>
         </div>
     </div>
 </nav>
@@ -657,7 +657,7 @@
 // ⚠️  SETUP — Replace these 2 values before going live
 // ============================================================
 const MERCHANT = {
-    upiId:   'parulpathar@okhdfcbank',  // e.g.  9428686034@paytm  or  ramesh@okicici
+    upiId:   'YOUR-UPI-ID@upi',  // e.g.  9428686034@paytm  or  ramesh@okicici
     name:    'SandhibhadraGhrita',
     waPhone: '919428686034',
 };
