@@ -6,33 +6,130 @@
     <title>Sandhibhadra Ghrita | Premium Ayurvedic Relief for Joint & Muscle Pain</title>
     <meta name="description" content="Relieve chronic joint, back, and knee pain naturally with Sandhibhadra Ghrita by Shree Narayan Ayurveda. Authentic Ayurvedic medicated ghee handcrafted in Patan city located in Gujarat for effective muscle and joint recovery.">
     <meta name="keywords" content="Ayurvedic Ghee, Joint Pain Relief, Sandhibhadra Ghrita, Muscle Pain, Ayurvedic Medicine Gujarat, Knee Pain Treatment">
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-16px); }
+        }
+        @keyframes pulse-green-ring {
+            0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+            70%  { box-shadow: 0 0 0 14px rgba(34,197,94,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes checkmark {
+            0%   { stroke-dashoffset: 40; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes circledraw {
+            0%   { stroke-dashoffset: 166; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .floating   { animation: float 5s ease-in-out infinite; }
+        .pulse-green { animation: pulse-green-ring 2s infinite; }
+
+        .glass-nav {
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(16px);
+        }
+        .header-logo { height: 48px; width: auto; }
+        @media(min-width:768px){ .header-logo{ height:64px; } }
+
+        .hero-gradient   { background: linear-gradient(135deg,#fdf8f0 0%,#fef3e2 40%,#f0fdf4 100%); }
+        .footer-gradient { background: linear-gradient(160deg,#0d1f18 0%,#1a2e26 100%); }
+
+        /* Cart Drawer */
+        #cart-drawer {
+            transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+            transform: translateX(100%);
+        }
+        #cart-drawer.open { transform: translateX(0); }
+        #cart-overlay {
+            transition: opacity 0.3s;
+            opacity: 0; pointer-events: none;
+        }
+        #cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+        /* Payment Modal */
+        #payment-modal {
+            transition: opacity 0.3s;
+            opacity: 0; pointer-events: none;
+        }
+        #payment-modal.open { opacity: 1; pointer-events: auto; }
+        .modal-box { animation: scaleIn 0.3s ease forwards; }
+
+        /* UPI QR shimmer placeholder */
+        .qr-placeholder {
+            background: linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
+            background-size: 200% auto;
+        }
+
+        /* Tick animation */
+        .tick-circle { stroke-dasharray: 166; stroke-dashoffset: 166; animation: circledraw 0.6s 0.1s ease forwards; }
+        .tick-check  { stroke-dasharray: 40;  stroke-dashoffset: 40;  animation: checkmark 0.4s 0.7s ease forwards; }
+
+        /* Steps */
+        .step-dot { transition: all 0.3s; }
+        .step.active .step-dot { background: #92400e; border-color: #92400e; color: white; }
+        .step.done   .step-dot { background: #16a34a; border-color: #16a34a; color: white; }
+        .step-line   { flex:1; height:2px; background:#e5e7eb; margin:0 4px; transition: background 0.3s; }
+        .step.done ~ .step-line-after { background: #92400e; }
+
+        /* Add to cart button */
+        .btn-atc {
+            background: linear-gradient(135deg,#92400e 0%,#b45309 100%);
+            transition: filter 0.25s, transform 0.15s;
+        }
+        .btn-atc:hover  { filter: brightness(1.1); transform: translateY(-1px); }
+        .btn-atc:active { transform: translateY(0); }
+    </style>
 </head>
 <body class="antialiased">
 
-    <a href="https://wa.me/919428686034?text=Hello! I want to order Sandhibhadra Ghrita." 
-       target="_blank" 
-       class="fixed bottom-5 right-5 z-[100] bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl flex items-center justify-center pulse-green hover:bg-green-600 transition-all">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-    </a>
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/919428686034?text=Hello! I want to order Sandhibhadra Ghrita."
+   target="_blank"
+   class="fixed bottom-5 right-5 z-[100] bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl flex items-center justify-center pulse-green hover:bg-green-600 transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+</a>
 
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100 h-16 md:h-24">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-full flex justify-between items-center w-full">
-            <a href="#" aria-label="Home"><img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Sandhibhadra Logo" class="header-logo" width="180" height="50"></a>
-            
-            <div class="hidden lg:flex space-x-10 text-sm font-bold uppercase tracking-widest text-gray-700">
-                <a href="#about" class="hover:text-amber-700 transition">About Us</a>
-                <a href="#problem" class="hover:text-amber-700 transition">Pain Relief</a>
-                <a href="#apply" class="hover:text-amber-700 transition">Usage</a>
-                <a href="#reviews" class="hover:text-amber-700 transition">Reviews</a>
-            </div>
+<!-- ===== NAV ===== -->
+<nav class="fixed w-full z-50 glass-nav border-b border-gray-100 min-h-[64px] md:min-h-[96px]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 min-h-[64px] md:min-h-[96px] flex justify-between items-center w-full">
+        <a href="#" aria-label="Home"><img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Sandhibhadra Logo" class="header-logo" width="180" height="50"></a>
+
+        <div class="hidden lg:flex space-x-10 text-sm font-bold uppercase tracking-widest text-gray-700">
+            <a href="#about"   class="hover:text-amber-700 transition">About Us</a>
+            <a href="#problem" class="hover:text-amber-700 transition">Pain Relief</a>
+            <a href="#apply"   class="hover:text-amber-700 transition">Usage</a>
+            <a href="#reviews" class="hover:text-amber-700 transition">Reviews</a>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-3">
+            <!-- Cart Icon -->
+            <button id="open-cart-btn" aria-label="Open Cart"
+                    class="relative p-2 text-[#1a2e26] hover:text-amber-700 transition">
+                <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/>
+                </svg>
+                <span id="cart-count"
+                      class="absolute -top-1 -right-1 bg-amber-700 text-white text-[9px] font-black w-5 h-5 rounded-full items-center justify-center hidden">0</span>
+            </button>
 
             <button id="mobile-menu-btn" class="lg:hidden text-gray-700 p-2" aria-label="Toggle Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,241 +137,745 @@
                 </svg>
             </button>
 
-            <a href="https://wa.me/919428686034" class="hidden md:block bg-[#1a2e26] text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-[10px] md:text-sm font-bold hover:bg-black transition shadow-lg">ORDER NOW</a>
+            <a href="https://wa.me/919428686034"
+               class="hidden md:block bg-[#1a2e26] text-white px-4 py-2 md:px-8 md:py-4 rounded-full text-[10px] md:text-sm font-bold hover:bg-black transition shadow-lg">ORDER NOW</a>
         </div>
+    </div>
 
-        <div id="mobile-menu" class="lg:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-100">
-            <div class="p-4 space-y-4">
-                <a href="#about" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">About Us</a>
-                <a href="#problem" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Pain Relief</a>
-                <a href="#apply" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Usage</a>
-                <a href="#reviews" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Reviews</a>
-                <a href="https://wa.me/919428686034" class="block w-full bg-[#1a2e26] text-white px-4 py-2 rounded-full text-center font-bold hover:bg-black transition">ORDER NOW</a>
+    <div id="mobile-menu" class="lg:hidden hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-100">
+        <div class="p-4 space-y-4">
+            <a href="#about"   class="block py-2 text-gray-700 hover:text-amber-700 font-bold">About Us</a>
+            <a href="#problem" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Pain Relief</a>
+            <a href="#apply"   class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Usage</a>
+            <a href="#reviews" class="block py-2 text-gray-700 hover:text-amber-700 font-bold">Reviews</a>
+            <a href="https://wa.me/919428686034"
+               class="block w-full bg-[#1a2e26] text-white px-4 py-2 rounded-full text-center font-bold hover:bg-black transition">ORDER NOW</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="pt-24 md:pt-40 lg:pt-48 pb-12 md:pb-24 hero-gradient px-4 md:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div class="space-y-6 md:space-y-10 text-center md:text-left">
+            <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-800 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase">Pure Ayurvedic Ghee</span>
+            <h1 class="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a2e26] leading-tight font-bold">
+                End the Cycle of Joint Pain By <span class="text-amber-700">Sandhibhadra Ghrit.</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto md:mx-0 font-light">
+                Sandhibhadra Ghrita deeply nourishes worn-out joints and restores strength to tired muscles, naturally.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-4">
+                <button onclick="addToCart()"
+                        class="btn-atc inline-flex items-center justify-center gap-2 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-bold text-base md:text-lg shadow-2xl w-full sm:w-auto">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/>
+                    </svg>
+                    Add to Cart — ₹300
+                </button>
+                <a href="https://wa.me/919428686034"
+                   class="inline-block w-full sm:w-auto border-2 border-[#1a2e26] text-[#1a2e26] px-8 py-4 rounded-2xl font-bold text-base hover:bg-[#1a2e26] hover:text-white transition text-center">
+                    Consult on WhatsApp
+                </a>
             </div>
         </div>
-    </nav>
 
-    <section class="pt-24 md:pt-40 lg:pt-48 pb-12 md:pb-24 hero-gradient px-4 md:px-8">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-            <div class="space-y-6 md:space-y-10 text-center md:text-left">
-                <span class="inline-block px-4 py-1.5 bg-amber-100 text-amber-800 rounded-full text-[10px] md:text-xs font-black tracking-widest uppercase">Pure Ayurvedic Ghee</span>
-                <h1 class="serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a2e26] leading-tight font-bold">End the Cycle of Joint Pain By <span class="text-amber-700">Sandhibhadra Ghrit.</span></h1>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg mx-auto md:mx-0 font-light">Sandhibhadra Ghrita deeply nourishes worn-out joints and restores strength to tired muscles, naturally.</p>
-                <div class="pt-4">
-                    <a href="https://wa.me/919428686034" class="inline-block w-full sm:w-auto bg-amber-800 text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-bold text-lg hover:bg-amber-900 transition shadow-2xl">Consult on WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center order-first md:order-last">
-                <div class="relative group w-full max-w-md md:max-w-full">
-                    <img src="product image.jpg" alt="Sandhibhadra Ghrita Product Packaging" class="floating w-full md:w-3/4 max-w-[300px] sm:max-w-[400px] md:max-w-[500px] drop-shadow-2xl rounded-[2rem] md:rounded-[3rem]" width="500" height="500">
-                    
-                    <div class="absolute -bottom-6 -right-4 sm:bottom-0 sm:right-0 md:-bottom-8 md:-right-6 bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(26,46,38,0.2)] border border-gray-50 flex flex-col items-center min-w-[180px]">
-                        <span class="text-[9px] sm:text-[10px] text-amber-600 font-extrabold uppercase tracking-[0.2em] mb-2 sm:mb-3">Special Price</span>
-                        
-                        <div class="flex items-center gap-1">
-                            <svg class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[#1a2e26]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 3H18M6 8H18M14.5 21L6 13H9C15.667 13 15.667 3 9 3M9 8H15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1a2e26] tracking-tighter">300</span>
-                        </div>
-
-                        <div class="flex items-center gap-2 mt-2">
-                            <span class="bg-green-100 text-green-700 text-[8px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full">SAVE 33%</span>
-                        </div>
-
-                        <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100 w-full text-center">
-                            <div class="flex items-center justify-center gap-1.5 text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-widest">
-                                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                                In Stock: Patan, Gujarat
-                            </div>
-                        </div>
+        <div class="flex flex-col items-center justify-center order-first md:order-last">
+            <div class="relative group w-full max-w-md md:max-w-full">
+                <img src="product image.jpg" alt="Sandhibhadra Ghrita Product Packaging"
+                     class="floating w-full md:w-3/4 max-w-[300px] sm:max-w-[400px] md:max-w-[500px] drop-shadow-2xl rounded-[2rem] md:rounded-[3rem]"
+                     width="500" height="500">
+                <div class="absolute -bottom-6 -right-4 sm:bottom-0 sm:right-0 md:-bottom-8 md:-right-6 bg-white p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(26,46,38,0.2)] border border-gray-50 flex flex-col items-center min-w-[180px]">
+                    <span class="text-[9px] sm:text-[10px] text-amber-600 font-extrabold uppercase tracking-[0.2em] mb-2 sm:mb-3">Special Price</span>
+                    <div class="flex items-center gap-1">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-[#1a2e26]" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 3H18M6 8H18M14.5 21L6 13H9C15.667 13 15.667 3 9 3M9 8H15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#1a2e26] tracking-tighter">300</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 bg-white px-4 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative group">
-                    <div class="absolute -inset-4 bg-amber-100 rounded-[3rem] -z-10 transform rotate-2"></div>
-                    <div class="overflow-hidden rounded-[2.5rem] shadow-xl">
-                        <img src="aboutus.png" alt="Herbal Processing" class="w-full h-[400px] object-cover hover:scale-105 transition duration-700">
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-green-100 text-green-700 text-[8px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full">SAVE 33%</span>
                     </div>
-                </div>
-                <div class="space-y-6">
-                    <h4 class="text-amber-700 font-bold uppercase tracking-[0.3em] text-xs">Our Heritage</h4>
-                    <h2 class="serif text-4xl md:text-5xl text-[#1a2e26] leading-tight">Reviving Ancient Wisdom for <span class="text-amber-800 italic">Modern Healing.</span></h2>
-                    <p class="text-gray-600 leading-relaxed text-lg">
-                        At Sandhibhadra, we believe that nature holds the ultimate cure for physical ailments. Born in the heart of Gujarat, our journey started with a simple mission: to provide a side-effect-free solution for chronic joint and muscle pain using authentic Ayurvedic "Ghrita" (medicated ghee) formulations.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6 pt-4">
-                        <div class="border-l-4 border-amber-600 pl-4">
-                            <h5 class="font-bold text-[#1a2e26]">100% Natural</h5>
-                            <p class="text-sm text-gray-500">Pure herbs, no chemicals.</p>
-                        </div>
-                        <div class="border-l-4 border-amber-600 pl-4">
-                            <h5 class="font-bold text-[#1a2e26]">Handcrafted</h5>
-                            <p class="text-sm text-gray-500">Traditional slow-cooking process.</p>
+                    <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100 w-full text-center">
+                        <div class="flex items-center justify-center gap-1.5 text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-widest">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            In Stock: Patan, Gujarat
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="problem" class="py-16 md:py-28 bg-[#faf9f6] px-4 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-20">
-                <h2 class="serif text-3xl md:text-5xl mb-6 text-[#1a2e26]">Is Pain Stopping Your Life?</h2>
-                <p class="text-gray-500 text-base md:text-lg">Don't let age dictate your movement. We provide targeted relief for the most vulnerable joints.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
-                <div class="pain-card group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
-                    <img src="backpain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Back Pain">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
-                        <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Lower Backache</h3>
-                        <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">Restores flexibility and relieves spinal stiffness.</p>
-                    </div>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-20 bg-white px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-amber-100 rounded-[3rem] -z-10 transform rotate-2"></div>
+                <div class="overflow-hidden rounded-[2.5rem] shadow-xl">
+                    <img src="aboutus.png" alt="Herbal Processing" class="w-full h-[400px] object-cover hover:scale-105 transition duration-700">
                 </div>
-                
-                <div class="pain-card group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
-                    <img src="knee joint pain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Knee Pain">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
-                        <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Severe Knee Pain</h3>
-                        <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">The perfect solution for age-related joint wear and tear.</p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-amber-700 font-bold uppercase tracking-[0.3em] text-xs">Our Heritage</h4>
+                <h2 class="serif text-4xl md:text-5xl text-[#1a2e26] leading-tight">Reviving Ancient Wisdom for <span class="text-amber-800 italic">Modern Healing.</span></h2>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    At Sandhibhadra, we believe that nature holds the ultimate cure for physical ailments. Born in the heart of Gujarat, our journey started with a simple mission: to provide a side-effect-free solution for chronic joint and muscle pain using authentic Ayurvedic "Ghrita" (medicated ghee) formulations.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="border-l-4 border-amber-600 pl-4">
+                        <h5 class="font-bold text-[#1a2e26]">100% Natural</h5>
+                        <p class="text-sm text-gray-500">Pure herbs, no chemicals.</p>
+                    </div>
+                    <div class="border-l-4 border-amber-600 pl-4">
+                        <h5 class="font-bold text-[#1a2e26]">Handcrafted</h5>
+                        <p class="text-sm text-gray-500">Traditional slow-cooking process.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="apply" class="py-12 md:py-16 lg:py-28 bg-[#1a2e26] text-white px-4 md:px-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-            <div class="space-y-6 md:space-y-8 lg:space-y-10 order-2 md:order-1">
-                <h2 class="serif text-3xl md:text-4xl lg:text-5xl text-amber-400">Application Method</h2>
-                <div class="space-y-4 md:space-y-6 lg:space-y-8">
-                    <div class="flex gap-3 md:gap-4 lg:gap-6">
-                        <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">1</div>
-                        <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Massage the front and back of the knees for about <strong>10 minutes</strong> every night before bed.</p>
-                    </div>
-                    <div class="flex gap-3 md:gap-4 lg:gap-6">
-                        <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">2</div>
-                        <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Regular use nourishes tired muscles and restores their original strength within days.</p>
-                    </div>
-                </div>
-                <div class="p-4 md:p-6 lg:p-8 bg-white/5 border border-white/10 rounded-xl md:rounded-[1.5rem] text-xs md:text-sm text-gray-400 italic">
-                    <p class="text-amber-500 font-bold mb-2 uppercase text-[9px] md:text-xs">Safety Note:</p>
-                    Not for small children. For sensitive skin, mix with lukewarm plain ghee before use.
+<!-- ===== PAIN ===== -->
+<section id="problem" class="py-16 md:py-28 bg-[#faf9f6] px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12 md:mb-20">
+            <h2 class="serif text-3xl md:text-5xl mb-6 text-[#1a2e26]">Is Pain Stopping Your Life?</h2>
+            <p class="text-gray-500 text-base md:text-lg">Don't let age dictate your movement. We provide targeted relief for the most vulnerable joints.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+            <div class="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
+                <img src="backpain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Back Pain">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
+                    <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Lower Backache</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">Restores flexibility and relieves spinal stiffness.</p>
                 </div>
             </div>
-            <div class="relative order-1 md:order-2">
-                <img src="howtoapply.png" class="rounded-2xl md:rounded-3xl lg:rounded-[4rem] shadow-xl md:shadow-2xl relative z-10 w-full" alt="Massaging">
+            <div class="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] shadow-lg md:shadow-2xl h-[250px] sm:h-[300px] md:h-[450px]">
+                <img src="knee joint pain.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="Knee Pain">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 md:bottom-10 md:left-10 text-white">
+                    <h3 class="serif text-xl sm:text-2xl md:text-4xl mb-1 sm:mb-2 md:mb-3">Severe Knee Pain</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm md:text-base max-w-[180px] sm:max-w-[200px] md:max-w-xs">The perfect solution for age-related joint wear and tear.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="reviews" class="py-16 md:py-28 bg-white px-4 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
-                <h2 class="serif text-3xl md:text-5xl mb-4 text-[#1a2e26]">Voices of Relief</h2>
-                <p class="text-gray-500 text-base">See why hundreds of families trust Sandhibhadra Ghrita.</p>
+<!-- ===== APPLICATION ===== -->
+<section id="apply" class="py-12 md:py-16 lg:py-28 bg-[#1a2e26] text-white px-4 md:px-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+        <div class="space-y-6 md:space-y-8 lg:space-y-10 order-2 md:order-1">
+            <h2 class="serif text-3xl md:text-4xl lg:text-5xl text-amber-400">Application Method</h2>
+            <div class="space-y-4 md:space-y-6 lg:space-y-8">
+                <div class="flex gap-3 md:gap-4 lg:gap-6">
+                    <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">1</div>
+                    <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Massage the front and back of the knees for about <strong>10 minutes</strong> every night before bed.</p>
+                </div>
+                <div class="flex gap-3 md:gap-4 lg:gap-6">
+                    <div class="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-14 lg:h-14 rounded-lg md:rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-sm md:text-base lg:text-xl font-bold">2</div>
+                    <p class="text-sm md:text-base lg:text-xl text-gray-300 leading-relaxed font-light pt-1">Regular use nourishes tired muscles and restores their original strength within days.</p>
+                </div>
+            </div>
+            <div class="p-4 md:p-6 lg:p-8 bg-white/5 border border-white/10 rounded-xl md:rounded-[1.5rem] text-xs md:text-sm text-gray-400 italic">
+                <p class="text-amber-500 font-bold mb-2 uppercase text-[9px] md:text-xs">Safety Note:</p>
+                Not for small children. For sensitive skin, mix with lukewarm plain ghee before use.
+            </div>
+        </div>
+        <div class="relative order-1 md:order-2">
+            <img src="howtoapply.png" class="rounded-2xl md:rounded-3xl lg:rounded-[4rem] shadow-xl md:shadow-2xl relative z-10 w-full" alt="Massaging">
+        </div>
+    </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews" class="py-16 md:py-28 bg-white px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+            <h2 class="serif text-3xl md:text-5xl mb-4 text-[#1a2e26]">Voices of Relief</h2>
+            <p class="text-gray-500 text-base">See why hundreds of families trust Sandhibhadra Ghrita.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-1 mb-4 text-amber-500">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"My mother was struggling with knee pain for 5 years. After using this Ghrit for just 15 days, she can now walk comfortably around the house."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-amber-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs">JV</div>
+                    <div>
+                        <p class="font-bold text-[#1a2e26] text-sm">Jigar Vanza</p>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Verified Buyer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-center gap-1 mb-4 text-amber-500">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"Excellent for lower back stiffness. I use it every night before sleeping. The aroma is very authentic and the relief is almost immediate."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-green-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs">PS</div>
+                    <div>
+                        <p class="font-bold text-[#1a2e26] text-sm">Pankaj Sutariya</p>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Verified Buyer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+                <div class="flex items-center gap-1 mb-4 text-amber-500">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <p class="text-gray-700 italic leading-relaxed mb-6 text-sm md:text-base">"Being a doctor, I'm picky about Ayurvedic products. This Ghrit has the right balance of herbs. It nourishes the joints without being sticky."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs">MS</div>
+                    <div>
+                        <p class="font-bold text-[#1a2e26] text-sm">Dr. Mansi Shah</p>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Medical Professional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-gradient text-white pt-16 pb-8 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 text-center sm:text-left">
+            <div class="sm:col-span-2 lg:col-span-2 space-y-4 md:space-y-6">
+                <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="h-16 sm:h-20 md:h-24 lg:h-[100px] mx-auto sm:mx-0">
+                <p class="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm mx-auto sm:mx-0">
+                    Combining the purity of ancient Ayurveda with modern care to help you live a life without joint discomfort.
+                </p>
+            </div>
+            <div class="space-y-3 md:space-y-4">
+                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] sm:text-xs italic">Visit Our Store</h4>
+                <p class="text-gray-300 text-sm md:text-base font-light">Jalaram Mandir Road,<br>Patan, Gujarat.</p>
+            </div>
+            <div class="space-y-3 md:space-y-4">
+                <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[10px] sm:text-xs italic">Contact Us</h4>
+                <div class="space-y-2">
+                    <p class="text-gray-400 text-[10px] sm:text-xs uppercase font-bold">Direct WhatsApp Order</p>
+                    <a href="https://wa.me/919428686034" class="text-lg sm:text-xl md:text-2xl font-bold text-white hover:text-amber-500 transition tracking-tighter block">+91 9428686034</a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-center">
+            <p>&copy; 2026 Sandhibhadra Ghrita.</p>
+            <p>Designed for all screens</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+     CART DRAWER OVERLAY
+============================================================ -->
+<div id="cart-overlay"
+     class="fixed inset-0 bg-black/40 z-[200] backdrop-blur-sm"
+     onclick="closeCart()"></div>
+
+<!-- ============================================================
+     CART DRAWER
+============================================================ -->
+<aside id="cart-drawer"
+       class="fixed top-0 right-0 h-full w-full max-w-[420px] bg-white z-[300] shadow-2xl flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-[#faf9f6] shrink-0">
+        <div>
+            <h2 class="font-black text-[#1a2e26] text-lg">Your Cart</h2>
+            <p class="text-xs text-gray-400 mt-0.5">Sandhibhadra Ghrita</p>
+        </div>
+        <button onclick="closeCart()" class="p-2 rounded-full hover:bg-gray-200 transition" aria-label="Close">
+            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Body -->
+    <div class="flex-1 overflow-y-auto px-6 py-6">
+        <!-- Empty -->
+        <div id="cart-empty" class="flex flex-col items-center justify-center h-48 text-center">
+            <svg class="w-16 h-16 text-gray-200 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/>
+            </svg>
+            <p class="text-gray-400 font-semibold">Your cart is empty</p>
+            <p class="text-xs text-gray-300 mt-1">Add Sandhibhadra Ghrita to get started</p>
+        </div>
+
+        <!-- Item row -->
+        <div id="cart-item" class="hidden space-y-4">
+            <div class="flex items-start gap-4 bg-amber-50 border border-amber-100 rounded-2xl p-4">
+                <div class="w-16 h-16 rounded-xl bg-white flex items-center justify-center shadow-sm overflow-hidden shrink-0">
+                    <img src="product image.jpg" alt="Product" class="w-full h-full object-cover"
+                         onerror="this.parentElement.innerHTML='<span class=\'text-2xl\'>🌿</span>'">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="font-bold text-[#1a2e26] text-sm leading-snug">Sandhibhadra Ghrita</p>
+                    <p class="text-xs text-amber-700 font-semibold mt-0.5">₹300 per unit</p>
+                    <div class="flex items-center gap-2 mt-2">
+                        <button onclick="changeQty(-1)"
+                                class="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 font-bold text-sm hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">−</button>
+                        <span id="qty-display" class="w-6 text-center font-black text-[#1a2e26] text-sm">1</span>
+                        <button onclick="changeQty(1)"
+                                class="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 font-bold text-sm hover:bg-amber-500 hover:text-white hover:border-amber-500 transition">+</button>
+                    </div>
+                </div>
+                <div class="text-right shrink-0">
+                    <p id="item-total" class="font-black text-[#1a2e26] text-lg">₹300</p>
+                    <button onclick="removeFromCart()" class="text-[10px] text-red-400 hover:text-red-600 font-semibold mt-1 block">Remove</button>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-1 mb-4 sm:mb-5 md:mb-6 text-amber-500">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-gray-700 italic leading-relaxed mb-6 md:mb-8 text-sm md:text-base">"My mother was struggling with knee pain for 5 years. After using this Ghrit for just 15 days, she can now walk comfortably around the house."</p>
-                    <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-amber-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs md:text-sm">JV</div>
-                        <div class="min-w-0">
-                            <p class="font-bold text-[#1a2e26] text-sm md:text-base truncate">Jigar Vanza</p>
-                            <p class="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest">Verified Buyer</p>
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">Order Note (optional)</label>
+                <textarea id="order-note" rows="2" placeholder="Special instructions, address hint..."
+                          class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-700 resize-none focus:outline-none focus:border-amber-400 transition"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="px-6 pb-6 pt-4 border-t border-gray-100 space-y-3 bg-white shrink-0">
+        <div id="cart-summary" class="hidden space-y-1">
+            <div class="flex justify-between text-sm text-gray-500">
+                <span>Subtotal</span>
+                <span id="subtotal-val">₹300</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-500">
+                <span>Delivery</span>
+                <span class="text-green-600 font-semibold">FREE</span>
+            </div>
+            <div class="flex justify-between font-black text-[#1a2e26] text-lg border-t border-gray-100 pt-2 mt-1">
+                <span>Total</span>
+                <span id="total-val">₹300</span>
+            </div>
+        </div>
+        <button id="checkout-btn" onclick="openPaymentModal()"
+                class="hidden w-full bg-[#1a2e26] text-white py-4 rounded-2xl font-bold text-base hover:bg-black transition shadow-lg flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            Proceed to Pay
+        </button>
+        <button onclick="closeCart()"
+                class="w-full border border-gray-200 text-gray-400 py-3 rounded-2xl font-semibold text-sm hover:bg-gray-50 transition">
+            Continue Shopping
+        </button>
+    </div>
+</aside>
+
+<!-- ============================================================
+     PAYMENT MODAL
+============================================================ -->
+<div id="payment-modal"
+     class="fixed inset-0 bg-black/60 z-[400] flex items-center justify-center p-3 md:p-4 backdrop-blur-sm overflow-y-auto">
+
+    <div class="modal-box bg-white rounded-[2rem] w-full max-w-md shadow-2xl overflow-hidden my-auto">
+
+        <!-- Steps Header -->
+        <div class="bg-[#faf9f6] px-6 pt-5 pb-4 border-b border-gray-100">
+            <div class="flex items-center justify-between">
+                <div id="step1" class="step active flex flex-col items-center gap-1">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-xs font-black">1</div>
+                    <span class="text-[9px] font-bold uppercase tracking-wide text-gray-400">Details</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-200 mx-2" id="line-1-2"></div>
+                <div id="step2" class="step flex flex-col items-center gap-1">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-xs font-black text-gray-400">2</div>
+                    <span class="text-[9px] font-bold uppercase tracking-wide text-gray-400">Pay</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-200 mx-2" id="line-2-3"></div>
+                <div id="step3" class="step flex flex-col items-center gap-1">
+                    <div class="step-dot w-7 h-7 rounded-full border-2 border-gray-300 flex items-center justify-center text-xs font-black text-gray-400">3</div>
+                    <span class="text-[9px] font-bold uppercase tracking-wide text-gray-400">Done</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 1: Details -->
+        <div id="modal-step-1" class="px-6 py-6 space-y-4">
+            <div>
+                <h3 class="serif text-2xl text-[#1a2e26] font-bold">Delivery Details</h3>
+                <p class="text-sm text-gray-400 mt-1">We confirm dispatch after verifying your UPI payment.</p>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">Full Name *</label>
+                <input id="cust-name" type="text" placeholder="e.g. Ramesh Patel"
+                       class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition">
+            </div>
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">WhatsApp Number *</label>
+                <input id="cust-phone" type="tel" placeholder="e.g. 9876543210"
+                       class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition">
+            </div>
+            <div>
+                <label class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 block">Full Address *</label>
+                <textarea id="cust-address" rows="3" placeholder="House no, Street, City, PIN Code..."
+                          class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm resize-none focus:outline-none focus:border-amber-500 transition"></textarea>
+            </div>
+
+            <div id="details-error" class="hidden text-red-500 text-xs font-semibold bg-red-50 border border-red-100 rounded-xl px-3 py-2"></div>
+
+            <div class="flex gap-3 pt-1">
+                <button onclick="closePaymentModal()"
+                        class="flex-1 border border-gray-200 text-gray-500 py-3 rounded-xl font-semibold text-sm hover:bg-gray-50 transition">Cancel</button>
+                <button onclick="goToPayStep()"
+                        class="flex-1 bg-amber-800 text-white py-3 rounded-xl font-bold text-sm hover:bg-amber-900 transition">
+                    Next: Pay ₹<span id="step1-total">300</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- STEP 2: UPI Payment -->
+        <div id="modal-step-2" class="hidden px-6 py-6 space-y-4">
+            <div>
+                <h3 class="serif text-2xl text-[#1a2e26] font-bold">Pay via UPI</h3>
+                <p class="text-sm text-gray-400 mt-1">No third-party gateway. Direct to merchant.</p>
+            </div>
+
+            <!-- Amount Banner -->
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-amber-700 font-bold uppercase tracking-widest">Amount to Pay</p>
+                    <p id="pay-amount" class="text-3xl font-black text-[#1a2e26] tracking-tighter mt-0.5">₹300</p>
+                </div>
+                <div class="bg-amber-800 text-white px-3 py-1.5 rounded-full text-xs font-bold text-center">Sandhibhadra<br>Ghrita</div>
+            </div>
+
+            <!-- Tabs -->
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Choose Method</p>
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                    <button onclick="selectUpiMethod('qr')"  id="tab-qr"
+                            class="py-2.5 rounded-xl border-2 font-bold text-xs text-center transition border-amber-700 bg-amber-50 text-amber-800">Scan QR</button>
+                    <button onclick="selectUpiMethod('id')"  id="tab-id"
+                            class="py-2.5 rounded-xl border-2 font-bold text-xs text-center transition border-gray-200 text-gray-500 hover:border-amber-300">UPI ID</button>
+                    <button onclick="selectUpiMethod('app')" id="tab-app"
+                            class="py-2.5 rounded-xl border-2 font-bold text-xs text-center transition border-gray-200 text-gray-500 hover:border-amber-300">Open App</button>
+                </div>
+
+                <!-- QR Panel -->
+                <div id="panel-qr" class="space-y-3 text-center">
+                    <div class="flex justify-center">
+                        <div class="p-2 border border-gray-200 rounded-2xl shadow-inner bg-white">
+                            <img id="upi-qr-img" src="" alt="UPI QR Code" class="w-48 h-48 rounded-xl block">
                         </div>
                     </div>
+                    <p class="text-xs text-gray-500">Open any UPI app → Scan QR → Pay <strong id="qr-amount-lbl">₹300</strong></p>
+                    <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wide">GPay · PhonePe · Paytm · BHIM · Any UPI</p>
                 </div>
 
-                <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-1 mb-4 sm:mb-5 md:mb-6 text-amber-500">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <!-- UPI ID Panel -->
+                <div id="panel-id" class="hidden space-y-3">
+                    <p class="text-xs text-gray-500 text-center">Copy the UPI ID and pay from any UPI app</p>
+                    <div class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
+                        <span id="upi-id-text" class="flex-1 font-bold text-[#1a2e26] text-sm tracking-wide break-all">—</span>
+                        <button onclick="copyUpiId()" id="copy-btn"
+                                class="shrink-0 bg-amber-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-amber-900 transition">Copy</button>
                     </div>
-                    <p class="text-gray-700 italic leading-relaxed mb-6 md:mb-8 text-sm md:text-base">"Excellent for lower back stiffness. I use it every night before sleeping. The aroma is very authentic and the relief is almost immediate."</p>
-                    <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-green-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs md:text-sm">PS</div>
-                        <div class="min-w-0">
-                            <p class="font-bold text-[#1a2e26] text-sm md:text-base truncate">Pankaj Sutariya</p>
-                            <p class="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest">Verified Buyer</p>
-                        </div>
+                    <div class="bg-blue-50 border border-blue-100 rounded-xl p-3 text-xs text-blue-700 space-y-0.5">
+                        <p class="font-bold mb-1">How to pay:</p>
+                        <p>1. Open GPay / PhonePe / Paytm</p>
+                        <p>2. Tap "Send Money" → Enter UPI ID above</p>
+                        <p>3. Enter amount: ₹<span id="uid-amount">300</span></p>
+                        <p>4. Add note: Sandhibhadra Order</p>
+                        <p>5. Complete payment &amp; take screenshot</p>
                     </div>
                 </div>
 
-                <div class="bg-[#faf9f6] p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl sm:rounded-2xl md:rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
-                    <div class="flex items-center gap-1 mb-4 sm:mb-5 md:mb-6 text-amber-500">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    </div>
-                    <p class="text-gray-700 italic leading-relaxed mb-6 md:mb-8 text-sm md:text-base">"Being a doctor, I'm picky about Ayurvedic products. This Ghrit has the right balance of herbs. It nourishes the joints without being sticky."</p>
-                    <div class="flex items-center gap-3 md:gap-4">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-blue-200 rounded-full flex items-center justify-center font-bold text-[#1a2e26] text-xs md:text-sm">MS</div>
-                        <div class="min-w-0">
-                            <p class="font-bold text-[#1a2e26] text-sm md:text-base truncate">Dr. Mansi Shah</p>
-                            <p class="text-[9px] sm:text-[10px] text-gray-500 uppercase tracking-widest">Medical Professional</p>
-                        </div>
-                    </div>
+                <!-- App Panel -->
+                <div id="panel-app" class="hidden space-y-3">
+                    <p class="text-xs text-gray-500 text-center">Tap to open your app with amount pre-filled</p>
+                    <div id="app-buttons" class="grid grid-cols-2 gap-3"></div>
+                    <p class="text-[10px] text-gray-400 text-center">Amount ₹<span id="app-amount">300</span> will be pre-set</p>
                 </div>
+            </div>
+
+            <!-- After-pay instructions -->
+            <div class="bg-green-50 border border-green-200 rounded-xl p-3 text-xs text-green-800">
+                <p class="font-bold mb-1">✅ After paying:</p>
+                <p>Click "I've Paid" below and share your payment screenshot on WhatsApp. We'll confirm your order and dispatch within 24 hours.</p>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="backToDetails()"
+                        class="border border-gray-200 text-gray-500 px-4 py-3 rounded-xl font-semibold text-sm hover:bg-gray-50 transition whitespace-nowrap">← Back</button>
+                <button onclick="confirmPayment()"
+                        class="flex-1 bg-green-600 text-white py-3 rounded-xl font-bold text-sm hover:bg-green-700 transition flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607z"/>
+                    </svg>
+                    I've Paid — Confirm via WhatsApp
+                </button>
             </div>
         </div>
-    </section>
 
-    <footer class="footer-gradient text-white pt-16 pb-8 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16 text-center sm:text-left">
-                <div class="sm:col-span-2 lg:col-span-2 space-y-4 md:space-y-6">
-                    <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="footer-logo h-16 sm:h-20 md:h-24 lg:h-[100px] mx-auto sm:mx-0">
-                    <p class="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm mx-auto sm:mx-0">
-                        Combining the purity of ancient Ayurveda with modern care to help you live a life without joint discomfort.
-                    </p>
-                </div>
-
-                <div class="space-y-3 md:space-y-4">
-                    <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[9px] italic">Visit Our Store</h4>
-                    <p class="text-gray-300 text-sm md:text-base font-light">
-                        Jalaram Mandir Road,<br> Patan, Gujarat.
-                    </p>
-                </div>
-
-                <div class="space-y-3 md:space-y-4">
-                    <h4 class="text-amber-500 font-bold uppercase tracking-widest text-[9px] italic">Contact Us</h4>
-                    <div class="space-y-2">
-                        <p class="text-gray-400 text-[9px] uppercase font-bold">Direct WhatsApp Order</p>
-                        <a href="https://wa.me/919428686034" class="text-lg sm:text-xl md:text-2xl font-bold text-white hover:text-amber-500 transition tracking-tighter">+91 9428686034</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-center">
-                <p>&copy; 2026 Sandhibhadra Ghrita.</p>
-                <p>Designed for all screens</p>
-            </div>
+        <!-- STEP 3: Success -->
+        <div id="modal-step-3" class="hidden px-6 py-10 flex flex-col items-center text-center space-y-4">
+            <svg class="w-20 h-20" viewBox="0 0 52 52" fill="none">
+                <circle class="tick-circle" cx="26" cy="26" r="25" stroke="#16a34a" stroke-width="2"/>
+                <path class="tick-check" d="M14 27l8 8 16-16" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="serif text-2xl text-[#1a2e26] font-bold">Order Received! 🌿</h3>
+            <p class="text-gray-500 text-sm max-w-xs">Please share your UPI payment screenshot on WhatsApp to confirm dispatch.</p>
+            <div id="wa-confirm-btn" class="w-full"></div>
+            <button onclick="closePaymentModal(); clearCart()"
+                    class="w-full border border-gray-200 text-gray-400 py-3 rounded-xl font-semibold text-sm hover:bg-gray-50 transition">
+                Close
+            </button>
         </div>
-    </footer>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
+    </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+// ============================================================
+// ⚠️  SETUP — Replace these 2 values before going live
+// ============================================================
+const MERCHANT = {
+    upiId:   'parulpathar@okhdfcbank',  // e.g.  9428686034@paytm  or  ramesh@okicici
+    name:    'SandhibhadraGhrita',
+    waPhone: '919428686034',
+};
+const PRICE = 300;
+
+// ===================== CART STATE =====================
+let cart = { qty: 0 };
+
+function addToCart() {
+    cart.qty += 1;
+    updateCartUI();
+    openCart();
+}
+
+function removeFromCart() {
+    cart.qty = 0;
+    updateCartUI();
+}
+
+function changeQty(delta) {
+    cart.qty = Math.max(0, cart.qty + delta);
+    updateCartUI();
+}
+
+function clearCart() { cart.qty = 0; updateCartUI(); }
+
+function updateCartUI() {
+    const empty = cart.qty === 0;
+    const total = cart.qty * PRICE;
+
+    // Badge
+    const badge = document.getElementById('cart-count');
+    badge.textContent = cart.qty;
+    badge.style.display = empty ? 'none' : 'flex';
+
+    // Drawer
+    document.getElementById('cart-empty').classList.toggle('hidden', !empty);
+    document.getElementById('cart-item').classList.toggle('hidden', empty);
+    document.getElementById('cart-summary').classList.toggle('hidden', empty);
+    document.getElementById('checkout-btn').classList.toggle('hidden', empty);
+
+    if (!empty) {
+        document.getElementById('qty-display').textContent  = cart.qty;
+        document.getElementById('item-total').textContent   = `₹${total}`;
+        document.getElementById('subtotal-val').textContent = `₹${total}`;
+        document.getElementById('total-val').textContent    = `₹${total}`;
+    }
+}
+
+function openCart() {
+    document.getElementById('cart-drawer').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+    document.getElementById('cart-drawer').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// ===================== PAYMENT MODAL =====================
+function openPaymentModal() {
+    closeCart();
+    syncAmounts();
+    showModalStep(1);
+    document.getElementById('payment-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePaymentModal() {
+    document.getElementById('payment-modal').classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => showModalStep(1), 300);
+}
+
+function syncAmounts() {
+    const total = cart.qty * PRICE;
+    document.getElementById('step1-total').textContent = total;
+    document.getElementById('pay-amount').textContent  = `₹${total}`;
+    document.getElementById('qr-amount-lbl').textContent = `₹${total}`;
+    document.getElementById('uid-amount').textContent  = total;
+    document.getElementById('app-amount').textContent  = total;
+    document.getElementById('upi-id-text').textContent = MERCHANT.upiId;
+
+    // QR code via free API — replace with your own static QR image for best results
+    const upiStr = `upi://pay?pa=${encodeURIComponent(MERCHANT.upiId)}&pn=${encodeURIComponent(MERCHANT.name)}&am=${total}&cu=INR&tn=SandhibhadraOrder`;
+    document.getElementById('upi-qr-img').src =
+        `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiStr)}`;
+
+    buildAppButtons(total);
+}
+
+function buildAppButtons(total) {
+    const upiStr = `upi://pay?pa=${encodeURIComponent(MERCHANT.upiId)}&pn=${encodeURIComponent(MERCHANT.name)}&am=${total}&cu=INR&tn=SandhibhadraOrder`;
+    const apps = [
+        { label:'Google Pay',  bg:'bg-blue-600',   letter:'G' },
+        { label:'PhonePe',     bg:'bg-purple-700', letter:'P' },
+        { label:'Paytm',       bg:'bg-sky-500',    letter:'PT' },
+        { label:'BHIM',        bg:'bg-green-700',  letter:'B' },
+    ];
+    document.getElementById('app-buttons').innerHTML = apps.map(a =>
+        `<a href="${upiStr}" class="${a.bg} text-white rounded-xl py-3 flex flex-col items-center gap-1 font-bold text-xs hover:opacity-90 transition">
+            <span class="text-xl font-black">${a.letter}</span>
+            <span>${a.label}</span>
+        </a>`
+    ).join('');
+}
+
+function showModalStep(n) {
+    [1,2,3].forEach(i => {
+        document.getElementById(`modal-step-${i}`).classList.toggle('hidden', i !== n);
+        const s = document.getElementById(`step${i}`);
+        const dot = s.querySelector('.step-dot');
+        s.classList.remove('active','done');
+        dot.classList.remove('bg-amber-800','border-amber-800','text-white','bg-green-600','border-green-600');
+        if (i < n)  { s.classList.add('done');   dot.classList.add('bg-green-600','border-green-600','text-white'); }
+        if (i === n){ s.classList.add('active'); dot.classList.add('bg-amber-800','border-amber-800','text-white'); }
+    });
+    // Connector lines
+    const l12 = document.getElementById('line-1-2');
+    const l23 = document.getElementById('line-2-3');
+    if(l12) l12.style.background = n >= 2 ? '#92400e' : '#e5e7eb';
+    if(l23) l23.style.background = n >= 3 ? '#92400e' : '#e5e7eb';
+}
+
+function goToPayStep() {
+    const name    = document.getElementById('cust-name').value.trim();
+    const phone   = document.getElementById('cust-phone').value.trim();
+    const address = document.getElementById('cust-address').value.trim();
+    const errEl   = document.getElementById('details-error');
+
+    if (!name || !phone || !address) {
+        errEl.textContent = 'Please fill in all required fields before continuing.';
+        errEl.classList.remove('hidden');
+        return;
+    }
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+        errEl.textContent = 'Please enter a valid 10-digit Indian mobile number.';
+        errEl.classList.remove('hidden');
+        return;
+    }
+    errEl.classList.add('hidden');
+    syncAmounts();
+    showModalStep(2);
+    selectUpiMethod('qr');
+}
+
+function backToDetails() { showModalStep(1); }
+
+function selectUpiMethod(method) {
+    ['qr','id','app'].forEach(m => {
+        const tab   = document.getElementById(`tab-${m}`);
+        const panel = document.getElementById(`panel-${m}`);
+        const active = m === method;
+        tab.className = `py-2.5 rounded-xl border-2 font-bold text-xs text-center transition ${
+            active ? 'border-amber-700 bg-amber-50 text-amber-800' : 'border-gray-200 text-gray-500 hover:border-amber-300'
+        }`;
+        panel.classList.toggle('hidden', !active);
+    });
+}
+
+function copyUpiId() {
+    navigator.clipboard.writeText(MERCHANT.upiId).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = 'Copied!';
+        btn.classList.replace('bg-amber-800','bg-green-600');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.replace('bg-green-600','bg-amber-800'); }, 2000);
+    }).catch(() => {
+        // fallback
+        const el = document.createElement('textarea');
+        el.value = MERCHANT.upiId;
+        document.body.appendChild(el);
+        el.select(); document.execCommand('copy');
+        document.body.removeChild(el);
+    });
+}
+
+function confirmPayment() {
+    const name    = document.getElementById('cust-name').value.trim();
+    const phone   = document.getElementById('cust-phone').value.trim();
+    const address = document.getElementById('cust-address').value.trim();
+    const note    = document.getElementById('order-note')?.value.trim() || '';
+    const qty     = cart.qty;
+    const total   = qty * PRICE;
+
+    const msg = [
+        `🌿 *New Order — Sandhibhadra Ghrita*`,
+        ``,
+        `👤 *Name:* ${name}`,
+        `📞 *Phone:* ${phone}`,
+        `📦 *Qty:* ${qty} unit${qty > 1 ? 's' : ''}`,
+        `💰 *Amount Paid:* ₹${total} (UPI)`,
+        `📍 *Address:* ${address}`,
+        note ? `📝 *Note:* ${note}` : null,
+        ``,
+        `_Sending payment screenshot below._`
+    ].filter(Boolean).join('\n');
+
+    const waUrl = `https://wa.me/${MERCHANT.waPhone}?text=${encodeURIComponent(msg)}`;
+
+    showModalStep(3);
+
+    document.getElementById('wa-confirm-btn').innerHTML = `
+        <a href="${waUrl}" target="_blank"
+           class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-sm hover:bg-green-700 transition flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/>
+            </svg>
+            Share Payment Screenshot on WhatsApp
+        </a>`;
+}
+
+// ===================== MOBILE MENU =====================
+document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+document.getElementById('open-cart-btn').addEventListener('click', openCart);
+</script>
 </body>
 </html>
