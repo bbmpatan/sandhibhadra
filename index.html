@@ -738,16 +738,21 @@ function syncAmounts(){
 }
 
 function buildAppBtns(pa,pn,am,tn){
-  // Build the UPI query string with all params properly encoded
+  // upi://pay is the universal scheme — ALL UPI apps (PhonePe, Paytm, BHIM, GPay etc.) respond to it
+  // GPay also has its own tez:// scheme as an alternative
   var q = 'pa=' + pa + '&pn=' + pn + '&am=' + am + '&cu=INR&tn=' + tn;
+  var upiUrl = 'upi://pay?' + q;
+
   var apps = [
-    { label:'Google Pay',   cls:'gpay',    letter:'G',  scheme:'tez://upi/pay'   },
-    { label:'PhonePe',      cls:'phonepe', letter:'P',  scheme:'phonepe://pay'   },
-    { label:'Paytm',        cls:'paytm',   letter:'PT', scheme:'paytmmp://pay'   },
-    { label:'BHIM / Other', cls:'bhim',    letter:'B',  scheme:'upi://pay'       },
+    { label:'Google Pay',  cls:'gpay',    letter:'G',  url: 'tez://upi/pay?' + q  },
+    { label:'PhonePe',     cls:'phonepe', letter:'P',  url: upiUrl                 },
+    { label:'Paytm',       cls:'paytm',   letter:'PT', url: upiUrl                 },
+    { label:'BHIM / Any',  cls:'bhim',    letter:'B',  url: upiUrl                 },
   ];
-  // Store app data globally so onclick can access safely
-  window._upiApps = apps.map(function(a){ return { href: a.scheme + '?' + q, fallback: 'upi://pay?' + q }; });
+
+  // Store globally — safe from encoding issues in onclick
+  window._upiApps = apps;
+
   var html = '';
   for(var i = 0; i < apps.length; i++){
     var a = apps[i];
@@ -762,14 +767,7 @@ function buildAppBtns(pa,pn,am,tn){
 function openUpiApp(idx){
   var app = window._upiApps[idx];
   if(!app) return;
-  // Try app-specific scheme; fall back to universal upi:// if app not installed
-  window.location.href = app.href;
-  var t = Date.now();
-  setTimeout(function(){
-    if(document.visibilityState !== 'hidden' && Date.now() - t < 2000){
-      window.location.href = app.fallback;
-    }
-  }, 1500);
+  window.location.href = app.url;
 }
 
 function selectTab(tab){
