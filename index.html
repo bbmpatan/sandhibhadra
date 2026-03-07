@@ -289,7 +289,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .how-to-pay{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:12px 14px;font-size:12px;color:#1d4ed8;line-height:1.9}
 .how-to-pay strong{display:block;font-weight:700;margin-bottom:4px}
 .app-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
-.app-btn{padding:14px 8px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:700;font-size:12px;color:#fff;transition:opacity .2s,transform .1s;border:none;cursor:pointer;width:100%}
+.app-btn{padding:14px 8px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:700;font-size:12px;color:#fff;transition:opacity .2s,transform .1s;text-decoration:none;width:100%;justify-content:center}
 .app-btn:hover{opacity:.88;transform:translateY(-2px)}
 .app-btn:active{transform:translateY(0);opacity:1}
 .app-btn .app-letter{font-size:22px;font-weight:900;line-height:1}
@@ -676,7 +676,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </div>
 
 <script>
-var MERCHANT = { upiId:'parulpathar@okhdfcbank', name:'Shree Narayan Ayurveda', waPhone:'919428686034' };
+var MERCHANT = { upiId:'parulpathar@okhdfcbank', name:'PARUL HARSH PARIKH', waPhone:'919428686034' };
 var PRICE = 300;
 var cart = { qty: 0 };
 
@@ -714,60 +714,57 @@ function closePaymentModal(){document.getElementById('payment-modal').classList.
 
 function syncAmounts(){
   var total = cart.qty * PRICE;
-  var pa = encodeURIComponent(MERCHANT.upiId);
-  var pn = encodeURIComponent(MERCHANT.name);
-  var tn = encodeURIComponent('Sandhibhadra Ghrita Order');
 
-  // Update amount displays
-  document.getElementById('step1-total').textContent = total;
-  document.getElementById('pay-amount').textContent  = '₹' + total;
+  // Raw values for UPI deep links (browser encodes them automatically)
+  var pa = MERCHANT.upiId;
+  var pn = MERCHANT.name;
+  var tn = 'Sandhibhadra Ghrita Order';
+
+  // URL-encoded versions only for the QR code image URL
+  var pa_enc = encodeURIComponent(pa);
+  var pn_enc = encodeURIComponent(pn);
+  var tn_enc = encodeURIComponent(tn);
+
+  document.getElementById('step1-total').textContent   = total;
+  document.getElementById('pay-amount').textContent    = '₹' + total;
   document.getElementById('qr-amount-lbl').textContent = '₹' + total;
-  document.getElementById('uid-amount').textContent  = total;
-  document.getElementById('app-amount').textContent  = total;
+  document.getElementById('uid-amount').textContent    = total;
+  document.getElementById('app-amount').textContent    = total;
+  document.getElementById('upi-id-text').textContent   = pa;
 
-  // Show UPI ID in copy panel
-  document.getElementById('upi-id-text').textContent = MERCHANT.upiId;
-
-  // Generate QR code using standard UPI deep link
-  var upiStr = 'upi://pay?pa=' + pa + '&pn=' + pn + '&am=' + total + '&cu=INR&tn=' + tn;
+  // QR code needs fully encoded URL
+  var upiStr = 'upi://pay?pa=' + pa_enc + '&pn=' + pn_enc + '&am=' + total + '&cu=INR&tn=' + tn_enc;
   document.getElementById('upi-qr-img').src =
     'https://api.qrserver.com/v1/create-qr-code/?size=220x220&ecc=M&data=' + encodeURIComponent(upiStr);
 
+  // Pass raw values to app buttons — browser will encode the href correctly
   buildAppBtns(pa, pn, total, tn);
   selectTab('qr');
 }
 
-function buildAppBtns(pa,pn,am,tn){
-  // upi://pay is the universal scheme — ALL UPI apps (PhonePe, Paytm, BHIM, GPay etc.) respond to it
-  // GPay also has its own tez:// scheme as an alternative
+function buildAppBtns(pa, pn, am, tn){
+  // Use raw values directly in the URL string — NO encodeURIComponent here.
+  // The <a href> attribute handles encoding automatically and correctly.
+  // Using encodeURIComponent + window.location.href causes double-encoding in Android WebView.
   var q = 'pa=' + pa + '&pn=' + pn + '&am=' + am + '&cu=INR&tn=' + tn;
-  var upiUrl = 'upi://pay?' + q;
 
   var apps = [
-    { label:'Google Pay',  cls:'gpay',    letter:'G',  url: 'tez://upi/pay?' + q  },
-    { label:'PhonePe',     cls:'phonepe', letter:'P',  url: upiUrl                 },
-    { label:'Paytm',       cls:'paytm',   letter:'PT', url: upiUrl                 },
-    { label:'BHIM / Any',  cls:'bhim',    letter:'B',  url: upiUrl                 },
+    { label:'Google Pay',  cls:'gpay',    letter:'G',  url:'tez://upi/pay?' + q  },
+    { label:'PhonePe',     cls:'phonepe', letter:'P',  url:'upi://pay?' + q      },
+    { label:'Paytm',       cls:'paytm',   letter:'PT', url:'upi://pay?' + q      },
+    { label:'BHIM / Any',  cls:'bhim',    letter:'B',  url:'upi://pay?' + q      },
   ];
-
-  // Store globally — safe from encoding issues in onclick
-  window._upiApps = apps;
 
   var html = '';
   for(var i = 0; i < apps.length; i++){
     var a = apps[i];
-    html += '<button class="app-btn ' + a.cls + '" onclick="openUpiApp(' + i + ')">'
+    // Use <a> tag with direct href — browser handles special chars (@, spaces) correctly
+    html += '<a href="' + a.url + '" class="app-btn ' + a.cls + '">'
           + '<span class="app-letter">' + a.letter + '</span>'
           + '<span>' + a.label + '</span>'
-          + '</button>';
+          + '</a>';
   }
   document.getElementById('app-buttons').innerHTML = html;
-}
-
-function openUpiApp(idx){
-  var app = window._upiApps[idx];
-  if(!app) return;
-  window.location.href = app.url;
 }
 
 function selectTab(tab){
