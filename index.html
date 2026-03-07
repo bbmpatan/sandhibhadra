@@ -180,7 +180,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:48px;text-align:center}
 @media(min-width:640px){.footer-grid{grid-template-columns:1fr 1fr;text-align:left}}
 @media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
-.footer-logo{height:64px;width:auto;margin:0 auto 16px}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center}
+@media(min-width:640px){.footer-brand{justify-content:flex-start}}
 @media(min-width:640px){.footer-logo{margin:0 0 16px}}
 @media(min-width:768px){.footer-logo{height:80px}}
 .footer-desc{color:#9ca3af;font-size:13px;line-height:1.7;max-width:280px;margin:0 auto}
@@ -288,14 +289,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .how-to-pay{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:12px 14px;font-size:12px;color:#1d4ed8;line-height:1.9}
 .how-to-pay strong{display:block;font-weight:700;margin-bottom:4px}
 .app-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:4px}
-.app-btn{padding:14px 8px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:4px;font-weight:700;font-size:12px;color:#fff;transition:opacity .2s,transform .1s;text-decoration:none}
-.app-btn:hover{opacity:.9;transform:translateY(-1px)}
-.app-btn:active{transform:translateY(0)}
-.app-btn .app-letter{font-size:22px;font-weight:900}
+.app-btn{padding:14px 8px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:700;font-size:12px;color:#fff;transition:opacity .2s,transform .1s;border:none;cursor:pointer;width:100%}
+.app-btn:hover{opacity:.88;transform:translateY(-2px)}
+.app-btn:active{transform:translateY(0);opacity:1}
+.app-btn .app-letter{font-size:22px;font-weight:900;line-height:1}
 .app-btn.gpay{background:#1a73e8}
 .app-btn.phonepe{background:#5f259f}
 .app-btn.paytm{background:#002970}
-.app-btn.bhim{background:#006400}
+.app-btn.bhim{background:#1a6b1a}
 .app-hint{font-size:10px;color:#9ca3af;text-align:center;margin-top:8px}
 .after-pay-note{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:14px;font-size:12px;color:#15803d;margin-top:16px}
 .after-pay-note strong{display:block;margin-bottom:4px;font-weight:700}
@@ -489,7 +490,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;justify-content:center">
+        <div class="footer-brand">
           <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="footer-logo" style="margin:0">
           <div style="line-height:1.3">
             <div style="font-weight:800;font-size:16px;color:#fff;letter-spacing:.01em">Shree Narayan</div>
@@ -737,32 +738,38 @@ function syncAmounts(){
 }
 
 function buildAppBtns(pa,pn,am,tn){
-  // Standard UPI intent query string — pa must be raw UPI ID (already encoded via pa param)
-  // Each app uses its own scheme; upi://pay is the universal fallback
-  var q='pa='+pa+'&pn='+pn+'&am='+am+'&cu=INR&tn='+tn;
-  var apps=[
-    {label:'Google Pay',  cls:'gpay',    letter:'G',  href:'tez://upi/pay?'+q,      fallback:'upi://pay?'+q},
-    {label:'PhonePe',     cls:'phonepe', letter:'P',  href:'phonepe://pay?'+q,       fallback:'upi://pay?'+q},
-    {label:'Paytm',       cls:'paytm',   letter:'PT', href:'paytmmp://pay?'+q,       fallback:'upi://pay?'+q},
-    {label:'BHIM / Other',cls:'bhim',    letter:'B',  href:'upi://pay?'+q,           fallback:'upi://pay?'+q},
+  // Build the UPI query string with all params properly encoded
+  var q = 'pa=' + pa + '&pn=' + pn + '&am=' + am + '&cu=INR&tn=' + tn;
+  var apps = [
+    { label:'Google Pay',   cls:'gpay',    letter:'G',  scheme:'tez://upi/pay'   },
+    { label:'PhonePe',      cls:'phonepe', letter:'P',  scheme:'phonepe://pay'   },
+    { label:'Paytm',        cls:'paytm',   letter:'PT', scheme:'paytmmp://pay'   },
+    { label:'BHIM / Other', cls:'bhim',    letter:'B',  scheme:'upi://pay'       },
   ];
-  var html='';
-  for(var i=0;i<apps.length;i++){
-    var a=apps[i];
-    html+='<a href="'+a.href+'" class="app-btn '+a.cls+'" onclick="handleAppTap(event,\''+encodeURIComponent(a.href)+'\',\''+encodeURIComponent(a.fallback)+'\')">'
-        +'<span class="app-letter">'+a.letter+'</span>'
-        +'<span>'+a.label+'</span>'
-        +'</a>';
+  // Store app data globally so onclick can access safely
+  window._upiApps = apps.map(function(a){ return { href: a.scheme + '?' + q, fallback: 'upi://pay?' + q }; });
+  var html = '';
+  for(var i = 0; i < apps.length; i++){
+    var a = apps[i];
+    html += '<button class="app-btn ' + a.cls + '" onclick="openUpiApp(' + i + ')">'
+          + '<span class="app-letter">' + a.letter + '</span>'
+          + '<span>' + a.label + '</span>'
+          + '</button>';
   }
-  document.getElementById('app-buttons').innerHTML=html;
+  document.getElementById('app-buttons').innerHTML = html;
 }
 
-function handleAppTap(e,appHref,fallbackEnc){
-  e.preventDefault();
-  var fallback=decodeURIComponent(fallbackEnc);
-  window.location.href=appHref;
-  var t=Date.now();
-  setTimeout(function(){if(Date.now()-t<2200){window.location.href=fallback;}},1500);
+function openUpiApp(idx){
+  var app = window._upiApps[idx];
+  if(!app) return;
+  // Try app-specific scheme; fall back to universal upi:// if app not installed
+  window.location.href = app.href;
+  var t = Date.now();
+  setTimeout(function(){
+    if(document.visibilityState !== 'hidden' && Date.now() - t < 2000){
+      window.location.href = app.fallback;
+    }
+  }, 1500);
 }
 
 function selectTab(tab){
