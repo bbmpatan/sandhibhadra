@@ -745,10 +745,13 @@ function syncAmounts(){
 }
 
 function buildAppBtns(pa, pn, am, tn){
-  // Use raw values directly in the URL string — NO encodeURIComponent here.
-  // The <a href> attribute handles encoding automatically and correctly.
-  // Using encodeURIComponent + window.location.href causes double-encoding in Android WebView.
-  var q = 'pa=' + pa + '&pn=' + pn + '&am=' + am + '&cu=INR&tn=' + tn;
+  // pa (@) is safe raw in href attributes
+  // pn and tn MUST be encoded — spaces break the URL parameter
+  var q = 'pa=' + pa
+        + '&pn=' + encodeURIComponent(pn)
+        + '&am=' + am
+        + '&cu=INR'
+        + '&tn=' + encodeURIComponent(tn);
 
   var apps = [
     { label:'Google Pay',  cls:'gpay',    letter:'G',  url:'tez://upi/pay?' + q  },
@@ -760,7 +763,6 @@ function buildAppBtns(pa, pn, am, tn){
   var html = '';
   for(var i = 0; i < apps.length; i++){
     var a = apps[i];
-    // Use <a> tag with direct href — browser handles special chars (@, spaces) correctly
     html += '<a href="' + a.url + '" class="app-btn ' + a.cls + '">'
           + '<span class="app-letter">' + a.letter + '</span>'
           + '<span>' + a.label + '</span>'
