@@ -612,16 +612,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
       <!-- Tabs -->
       <div class="upi-tabs">
-        <button class="upi-tab active" id="tab-qr"  onclick="selectTab('qr')">📷 Scan QR</button>
+        <button class="upi-tab active" id="tab-app" onclick="selectTab('app')">📱 Open App</button>
         <button class="upi-tab"        id="tab-id"  onclick="selectTab('id')">🔗 UPI ID</button>
-        <button class="upi-tab"        id="tab-app" onclick="selectTab('app')">📱 Open App</button>
+        <button class="upi-tab"        id="tab-qr"  onclick="selectTab('qr')">📷 Scan QR</button>
       </div>
 
-      <!-- QR Panel -->
-      <div class="upi-panel active" id="panel-qr">
-        <div class="qr-wrap"><div class="qr-box"><img id="upi-qr-img" src="" alt="UPI QR Code"></div></div>
-        <p class="qr-hint">Open any UPI app → Scan QR → Pay <strong id="qr-amount-lbl">₹300</strong></p>
-        <p class="qr-apps">GPay · PhonePe · Paytm · BHIM · Any UPI App</p>
+      <!-- App Panel (default) -->
+      <div class="upi-panel active" id="panel-app">
+        <p style="font-size:12px;color:#6b7280;text-align:center;margin-bottom:10px">Tap your app — UPI ID &amp; amount pre-filled</p>
+        <div class="app-grid" id="app-buttons"></div>
+        <p class="app-hint">Amount ₹<span id="app-amount">300</span> will be pre-set automatically</p>
       </div>
 
       <!-- UPI ID Panel -->
@@ -641,11 +641,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
       </div>
 
-      <!-- App Panel -->
-      <div class="upi-panel" id="panel-app">
-        <p style="font-size:12px;color:#6b7280;text-align:center;margin-bottom:10px">Tap your app — UPI ID &amp; amount pre-filled</p>
-        <div class="app-grid" id="app-buttons"></div>
-        <p class="app-hint">Amount ₹<span id="app-amount">300</span> will be pre-set automatically</p>
+      <!-- QR Panel (last) -->
+      <div class="upi-panel" id="panel-qr">
+        <div class="qr-wrap"><div class="qr-box"><img id="upi-qr-img" src="" alt="UPI QR Code"></div></div>
+        <p class="qr-hint">Open any UPI app → Scan QR → Pay <strong id="qr-amount-lbl">₹300</strong></p>
+        <p class="qr-apps">GPay · PhonePe · Paytm · BHIM · Any UPI App</p>
       </div>
 
       <div class="after-pay-note"><strong>✅ After paying:</strong> Click "I've Paid" and share your screenshot on WhatsApp. We'll confirm &amp; dispatch within 24 hours.</div>
@@ -741,7 +741,7 @@ function syncAmounts(){
 
   // Pass raw values to app buttons — browser will encode the href correctly
   buildAppBtns(pa, pn, total, tn);
-  selectTab('qr');
+  selectTab('app');
 }
 
 function buildAppBtns(pa, pn, am, tn){
