@@ -175,6 +175,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .reviewer-name{font-weight:700;color:#1a2e26;font-size:14px}
 .reviewer-role{font-size:9px;color:#9ca3af;text-transform:uppercase;letter-spacing:.15em;margin-top:2px}
 
+/* Testimonial Videos */
+.videos-section{background:linear-gradient(135deg,#0d1f18 0%,#1a2e26 100%);padding:64px 0}
+@media(min-width:768px){.videos-section{padding:80px 0}}
+.videos-heading{text-align:center;padding:0 16px;margin-bottom:40px}
+.videos-heading .section-tag{color:#fbbf24}
+.videos-heading .section-h2{color:#fff}
+.videos-heading p{color:#9ca3af;font-size:15px;margin-top:8px}
+.videos-track-wrap{overflow:hidden;position:relative;width:100%}
+.videos-track-wrap::before,.videos-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:10;pointer-events:none}
+.videos-track-wrap::before{left:0;background:linear-gradient(to right,#0d1f18,transparent)}
+.videos-track-wrap::after{right:0;background:linear-gradient(to left,#0d1f18,transparent)}
+.videos-track{display:flex;gap:20px;padding:8px 40px;animation:scrollVideos 20s linear infinite;width:max-content}
+.videos-track:hover{animation-play-state:paused}
+@keyframes scrollVideos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.video-card{flex-shrink:0;width:220px;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.4);background:#000;border:2px solid rgba(255,255,255,.08);transition:transform .3s,box-shadow .3s}
+.video-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 48px rgba(0,0,0,.6)}
+.video-card iframe{display:block;width:220px;height:390px;border:none}
+
 /* Footer */
 .footer{background:linear-gradient(160deg,#0d1f18,#1a2e26);color:#fff;padding:64px 16px 32px}
 @media(min-width:768px){.footer{padding:80px 32px 32px}}
@@ -483,6 +501,31 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <p class="review-quote">"Being a doctor, I'm picky about Ayurvedic products. This Ghrit has the right balance of herbs. It nourishes the joints without being sticky."</p>
         <div class="reviewer"><div class="reviewer-avatar" style="background:#dbeafe">MS</div><div><div class="reviewer-name">Dr. Mansi Shah</div><div class="reviewer-role">Medical Professional</div></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Videos -->
+<section id="testimonials" class="videos-section">
+  <div class="videos-heading">
+    <div class="section-tag">Real Results</div>
+    <h2 class="section-h2">What Our Customers Say</h2>
+    <p>Watch real people share their experience with Sandhibhadra Ghrita</p>
+  </div>
+  <div class="videos-track-wrap">
+    <!-- Track is duplicated to create seamless infinite scroll -->
+    <div class="videos-track" id="videos-track">
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/VL0rADFxw3Q?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/odXVDovKjjc?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/e4Dwz3YSsKw?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/wMIs9RsoKrI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/KAAILK9aJPo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <!-- Duplicated for seamless loop -->
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/VL0rADFxw3Q?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/odXVDovKjjc?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/e4Dwz3YSsKw?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/wMIs9RsoKrI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/KAAILK9aJPo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
     </div>
   </div>
 </section>
