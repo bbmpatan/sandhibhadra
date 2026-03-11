@@ -186,15 +186,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .videos-track-wrap::before,.videos-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:10;pointer-events:none}
 .videos-track-wrap::before{left:0;background:linear-gradient(to right,#0d1f18,transparent)}
 .videos-track-wrap::after{right:0;background:linear-gradient(to left,#0d1f18,transparent)}
-.videos-track{display:flex;gap:20px;padding:8px 40px;animation:scrollVideos 22s linear infinite;width:max-content}
-.videos-track:hover{animation-play-state:paused}
+.videos-track{display:flex;gap:16px;padding:8px 24px;animation:scrollVideos 24s linear infinite;width:max-content}
 @keyframes scrollVideos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.video-card{flex-shrink:0;width:200px;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.4);background:#000;border:2px solid rgba(255,255,255,.08);transition:transform .3s,box-shadow .3s;cursor:pointer;position:relative}
+.video-card{flex-shrink:0;width:180px;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.4);background:#000;border:2px solid rgba(255,255,255,.08);transition:transform .3s,box-shadow .3s;cursor:pointer;position:relative}
 .video-card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 20px 48px rgba(0,0,0,.6)}
-.video-thumb{width:200px;height:355px;object-fit:cover;display:block}
+.video-thumb{width:180px;height:320px;object-fit:cover;display:block}
 .video-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);transition:background .2s}
 .video-card:hover .video-play-btn{background:rgba(0,0,0,.45)}
-.video-play-circle{width:56px;height:56px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:transform .2s}
+.video-play-circle{width:52px;height:52px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:transform .2s}
 .video-card:hover .video-play-circle{transform:scale(1.1)}
 .video-play-circle svg{width:22px;height:22px;color:#1a2e26;margin-left:3px}
 
@@ -529,44 +528,44 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="videos-track-wrap">
     <div class="videos-track">
       <!-- Original set -->
-      <div class="video-card" onclick="openVideoModal('VL0rADFxw3Q')">
+      <div class="video-card" data-videoid="VL0rADFxw3Q">
         <img class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('odXVDovKjjc')">
+      <div class="video-card" data-videoid="odXVDovKjjc">
         <img class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('e4Dwz3YSsKw')">
+      <div class="video-card" data-videoid="e4Dwz3YSsKw">
         <img class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('wMIs9RsoKrI')">
+      <div class="video-card" data-videoid="wMIs9RsoKrI">
         <img class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('KAAILK9aJPo')">
+      <div class="video-card" data-videoid="KAAILK9aJPo">
         <img class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <!-- Duplicated for seamless loop -->
-      <div class="video-card" onclick="openVideoModal('VL0rADFxw3Q')">
+      <div class="video-card" data-videoid="VL0rADFxw3Q">
         <img class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('odXVDovKjjc')">
+      <div class="video-card" data-videoid="odXVDovKjjc">
         <img class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('e4Dwz3YSsKw')">
+      <div class="video-card" data-videoid="e4Dwz3YSsKw">
         <img class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('wMIs9RsoKrI')">
+      <div class="video-card" data-videoid="wMIs9RsoKrI">
         <img class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="video-card" onclick="openVideoModal('KAAILK9aJPo')">
+      <div class="video-card" data-videoid="KAAILK9aJPo">
         <img class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
@@ -932,6 +931,38 @@ function confirmPayment(){
 document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('open');});
 function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');}
 document.getElementById('open-cart-btn').addEventListener('click',openCart);
+
+// Video scroll touch handling — pause on touchstart, resume on touchend
+(function(){
+  var track = document.querySelector('.videos-track');
+  if(!track) return;
+  var touchStartX = 0;
+  var touchStartTime = 0;
+
+  track.addEventListener('touchstart', function(e){
+    touchStartX = e.touches[0].clientX;
+    touchStartTime = Date.now();
+    track.style.animationPlayState = 'paused';
+  }, {passive: true});
+
+  track.addEventListener('touchend', function(e){
+    var dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+    var dt = Date.now() - touchStartTime;
+    // Resume scroll always on touchend
+    track.style.animationPlayState = 'running';
+    // Only open modal if it was a tap (not a swipe)
+    if(dx < 8 && dt < 300){
+      var card = e.target.closest('.video-card');
+      if(card && card.dataset.videoid){
+        openVideoModal(card.dataset.videoid);
+      }
+    }
+  }, {passive: true});
+
+  // Desktop hover pause/resume
+  track.addEventListener('mouseenter', function(){ track.style.animationPlayState = 'paused'; });
+  track.addEventListener('mouseleave', function(){ track.style.animationPlayState = 'running'; });
+})();
 
 function openVideoModal(videoId){
   var iframe = document.getElementById('video-modal-iframe');
