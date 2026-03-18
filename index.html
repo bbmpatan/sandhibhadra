@@ -819,10 +819,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
             <span>Sandhibhadra Ghrita का उपयोग करने के लिए आपका बहुत-बहुत धन्यवाद!</span>
           </div>
         </div>
-        <a href="#" id="wa-share-link" target="_blank" class="wa-share-btn">
-          <svg fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607z"/></svg>
-          WhatsApp पर संपर्क करें
-        </a>
         <button class="btn-close-modal" onclick="closePaymentModal();clearCart()">बंद करें</button>
       </div>
     </div>
@@ -887,7 +883,12 @@ function placeOrder(){
     note ? '📝 *नोट:* ' + note : null,'',
     '_भुगतान प्रक्रिया के लिए कृपया संपर्क करें।_'
   ].filter(Boolean).join('\n');
-  document.getElementById('wa-share-link').href = 'https://wa.me/' + MERCHANT.waPhone + '?text=' + encodeURIComponent(lines);
+
+  var waUrl = 'https://wa.me/' + MERCHANT.waPhone + '?text=' + encodeURIComponent(lines);
+
+  // Auto-open WhatsApp immediately — no second tap needed
+  window.open(waUrl, '_blank');
+
   if(window.incrementOrderStat) window.incrementOrderStat();
   showStep(2);
 }
