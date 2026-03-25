@@ -65,9 +65,15 @@
 <!-- ── Favicon ── -->
 <link rel="icon" type="image/png" href="https://i.ibb.co/fYQdWNBJ/logo.png">
 <link rel="apple-touch-icon" href="https://i.ibb.co/fYQdWNBJ/logo.png">
+<!-- ── Resource Hints ── -->
+<link rel="preconnect" href="https://i.ibb.co">
+<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="product image.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -171,6 +177,33 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .section-inner{max-width:1280px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:#b45309;margin-bottom:12px}
 .section-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:#1a2e26;line-height:1.2;margin-bottom:16px}
+
+/* Trial Pack */
+.trial-banner{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:5px 14px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px;box-shadow:0 4px 12px rgba(220,38,38,.4)}
+.product-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 16px}
+.product-card{border:2px solid #e5e7eb;border-radius:20px;padding:16px 12px;cursor:pointer;transition:all .25s;position:relative;background:#fff;text-align:center}
+.product-card:hover{border-color:#b45309;box-shadow:0 8px 24px rgba(180,83,9,.15)}
+.product-card.selected{border-color:#b45309;background:#fffbeb;box-shadow:0 8px 24px rgba(180,83,9,.2)}
+.product-card.selected::after{content:'✓';position:absolute;top:-10px;right:-10px;width:24px;height:24px;background:#b45309;color:#fff;border-radius:50%;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:24px}
+.product-card-tag{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;padding:3px 10px;border-radius:999px;margin-bottom:8px;display:inline-block}
+.tag-regular{background:#f0fdf4;color:#15803d}
+.tag-trial{background:#fef2f2;color:#dc2626}
+.product-card-name{font-weight:800;font-size:13px;color:#1a2e26;margin-bottom:2px}
+.product-card-size{font-size:11px;color:#9ca3af;margin-bottom:10px}
+.product-card-price{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.price-offer{font-size:20px;font-weight:900;color:#b45309}
+.price-mrp{font-size:12px;color:#9ca3af;text-decoration:line-through}
+.price-off{font-size:9px;font-weight:800;background:#fef2f2;color:#dc2626;padding:2px 6px;border-radius:999px}
+.trial-limit-note{font-size:10px;color:#dc2626;font-weight:700;margin-top:6px}
+.trial-used-banner{background:#fef2f2;border:1px solid #fecaca;border-radius:14px;padding:10px 14px;font-size:12px;color:#dc2626;font-weight:600;text-align:center;margin-top:8px;line-height:1.6}
+.cart-item-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px;display:inline-block;margin-bottom:4px}
+.cart-tag-regular{background:#f0fdf4;color:#15803d}
+.cart-tag-trial{background:#fef2f2;color:#dc2626}
+.trial-offer-hero{background:linear-gradient(135deg,#fff5f5,#fff);border:2px dashed #fca5a5;border-radius:20px;padding:16px;margin-top:20px;text-align:center}
+.trial-offer-hero h4{font-weight:900;font-size:15px;color:#dc2626;margin-bottom:4px}
+.trial-offer-hero p{font-size:12px;color:#6b7280;margin-bottom:12px}
+.btn-trial{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:12px 24px;border-radius:14px;font-weight:800;font-size:14px;box-shadow:0 6px 20px rgba(220,38,38,.35);transition:filter .2s,transform .15s;cursor:pointer;border:none;font-family:inherit;width:100%}
+.btn-trial:hover{filter:brightness(1.1);transform:translateY(-2px)}
 
 /* Stats Block */
 .stats-section{background:linear-gradient(135deg,#1a2e26 0%,#0d1f18 100%);padding:32px 16px}
@@ -501,10 +534,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </button>
         <a href="https://wa.me/919428686034" class="btn-wa-consult">Consult on WhatsApp</a>
       </div>
+
+      <!-- Trial Pack Offer -->
+      <div class="trial-offer-hero" id="trial-offer-hero">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:#dc2626;color:#fff;padding:4px 12px;border-radius:999px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px">⚡ Limited Time Offer</div>
+        <h4>🧪 Trial Pack — 30ml</h4>
+        <p>Try before you commit! Only ₹50 (MRP ₹100). <strong>1 per customer.</strong> Website exclusive.</p>
+        <button class="btn-trial" onclick="addTrialToCart()" id="trial-hero-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+          Get Trial Pack @ ₹50
+        </button>
+      </div>
     </div>
     <div class="hero-img-wrap">
       <div class="hero-img-inner">
-        <img src="product image.jpg" alt="Sandhibhadra Ghrita" class="hero-product-img" width="440" height="440">
+        <img src="product image.jpg" alt="Sandhibhadra Ghrita" class="hero-product-img" width="440" height="440" fetchpriority="high">
         <div class="price-card">
           <div class="price-card-label">Special Price</div>
           <div class="price-card-amount">
@@ -548,7 +592,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="about-grid">
       <div class="about-img-wrap">
         <div class="about-bg-accent"></div>
-        <div class="about-img-clip"><img src="aboutus.png" alt="Herbal Processing"></div>
+        <div class="about-img-clip"><img loading="lazy" src="aboutus.png" alt="Herbal Processing"></div>
       </div>
       <div>
         <div class="section-tag">Our Heritage</div>
@@ -572,12 +616,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
     <div class="pain-grid">
       <div class="pain-card">
-        <img src="backpain.png" alt="Back Pain">
+        <img loading="lazy" src="backpain.png" alt="Back Pain">
         <div class="pain-overlay"></div>
         <div class="pain-text"><h3>Lower Backache</h3><p>Restores flexibility and relieves spinal stiffness.</p></div>
       </div>
       <div class="pain-card">
-        <img src="knee joint pain.png" alt="Knee Pain">
+        <img loading="lazy" src="knee joint pain.png" alt="Knee Pain">
         <div class="pain-overlay"></div>
         <div class="pain-text"><h3>Severe Knee Pain</h3><p>The perfect solution for age-related joint wear and tear.</p></div>
       </div>
@@ -594,7 +638,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="apply-step"><div class="step-num">2</div><p class="step-text">Regular use nourishes tired muscles and restores their original strength within days.</p></div>
       <div class="apply-note"><strong>Safety Note:</strong>Not for small children. For sensitive skin, mix with lukewarm plain ghee before use.</div>
     </div>
-    <div style="order:1"><img src="howtoapply.png" alt="How to apply" class="apply-img"></div>
+    <div style="order:1"><img loading="lazy" src="howtoapply.png" alt="How to apply" class="apply-img"></div>
   </div>
 </section>
 
@@ -636,44 +680,44 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="videos-track">
       <!-- Original set -->
       <div class="video-card" data-videoid="VL0rADFxw3Q">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="odXVDovKjjc">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="e4Dwz3YSsKw">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="wMIs9RsoKrI">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="KAAILK9aJPo">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <!-- Duplicated for seamless loop -->
       <div class="video-card" data-videoid="VL0rADFxw3Q">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/VL0rADFxw3Q/hqdefault.jpg" alt="Testimonial 1">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="odXVDovKjjc">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/odXVDovKjjc/hqdefault.jpg" alt="Testimonial 2">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="e4Dwz3YSsKw">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/e4Dwz3YSsKw/hqdefault.jpg" alt="Testimonial 3">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="wMIs9RsoKrI">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/wMIs9RsoKrI/hqdefault.jpg" alt="Testimonial 4">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
       <div class="video-card" data-videoid="KAAILK9aJPo">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
+        <img loading="lazy" class="video-thumb" src="https://i.ytimg.com/vi/KAAILK9aJPo/hqdefault.jpg" alt="Testimonial 5">
         <div class="video-play-btn"><div class="video-play-circle"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
     </div>
@@ -696,7 +740,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="footer-logo" style="margin:0">
+          <img loading="lazy" src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="footer-logo" style="margin:0">
           <div style="line-height:1.3">
             <div style="font-weight:800;font-size:16px;color:#fff;letter-spacing:.01em">Shree Narayan</div>
             <div style="font-weight:700;font-size:13px;color:#f59e0b;text-transform:uppercase;letter-spacing:.15em">Ayurveda</div>
@@ -739,13 +783,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <small>Add Sandhibhadra Ghrita to get started</small>
     </div>
     <div id="cart-has-items" class="hidden">
-      <div class="cart-item-row">
+
+      <!-- Regular Product Row -->
+      <div id="cart-regular-row" class="cart-item-row" style="display:none">
         <div class="cart-item-img">
           <img src="product image.jpg" alt="Product" onerror="this.parentElement.innerHTML='<span style=font-size:24px>&#127807;</span>'">
         </div>
         <div class="cart-item-info">
+          <span class="cart-item-tag cart-tag-regular">Regular</span>
           <div class="cart-item-name">Sandhibhadra Ghrita</div>
-          <div class="cart-item-price">₹300 per unit</div>
+          <div class="cart-item-price">₹300 per jar</div>
           <div class="qty-row">
             <button class="qty-btn" onclick="changeQty(-1)">−</button>
             <span class="qty-num" id="qty-display">1</span>
@@ -754,9 +801,30 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <div class="cart-item-total">
           <strong id="item-total">₹300</strong>
-          <span class="cart-remove" onclick="removeFromCart()">Remove</span>
+          <span class="cart-remove" onclick="removeRegularFromCart()">Remove</span>
         </div>
       </div>
+
+      <!-- Trial Pack Row -->
+      <div id="cart-trial-row" style="display:none;background:#fff5f5;border:1px dashed #fca5a5;border-radius:16px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="cart-item-img" style="background:#fef2f2;border-radius:12px;display:flex;align-items:center;justify-content:center;width:56px;height:56px;font-size:28px;flex-shrink:0">🧪</div>
+          <div style="flex:1">
+            <span class="cart-item-tag cart-tag-trial">Trial Pack</span>
+            <div class="cart-item-name">Sandhibhadra Ghrita — 30ml</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:2px">
+              <span style="font-weight:900;color:#dc2626;font-size:16px">₹50</span>
+              <span style="font-size:11px;color:#9ca3af;text-decoration:line-through">₹100</span>
+              <span style="font-size:9px;font-weight:800;background:#fef2f2;color:#dc2626;padding:2px 6px;border-radius:999px">50% OFF</span>
+            </div>
+            <div style="font-size:10px;color:#dc2626;font-weight:600;margin-top:4px">⚡ 1 per customer · Website exclusive</div>
+          </div>
+          <div>
+            <span class="cart-remove" onclick="removeTrialFromCart()">Remove</span>
+          </div>
+        </div>
+      </div>
+
       <div class="cart-note">
         <label>Order Note (optional)</label>
         <textarea id="order-note" rows="2" placeholder="Special instructions, address hint..."></textarea>
@@ -827,32 +895,108 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <script>
 var MERCHANT = { upiId:'parulpathar@okhdfcbank', name:'PARUL HARSH PARIKH', waPhone:'919428686034' };
-var PRICE = 300;
-var cart = { qty: 0 };
+var PRICE       = 300;
+var TRIAL_PRICE = 50;
+var TRIAL_MRP   = 100;
+var cart = { qty: 0, trial: false };
 
-function addToCart() { cart.qty += 1; refreshCartUI(); openCart(); }
-function removeFromCart() { cart.qty = 0; refreshCartUI(); }
-function changeQty(d) { cart.qty = Math.max(0, cart.qty + d); if(cart.qty===0){removeFromCart();return;} refreshCartUI(); }
-function clearCart() { cart.qty = 0; refreshCartUI(); }
+// Check if trial already used (localStorage)
+function trialAlreadyUsed(){ return localStorage.getItem('sna_trial_used') === '1'; }
+function markTrialUsed(){ localStorage.setItem('sna_trial_used','1'); }
 
-function refreshCartUI() {
-  var empty = cart.qty === 0;
-  var total = cart.qty * PRICE;
+// ── Add to cart ──────────────────────────────────
+function addToCart(){ cart.qty += 1; refreshCartUI(); openCart(); }
+
+function addTrialToCart(){
+  if(trialAlreadyUsed()){
+    showTrialUsedAlert();
+    return;
+  }
+  if(cart.trial){ openCart(); return; } // already in cart
+  cart.trial = true;
+  refreshCartUI();
+  openCart();
+}
+
+function showTrialUsedAlert(){
+  var btn = document.getElementById('trial-hero-btn');
+  if(btn){
+    btn.textContent = '✗ Trial Already Availed';
+    btn.style.background = '#6b7280';
+    btn.style.cursor = 'not-allowed';
+    btn.onclick = null;
+  }
+  alert('आपने पहले ही Trial Pack का लाभ उठाया है।\nYou have already availed the Trial Pack offer.\n(1 per customer only)');
+}
+
+// ── Remove ───────────────────────────────────────
+function removeFromCart(){ cart.qty = 0; refreshCartUI(); }
+function removeRegularFromCart(){ cart.qty = 0; refreshCartUI(); }
+function removeTrialFromCart(){ cart.trial = false; refreshCartUI(); }
+function clearCart(){ cart.qty = 0; cart.trial = false; refreshCartUI(); }
+function changeQty(d){ cart.qty = Math.max(0, cart.qty + d); if(cart.qty===0){ cart.qty=0; } refreshCartUI(); }
+
+// ── Refresh UI ────────────────────────────────────
+function refreshCartUI(){
+  var hasAny = cart.qty > 0 || cart.trial;
+  var total  = (cart.qty * PRICE) + (cart.trial ? TRIAL_PRICE : 0);
+
+  // Badge
+  var badgeCount = cart.qty + (cart.trial ? 1 : 0);
   var badge = document.getElementById('cart-count');
-  badge.textContent = cart.qty;
-  badge.style.display = empty ? 'none' : 'flex';
-  var emptyEl=document.getElementById('cart-empty');
-  var itemsEl=document.getElementById('cart-has-items');
-  var summaryEl=document.getElementById('cart-summary');
-  var checkoutEl=document.getElementById('checkout-btn');
-  if(empty){
-    emptyEl.classList.remove('hidden');itemsEl.classList.add('hidden');summaryEl.classList.add('hidden');checkoutEl.classList.add('hidden');
-  }else{
-    emptyEl.classList.add('hidden');itemsEl.classList.remove('hidden');summaryEl.classList.remove('hidden');checkoutEl.classList.remove('hidden');
-    document.getElementById('qty-display').textContent=cart.qty;
-    document.getElementById('item-total').textContent='₹'+total;
-    document.getElementById('subtotal-val').textContent='₹'+total;
-    document.getElementById('total-val').textContent='₹'+total;
+  badge.textContent = badgeCount;
+  badge.style.display = badgeCount > 0 ? 'flex' : 'none';
+
+  // Empty / has-items
+  document.getElementById('cart-empty').classList.toggle('hidden', hasAny);
+  document.getElementById('cart-has-items').classList.toggle('hidden', !hasAny);
+
+  // Regular row
+  var regRow = document.getElementById('cart-regular-row');
+  if(regRow) regRow.style.display = cart.qty > 0 ? 'flex' : 'none';
+  if(cart.qty > 0){
+    document.getElementById('qty-display').textContent = cart.qty;
+    document.getElementById('item-total').textContent  = '₹' + (cart.qty * PRICE);
+  }
+
+  // Trial row
+  var trialRow = document.getElementById('cart-trial-row');
+  if(trialRow) trialRow.style.display = cart.trial ? 'block' : 'none';
+
+  // Summary & checkout
+  var summaryEl  = document.getElementById('cart-summary');
+  var checkoutEl = document.getElementById('checkout-btn');
+  if(hasAny){
+    summaryEl.classList.remove('hidden');
+    checkoutEl.classList.remove('hidden');
+    document.getElementById('subtotal-val').textContent = '₹' + total;
+    document.getElementById('total-val').textContent    = '₹' + total;
+  } else {
+    summaryEl.classList.add('hidden');
+    checkoutEl.classList.add('hidden');
+  }
+
+  // Update trial hero button state
+  updateTrialHeroBtn();
+}
+
+function updateTrialHeroBtn(){
+  var btn = document.getElementById('trial-hero-btn');
+  if(!btn) return;
+  if(trialAlreadyUsed()){
+    btn.innerHTML = '✗ Trial Already Availed';
+    btn.style.background = '#6b7280';
+    btn.style.cursor = 'not-allowed';
+    btn.onclick = null;
+  } else if(cart.trial){
+    btn.innerHTML = '✓ Trial Pack in Cart';
+    btn.style.background = '#16a34a';
+    btn.onclick = function(){ openCart(); };
+  } else {
+    btn.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg> Get Trial Pack @ ₹50';
+    btn.style.background = '';
+    btn.style.cursor = '';
+    btn.onclick = addTrialToCart;
   }
 }
 
@@ -870,24 +1014,27 @@ function placeOrder(){
   if(!name || !phone || !address){ errEl.textContent='कृपया सभी आवश्यक फ़ील्ड भरें।'; errEl.style.display='block'; return; }
   if(!/^[6-9]\d{9}$/.test(phone)){ errEl.textContent='कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें।'; errEl.style.display='block'; return; }
   errEl.style.display='none';
-  var qty   = cart.qty;
-  var total = qty * PRICE;
+
+  var total = (cart.qty * PRICE) + (cart.trial ? TRIAL_PRICE : 0);
   var note  = (document.getElementById('order-note')||{value:''}).value.trim();
-  var lines = [
-    '🌿 *नया ऑर्डर — Sandhibhadra Ghrita*','',
-    '👤 *नाम:* ' + name,
-    '📞 *WhatsApp:* ' + phone,
-    '📦 *मात्रा:* ' + qty + ' नग',
-    '💰 *कुल राशि:* ₹' + total,
-    '📍 *पता:* ' + address,
-    note ? '📝 *नोट:* ' + note : null,'',
-    '_भुगतान प्रक्रिया के लिए कृपया संपर्क करें।_'
-  ].filter(Boolean).join('\n');
 
-  var waUrl = 'https://wa.me/' + MERCHANT.waPhone + '?text=' + encodeURIComponent(lines);
+  var orderLines = ['🌿 *नया ऑर्डर — Sandhibhadra Ghrita*',''];
+  if(cart.qty > 0)    orderLines.push('📦 *Regular Jar (full size):* ' + cart.qty + ' नग × ₹' + PRICE + ' = ₹' + (cart.qty * PRICE));
+  if(cart.trial)      orderLines.push('🧪 *Trial Pack (30ml):* 1 × ₹50  [50% OFF — Website Exclusive]');
+  orderLines.push('');
+  orderLines.push('👤 *नाम:* ' + name);
+  orderLines.push('📞 *WhatsApp:* ' + phone);
+  orderLines.push('💰 *कुल राशि:* ₹' + total);
+  orderLines.push('📍 *पता:* ' + address);
+  if(note) orderLines.push('📝 *नोट:* ' + note);
+  orderLines.push('');
+  orderLines.push('_भुगतान प्रक्रिया के लिए कृपया संपर्क करें।_');
 
-  // Auto-open WhatsApp immediately — no second tap needed
+  var waUrl = 'https://wa.me/' + MERCHANT.waPhone + '?text=' + encodeURIComponent(orderLines.filter(Boolean).join('\n'));
   window.open(waUrl, '_blank');
+
+  // Mark trial as used permanently
+  if(cart.trial) markTrialUsed();
 
   if(window.incrementOrderStat) window.incrementOrderStat();
   showStep(2);
@@ -983,6 +1130,9 @@ function showStep(n){
 function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');}
 document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('open');});
 document.getElementById('open-cart-btn').addEventListener('click',openCart);
+
+// Init trial button state on page load
+window.addEventListener('DOMContentLoaded', function(){ updateTrialHeroBtn(); });
 
 // Video scroll touch handling — pause on touchstart, resume on touchend
 (function(){
