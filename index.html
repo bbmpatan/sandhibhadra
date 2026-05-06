@@ -288,22 +288,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pain-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 50%)}
 .pain-label{position:absolute;bottom:10px;left:12px;color:#fff;font-weight:700;font-size:12px}
 
-/* ===== TRIAL SECTION ===== */
-.trial-section{background:var(--green-deep);padding:64px 20px;position:relative;overflow:hidden}
-.trial-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(201,150,62,.12),transparent 70%);pointer-events:none}
-.trial-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.trial-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(220,38,38,.2);border:1px solid rgba(220,38,38,.3);color:#f87171;padding:4px 14px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
-.trial-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4.5vw,2.4rem);color:#fff;font-weight:700;margin-bottom:10px;line-height:1.2}
-.trial-desc{color:rgba(255,255,255,.6);font-size:14px;line-height:1.8;margin-bottom:24px}
-.trial-price{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
-.trial-now{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:var(--gold-light);letter-spacing:-.04em;line-height:1}
-.trial-mrp{font-size:1rem;color:rgba(255,255,255,.35);text-decoration:line-through}
-.trial-off{font-size:12px;font-weight:800;background:rgba(220,38,38,.2);color:#f87171;border:1px solid rgba(220,38,38,.3);padding:4px 12px;border-radius:999px}
-.trial-rules{display:flex;flex-direction:column;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 20px;margin-bottom:24px;text-align:left;max-width:340px;margin-left:auto;margin-right:auto}
-.trial-rule{font-size:12px;color:rgba(255,255,255,.7);font-weight:500;display:flex;align-items:center;gap:8px}
-.btn-trial{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff;padding:14px 32px;border-radius:14px;font-weight:700;font-size:15px;box-shadow:0 8px 28px rgba(220,38,38,.35);transition:transform .15s,box-shadow .2s;cursor:pointer;border:none;font-family:inherit}
-.btn-trial:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(220,38,38,.45)}
-
 /* ===== HOW TO USE ===== */
 .howto-section{background:var(--green-deep);padding:72px 20px}
 @media(min-width:768px){.howto-section{padding:96px 32px}}
@@ -445,12 +429,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-continue-shopping{width:100%;text-align:center;color:var(--text-light);font-size:12px;font-weight:600;padding:6px;cursor:pointer}
 .btn-continue-shopping:hover{color:var(--green-deep)}
 
-/* Trial in cart */
-.trial-cart-item{background:#fff5f5;border:1px dashed #fca5a5;border-radius:16px;padding:12px;margin-bottom:10px}
-.trial-cart-inner{display:flex;align-items:center;gap:10px}
-.trial-cart-icon{width:60px;height:60px;background:#fef2f2;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
-.trial-cart-info{flex:1}
-
 /* ===== PAYMENT MODAL ===== */
 .pay-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px)}
 .pay-modal.open{opacity:1;pointer-events:auto}
@@ -568,7 +546,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <a href="#joint" onclick="closeMobileMenu()">Joint Relief</a>
     <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
     <a href="#testimonials" onclick="closeMobileMenu()">Videos</a>
-    <button class="btn-mobile-order btn-mobile-last" onclick="closeMobileMenu();openCart()">Shop Now →</button>
+    <button class="btn-mobile-order btn-mobile-last" onclick="closeMobileMenu();openCart()">Shop Now &rarr;</button>
   </div>
 </nav>
 
@@ -611,15 +589,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="hero-pcard" onclick="addToCart('joint')">
           <img src="product image.jpg" alt="Sandhibhadra Ghrit" fetchpriority="high" onerror="this.style.background='#e8e0d0';this.alt='Sandhibhadra Ghrit'">
           <div class="hpc-name">Sandhibhadra Ghrit</div>
-          <div class="hpc-price">₹300</div>
-          <div class="hpc-hint">Joint & Pain Relief</div>
+          <div class="hpc-price">₹300 <span style="font-size:11px;color:#aaa;text-decoration:line-through;font-weight:400">₹350</span></div>
+          <div class="hpc-hint">Joint &amp; Pain Relief</div>
         </div>
         <div class="hero-pcard" onclick="addToCart('hair')" style="border-color:#e9e3f8">
           <div class="new-badge">NEW</div>
           <img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" fetchpriority="high" onerror="this.style.background='#ede9f8';this.alt='Kesh Kalyani Tel'">
           <div class="hpc-name">Kesh Kalyani Tel</div>
-          <div class="hpc-price" style="color:#7c3aed">₹150</div>
-          <div class="hpc-hint">Hair Growth & Care</div>
+          <div class="hpc-price" style="color:#7c3aed">₹150 <span style="font-size:11px;color:#aaa;text-decoration:line-through;font-weight:400">₹200</span></div>
+          <div class="hpc-hint">Hair Growth &amp; Care</div>
         </div>
       </div>
     </div>
@@ -718,7 +696,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="divider-thin"></div>
         <div class="prod-price-row">
           <div>
-            <div class="prod-price">₹300</div>
+            <div class="prod-price">₹300 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹350</span></div>
             <div class="prod-price-sub">Per jar · Free Delivery</div>
           </div>
           <div class="prod-stock"><span class="pdot"></span>In Stock</div>
@@ -753,7 +731,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="divider-thin"></div>
         <div class="prod-price-row">
           <div>
-            <div class="prod-price purple">₹150</div>
+            <div class="prod-price purple">₹150 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹200</span></div>
             <div class="prod-price-sub">Per bottle · Free Delivery</div>
           </div>
           <div class="prod-stock"><span class="pdot"></span>In Stock</div>
@@ -787,29 +765,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" class="round-img" loading="lazy" onerror="this.style.background='#ede9f8'">
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== TRIAL SECTION ===== -->
-<section class="trial-section">
-  <div class="trial-inner">
-    <div class="trial-badge">⚡ Limited Time Offer</div>
-    <h2 class="trial-h2">Try Sandhibhadra Ghrit<br>30ml Trial Pack</h2>
-    <p class="trial-desc">Not sure yet? Try our 30ml trial pack at 50% off. Website exclusive — only 1 per customer.</p>
-    <div class="trial-price">
-      <span class="trial-now">₹50</span>
-      <span class="trial-mrp">₹100</span>
-      <span class="trial-off">50% OFF</span>
-    </div>
-    <div class="trial-rules">
-      <div class="trial-rule">🌐 Website exclusive — not available in stores</div>
-      <div class="trial-rule">👤 Only 1 trial pack per customer</div>
-      <div class="trial-rule">🚚 Free delivery across India</div>
-    </div>
-    <button class="btn-trial" onclick="addTrialToCart()" id="trial-hero-btn">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" style="width:17px;height:17px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
-      Get Trial Pack @ ₹50
-    </button>
   </div>
 </section>
 
@@ -997,7 +952,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="footer-col-h">Our Products</div>
         <button class="footer-link" onclick="addToCart('joint')">🦴 Sandhibhadra Ghrit — ₹300</button>
         <button class="footer-link" onclick="addToCart('hair')">💆 Kesh Kalyani Tel — ₹150</button>
-        <button class="footer-link" onclick="addTrialToCart()">🧪 Trial Pack — ₹50</button>
       </div>
       <div>
         <div class="footer-col-h">Visit Our Store</div>
@@ -1058,22 +1012,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           </div>
         </div>
         <div class="cart-item-right"><strong class="cart-item-total-price" id="total-hair">₹150</strong><span class="cart-remove-btn" onclick="removeFromCart('hair')">Remove</span></div>
-      </div>
-      <div id="cart-trial-row" class="trial-cart-item" style="display:none">
-        <div class="trial-cart-inner">
-          <div class="trial-cart-icon">🧪</div>
-          <div class="trial-cart-info">
-            <span class="cit-tag cit-r">⚡ Trial Pack</span>
-            <div class="cart-item-name">Sandhibhadra Ghrit 30ml</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:3px">
-              <span style="font-weight:900;color:#dc2626;font-size:15px">₹50</span>
-              <span style="font-size:11px;color:#9ca3af;text-decoration:line-through">₹100</span>
-              <span style="font-size:9px;font-weight:800;background:#fef2f2;color:#dc2626;padding:2px 7px;border-radius:999px">50% OFF</span>
-            </div>
-            <div style="font-size:10px;color:#dc2626;font-weight:600;margin-top:3px">1 per customer · Website exclusive</div>
-          </div>
-          <span class="cart-remove-btn" onclick="removeFromCart('trial')">Remove</span>
-        </div>
       </div>
       <div class="cart-note-area">
         <label>Order Note (optional)</label>
@@ -1137,8 +1075,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- ===== JAVASCRIPT ===== -->
 <script>
 var MERCHANT = { waPhone:'919428686034' };
-var PRICES = { joint:300, hair:150, trial:50 };
-var cart = { joint:0, hair:0, trial:false };
+var PRICES = { joint:300, hair:150 };
+var cart = { joint:0, hair:0 };
 
 // Nav scroll effect
 window.addEventListener('scroll', function(){
@@ -1147,19 +1085,10 @@ window.addEventListener('scroll', function(){
   else nav.classList.remove('scrolled');
 },{passive:true});
 
-// Trial
-function trialAlreadyUsed(){ return localStorage.getItem('sna_trial_used')==='1'; }
-function markTrialUsed(){ localStorage.setItem('sna_trial_used','1'); }
-
 function addToCart(type){
   if(type==='joint') cart.joint++;
   if(type==='hair') cart.hair++;
   refreshCartUI(); openCart();
-}
-function addTrialToCart(){
-  if(trialAlreadyUsed()){ alert('आपने पहले ही Trial Pack का लाभ उठाया है।\n(1 per customer only)'); return; }
-  if(cart.trial){ openCart(); return; }
-  cart.trial = true; refreshCartUI(); openCart();
 }
 function changeQty(type,d){
   if(type==='joint') cart.joint=Math.max(0,cart.joint+d);
@@ -1169,16 +1098,15 @@ function changeQty(type,d){
 function removeFromCart(type){
   if(type==='joint') cart.joint=0;
   if(type==='hair') cart.hair=0;
-  if(type==='trial') cart.trial=false;
   refreshCartUI();
 }
-function clearCart(){ cart.joint=0; cart.hair=0; cart.trial=false; refreshCartUI(); }
-function getTotal(){ return cart.joint*PRICES.joint + cart.hair*PRICES.hair + (cart.trial?PRICES.trial:0); }
+function clearCart(){ cart.joint=0; cart.hair=0; refreshCartUI(); }
+function getTotal(){ return cart.joint*PRICES.joint + cart.hair*PRICES.hair; }
 
 function refreshCartUI(){
-  var hasAny = cart.joint>0||cart.hair>0||cart.trial;
+  var hasAny = cart.joint>0||cart.hair>0;
   var total = getTotal();
-  var count = cart.joint+cart.hair+(cart.trial?1:0);
+  var count = cart.joint+cart.hair;
   var badge=document.getElementById('cart-count');
   badge.textContent=count; badge.style.display=count>0?'flex':'none';
   document.getElementById('cart-empty').classList.toggle('hidden',hasAny);
@@ -1195,7 +1123,6 @@ function refreshCartUI(){
     document.getElementById('qty-hair').textContent=cart.hair;
     document.getElementById('total-hair').textContent='₹'+(cart.hair*PRICES.hair);
   }
-  document.getElementById('cart-trial-row').style.display=cart.trial?'block':'none';
   var se=document.getElementById('cart-summary'),ce=document.getElementById('checkout-btn');
   if(hasAny){
     se.classList.remove('hidden'); ce.classList.remove('hidden');
@@ -1203,21 +1130,6 @@ function refreshCartUI(){
     document.getElementById('total-val').textContent='₹'+total;
   } else {
     se.classList.add('hidden'); ce.classList.add('hidden');
-  }
-  updateTrialBtn();
-}
-
-function updateTrialBtn(){
-  var btn=document.getElementById('trial-hero-btn'); if(!btn) return;
-  if(trialAlreadyUsed()){
-    btn.innerHTML='✗ Trial Already Availed';
-    btn.style.background='#6b7280'; btn.style.cursor='not-allowed'; btn.onclick=null;
-  } else if(cart.trial){
-    btn.innerHTML='✓ Trial Pack in Cart';
-    btn.style.background='#16a34a'; btn.onclick=function(){openCart();};
-  } else {
-    btn.innerHTML='<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" style="width:17px;height:17px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg> Get Trial Pack @ ₹50';
-    btn.style.background=''; btn.style.cursor=''; btn.onclick=addTrialToCart;
   }
 }
 
@@ -1239,7 +1151,6 @@ function placeOrder(){
   var lines=['🌿 *नया ऑर्डर — Shree Narayan Ayurveda*',''];
   if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
   if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
-  if(cart.trial)   lines.push('🧪 *Trial Pack (30ml):* 1 × ₹50  [50% OFF — Website Exclusive]');
   lines.push('');
   lines.push('👤 *नाम:* '+name);
   lines.push('📞 *WhatsApp:* '+phone);
@@ -1248,8 +1159,6 @@ function placeOrder(){
   if(note) lines.push('📝 *नोट:* '+note);
   lines.push(''); lines.push('_भुगतान प्रक्रिया के लिए कृपया संपर्क करें।_');
   window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
-  if(cart.trial) markTrialUsed();
-  if(window.incrementOrderStat) window.incrementOrderStat();
   showStep(2);
 }
 
@@ -1280,7 +1189,7 @@ function switchTab(tab,btn){
   var tv=bv+sv; var ao=Math.floor(tv*0.07);
   var so=parseInt(localStorage.getItem('sna_orders')||'0'); var to=Math.max(so,ao);
   var ds=Math.floor((new Date()-new Date('2024-01-01'))/86400000);
-  var hc2=Math.max(500,2000+Math.floor(ds*1.2)); // minimum floor of 500
+  var hc2=Math.max(500,2000+Math.floor(ds*1.2));
   function anim(el,t,suf,dur){
     var s=0,st=Math.ceil(t/(dur/16)),tm=setInterval(function(){
       s=Math.min(s+st,t);el.innerHTML=s.toLocaleString('en-IN')+(suf||'');if(s>=t)clearInterval(tm);
@@ -1291,7 +1200,6 @@ function switchTab(tab,btn){
     if(ec) anim(ec,hc2,'<span>+</span>',1800);
     if(ev) anim(ev,tv,'',1400);
     if(eo) anim(eo,to,'',1200);
-    updateTrialBtn();
   });
   setInterval(function(){ var v=parseInt(localStorage.getItem('sna_visitors')||'0')+1; localStorage.setItem('sna_visitors',v); var el=document.getElementById('stat-visitors'); if(el) el.textContent=(bv+v).toLocaleString('en-IN'); },45000);
   setInterval(function(){ var o=parseInt(localStorage.getItem('sna_orders')||'0')+1; localStorage.setItem('sna_orders',o); var el=document.getElementById('stat-orders'); if(el) el.textContent=Math.max(o,ao)+''; },240000);
