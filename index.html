@@ -35,7 +35,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   --radius:16px;--radius-lg:28px;
   --shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14);
 }
-.serif{font-family:'Cormorant Garamond',serif}
 
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(45,90,58,.5)}70%{box-shadow:0 0 0 14px rgba(45,90,58,0)}100%{box-shadow:0 0 0 0 rgba(45,90,58,0)}}
@@ -476,17 +475,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="nav-inner">
     <a href="#" class="nav-brand" aria-label="Home">
       <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" class="nav-logo" width="150" height="52" loading="eager">
-      <div class="nav-brand-text">
-        <span class="t1">Shree Narayan</span>
-        <span class="t2">Ayurveda</span>
-      </div>
+      <div class="nav-brand-text"><span class="t1">Shree Narayan</span><span class="t2">Ayurveda</span></div>
     </a>
     <nav class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#hair">Hair Oil</a>
-      <a href="#joint">Joint Relief</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#testimonials">Videos</a>
+      <a href="#products">Products</a><a href="#hair">Hair Oil</a><a href="#joint">Joint Relief</a><a href="#reviews">Reviews</a><a href="#testimonials">Videos</a>
     </nav>
     <div class="nav-right">
       <button class="cart-btn" id="open-cart-btn" aria-label="Cart">
@@ -500,28 +492,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#products" onclick="closeMobileMenu()">Products</a>
-    <a href="#hair" onclick="closeMobileMenu()">Hair Oil</a>
-    <a href="#joint" onclick="closeMobileMenu()">Joint Relief</a>
-    <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
-    <a href="#testimonials" onclick="closeMobileMenu()">Videos</a>
+    <a href="#products" onclick="closeMobileMenu()">Products</a><a href="#hair" onclick="closeMobileMenu()">Hair Oil</a><a href="#joint" onclick="closeMobileMenu()">Joint Relief</a><a href="#reviews" onclick="closeMobileMenu()">Reviews</a><a href="#testimonials" onclick="closeMobileMenu()">Videos</a>
     <button class="btn-mobile-order btn-mobile-last" onclick="closeMobileMenu();openCart()">Shop Now</button>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-bg">
-    <div class="hero-blob hero-blob-1"></div>
-    <div class="hero-blob hero-blob-2"></div>
-  </div>
+  <div class="hero-bg"><div class="hero-blob hero-blob-1"></div><div class="hero-blob hero-blob-2"></div></div>
   <div class="hero-deco">आयुर्वेद</div>
   <div class="hero-inner">
     <div>
-      <div class="hero-kicker">
-        <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="logo">
-        <span class="dot"></span>
-        Patan, Gujarat
-      </div>
+      <div class="hero-kicker"><img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="logo"><span class="dot"></span>Patan, Gujarat</div>
       <h1 class="hero-h1">Ancient Wisdom,<br><em>Real Results.</em></h1>
       <p class="hero-sub">Two powerful Ayurvedic products handcrafted from pure herbs — one heals your joints, one transforms your hair. No chemicals. No side effects.</p>
       <div class="trust-strip">
@@ -560,10 +541,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <img src="hairoil.jpg" alt="Kesh Kalyani Tel" class="hero-main-img" fetchpriority="high" onerror="this.style.background='#ede9df'">
         <div class="hero-badge-float">
           <div class="hbf-icon">🏺</div>
-          <div>
-            <div class="hbf-t1">Handcrafted in Patan</div>
-            <div class="hbf-t2">Gujarat, India</div>
-          </div>
+          <div><div class="hbf-t1">Handcrafted in Patan</div><div class="hbf-t2">Gujarat, India</div></div>
         </div>
       </div>
     </div>
@@ -572,47 +550,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <section class="stats-section">
   <div class="stats-inner">
-    <div class="stat-card">
-      <div class="stat-icon">😊</div>
-      <div class="stat-num" id="stat-customers">0<span>+</span></div>
-      <div class="stat-label">Happy Customers</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">👁</div>
-      <div class="stat-num" id="stat-visitors">0</div>
-      <div class="stat-label">Today's Visitors</div>
-      <div class="stat-live"><span class="stat-live-dot"></span>Live</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">📦</div>
-      <div class="stat-num" id="stat-orders">0</div>
-      <div class="stat-label">Today's Orders</div>
-      <div class="stat-live"><span class="stat-live-dot"></span>Live</div>
-    </div>
+    <div class="stat-card"><div class="stat-icon">😊</div><div class="stat-num" id="stat-customers">0<span>+</span></div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat-card"><div class="stat-icon">👁</div><div class="stat-num" id="stat-visitors">0</div><div class="stat-label">Today's Visitors</div><div class="stat-live"><span class="stat-live-dot"></span>Live</div></div>
+    <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-num" id="stat-orders">0</div><div class="stat-label">Today's Orders</div><div class="stat-live"><span class="stat-live-dot"></span>Live</div></div>
   </div>
 </section>
 
 <section class="order-flow-section">
   <div class="order-flow-inner">
-    <div class="order-flow-step">
-      <div class="ofs-num">1</div>
-      <div class="ofs-text">Choose Product<span>Pick what you need</span></div>
-    </div>
+    <div class="order-flow-step"><div class="ofs-num">1</div><div class="ofs-text">Choose Product<span>Pick what you need</span></div></div>
     <div class="ofs-arrow">→</div>
-    <div class="order-flow-step">
-      <div class="ofs-num">2</div>
-      <div class="ofs-text">Add to Cart<span>Select quantity</span></div>
-    </div>
+    <div class="order-flow-step"><div class="ofs-num">2</div><div class="ofs-text">Add to Cart<span>Select quantity</span></div></div>
     <div class="ofs-arrow">→</div>
-    <div class="order-flow-step">
-      <div class="ofs-num">3</div>
-      <div class="ofs-text">Pay Online<span>Secure Razorpay</span></div>
-    </div>
+    <div class="order-flow-step"><div class="ofs-num">3</div><div class="ofs-text">Pay Online<span>Secure Razorpay</span></div></div>
     <div class="ofs-arrow">→</div>
-    <div class="order-flow-step">
-      <div class="ofs-num">4</div>
-      <div class="ofs-text">Delivered to You<span>Fast, free delivery</span></div>
-    </div>
+    <div class="order-flow-step"><div class="ofs-num">4</div><div class="ofs-text">Delivered to You<span>Fast, free delivery</span></div></div>
   </div>
 </section>
 
@@ -629,10 +581,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="prod-img-overlay"></div>
       </div>
       <div class="prod-body">
-        <div class="prod-tags">
-          <span class="ptag ptag-green">Joint Relief</span>
-          <span class="ptag ptag-gold">Bestseller</span>
-        </div>
+        <div class="prod-tags"><span class="ptag ptag-green">Joint Relief</span><span class="ptag ptag-gold">Bestseller</span></div>
         <h3 class="prod-name">Sandhibhadra Ghrit</h3>
         <p class="prod-desc">100% Ayurvedic medicated ghee that deeply nourishes worn-out joints and restores strength to tired muscles — naturally, without side effects.</p>
         <div class="prod-feats">
@@ -643,10 +592,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <div class="divider-thin"></div>
         <div class="prod-price-row">
-          <div>
-            <div class="prod-price">₹300 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹350</span></div>
-            <div class="prod-price-sub">Per jar · Free Delivery</div>
-          </div>
+          <div><div class="prod-price">₹300 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹350</span></div><div class="prod-price-sub">Per jar · Free Delivery</div></div>
           <div class="prod-stock"><span class="pdot"></span>In Stock</div>
         </div>
         <button class="btn-cart btn-green" onclick="addToCart('joint')">
@@ -662,10 +608,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="prod-new-label">New Launch</div>
       </div>
       <div class="prod-body">
-        <div class="prod-tags">
-          <span class="ptag ptag-purple">Hair Care</span>
-          <span class="ptag ptag-red">New Launch</span>
-        </div>
+        <div class="prod-tags"><span class="ptag ptag-purple">Hair Care</span><span class="ptag ptag-red">New Launch</span></div>
         <h3 class="prod-name">Kesh Kalyani Tel</h3>
         <p class="prod-desc">100% Ayurvedic hair oil with ancient herb combination — controls hair fall, promotes natural growth, strengthens roots and deeply nourishes your scalp.</p>
         <div class="prod-feats">
@@ -676,10 +619,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <div class="divider-thin"></div>
         <div class="prod-price-row">
-          <div>
-            <div class="prod-price purple">₹150 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹200</span></div>
-            <div class="prod-price-sub">Per bottle · Free Delivery</div>
-          </div>
+          <div><div class="prod-price purple">₹150 <span style="font-size:1rem;color:var(--text-light);text-decoration:line-through;font-weight:400;letter-spacing:0">₹200</span></div><div class="prod-price-sub">Per bottle · Free Delivery</div></div>
           <div class="prod-stock"><span class="pdot"></span>In Stock</div>
         </div>
         <button class="btn-cart btn-purple" onclick="addToCart('hair')">
@@ -706,9 +646,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <button class="btn-cart btn-purple" style="max-width:280px;margin-top:8px" onclick="addToCart('hair')">Order Kesh Kalyani Tel — ₹150</button>
       </div>
-      <div>
-        <img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" class="round-img" loading="lazy" onerror="this.style.background='#ede9f8'">
-      </div>
+      <div><img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" class="round-img" loading="lazy" onerror="this.style.background='#ede9f8'"></div>
     </div>
   </div>
 </section>
@@ -749,7 +687,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <button class="how-tab" onclick="switchTab('hair',this)">Kesh Kalyani Tel</button>
     </div>
     <div class="how-content active" id="htab-joint">
-      <div><img src="howtoapply.png" alt="How to apply Sandhibhadra Ghrit" class="how-img" loading="lazy" onerror="this.style.background='#1a3a22'"></div>
+      <div><img src="howtoapply.png" alt="How to apply" class="how-img" loading="lazy" onerror="this.style.background='#1a3a22'"></div>
       <div>
         <div class="how-steps">
           <div class="how-step"><div class="snum">1</div><p class="stxt">Take a small amount on your palm and <strong>warm it slightly</strong> by rubbing hands together.</p></div>
@@ -760,7 +698,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
     </div>
     <div class="how-content" id="htab-hair">
-      <div><img src="howtousekesh.jpg" alt="How to apply Kesh Kalyani Tel" class="how-img" loading="lazy" onerror="this.style.background='#1a3a22'"></div>
+      <div><img src="howtousekesh.jpg" alt="How to apply" class="how-img" loading="lazy" onerror="this.style.background='#1a3a22'"></div>
       <div>
         <div class="how-steps">
           <div class="how-step"><div class="snum">1</div><p class="stxt">Apply Kesh Kalyani Tel <strong>directly to scalp</strong> — part your hair to ensure it reaches the roots.</p></div>
@@ -821,26 +759,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <section class="trust-section">
   <div class="trust-inner">
-    <div class="trust-card">
-      <div class="trust-card-icon">🔒</div>
-      <div class="trust-card-title">Secure Payment</div>
-      <div class="trust-card-text">Razorpay secured, 100% safe checkout</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-card-icon">🚚</div>
-      <div class="trust-card-title">Free Delivery</div>
-      <div class="trust-card-text">Pan-India free delivery on all orders</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-card-icon">🌿</div>
-      <div class="trust-card-title">100% Ayurvedic</div>
-      <div class="trust-card-text">Pure herbs, zero chemicals, zero side effects</div>
-    </div>
-    <div class="trust-card">
-      <div class="trust-card-icon">💬</div>
-      <div class="trust-card-title">WhatsApp Support</div>
-      <div class="trust-card-text">Direct support from our team anytime</div>
-    </div>
+    <div class="trust-card"><div class="trust-card-icon">🔒</div><div class="trust-card-title">Secure Payment</div><div class="trust-card-text">Razorpay secured, 100% safe checkout</div></div>
+    <div class="trust-card"><div class="trust-card-icon">🚚</div><div class="trust-card-title">Free Delivery</div><div class="trust-card-text">Pan-India free delivery on all orders</div></div>
+    <div class="trust-card"><div class="trust-card-icon">🌿</div><div class="trust-card-title">100% Ayurvedic</div><div class="trust-card-text">Pure herbs, zero chemicals, zero side effects</div></div>
+    <div class="trust-card"><div class="trust-card-icon">💬</div><div class="trust-card-title">WhatsApp Support</div><div class="trust-card-text">Direct support from our team anytime</div></div>
   </div>
 </section>
 
@@ -869,9 +791,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div class="vmodal" id="video-modal" onclick="closeVideoModal(event)">
   <div class="vmodal-box">
     <button class="vmodal-close" onclick="closeVideoModal()">✕</button>
-    <div class="vmodal-frame">
-      <iframe id="video-modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    <div class="vmodal-frame"><iframe id="video-modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   </div>
 </div>
 
@@ -886,87 +806,29 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <p class="footer-desc">Combining the purity of ancient Ayurveda with modern care — for your joints, your hair and your overall wellbeing. Made with love in Patan.</p>
       </div>
-      <div>
-        <div class="footer-col-h">Our Products</div>
-        <button class="footer-link" onclick="addToCart('joint')">Sandhibhadra Ghrit — ₹300</button>
-        <button class="footer-link" onclick="addToCart('hair')">Kesh Kalyani Tel — ₹150</button>
-      </div>
-      <div>
-        <div class="footer-col-h">Visit Our Store</div>
-        <p class="footer-addr">Jalaram Mandir Road,<br>Patan, Gujarat — 384265</p>
-      </div>
-      <div>
-        <div class="footer-col-h">Contact Us</div>
-        <div class="footer-wa-lbl">WhatsApp / Call</div>
-        <a href="https://wa.me/919428686034" class="footer-phone">+91 9428686034</a>
-        <div class="footer-wa-lbl" style="margin-top:14px">Website</div>
-        <a href="https://shreenarayanayurveda.in" class="footer-phone" style="font-size:14px">shreenarayanayurveda.in</a>
-      </div>
+      <div><div class="footer-col-h">Our Products</div><button class="footer-link" onclick="addToCart('joint')">Sandhibhadra Ghrit — ₹300</button><button class="footer-link" onclick="addToCart('hair')">Kesh Kalyani Tel — ₹150</button></div>
+      <div><div class="footer-col-h">Visit Our Store</div><p class="footer-addr">Jalaram Mandir Road,<br>Patan, Gujarat — 384265</p></div>
+      <div><div class="footer-col-h">Contact Us</div><div class="footer-wa-lbl">WhatsApp / Call</div><a href="https://wa.me/919428686034" class="footer-phone">+91 9428686034</a><div class="footer-wa-lbl" style="margin-top:14px">Website</div><a href="https://shreenarayanayurveda.in" class="footer-phone" style="font-size:14px">shreenarayanayurveda.in</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Shree Narayan Ayurveda. All rights reserved.</span>
-      <span>Made with 🌿 in Patan, Gujarat</span>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Shree Narayan Ayurveda. All rights reserved.</span><span>Made with 🌿 in Patan, Gujarat</span></div>
   </div>
 </footer>
 
 <!-- CART DRAWER -->
 <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
 <aside class="cart-drawer" id="cart-drawer">
-  <div class="cart-head">
-    <div class="cart-head-text"><h2>Your Cart</h2><p>Shree Narayan Ayurveda</p></div>
-    <button class="cart-close-btn" onclick="closeCart()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
-  </div>
+  <div class="cart-head"><div class="cart-head-text"><h2>Your Cart</h2><p>Shree Narayan Ayurveda</p></div><button class="cart-close-btn" onclick="closeCart()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
   <div class="cart-body">
-    <div class="cart-empty" id="cart-empty">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
-      <p>Your cart is empty</p><small>Add products to get started</small>
-    </div>
+    <div class="cart-empty" id="cart-empty"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m12-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z"/></svg><p>Your cart is empty</p><small>Add products to get started</small></div>
     <div id="cart-has-items" class="hidden">
-      <div id="cart-joint-row" class="cart-item" style="display:none">
-        <div class="cart-item-img-box"><img src="product image.jpg" alt="Sandhibhadra Ghrit" onerror="this.parentElement.innerHTML='🌿'"></div>
-        <div class="cart-item-info">
-          <span class="cit-tag cit-g">Joint Relief</span>
-          <div class="cart-item-name">Sandhibhadra Ghrit</div>
-          <div class="cart-item-unit-price">₹300 per jar</div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="changeQty('joint',-1)">&#8722;</button>
-            <span class="qty-num" id="qty-joint">1</span>
-            <button class="qty-btn" onclick="changeQty('joint',1)">+</button>
-          </div>
-        </div>
-        <div class="cart-item-right"><strong class="cart-item-total-price" id="total-joint">₹300</strong><span class="cart-remove-btn" onclick="removeFromCart('joint')">Remove</span></div>
-      </div>
-      <div id="cart-hair-row" class="cart-item" style="display:none">
-        <div class="cart-item-img-box"><img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" loading="lazy" onerror="this.parentElement.innerHTML='💆'"></div>
-        <div class="cart-item-info">
-          <span class="cit-tag cit-p">Hair Care</span>
-          <div class="cart-item-name">Kesh Kalyani Tel</div>
-          <div class="cart-item-unit-price">₹150 per bottle</div>
-          <div class="qty-row">
-            <button class="qty-btn" onclick="changeQty('hair',-1)">&#8722;</button>
-            <span class="qty-num" id="qty-hair">1</span>
-            <button class="qty-btn" onclick="changeQty('hair',1)">+</button>
-          </div>
-        </div>
-        <div class="cart-item-right"><strong class="cart-item-total-price" id="total-hair">₹150</strong><span class="cart-remove-btn" onclick="removeFromCart('hair')">Remove</span></div>
-      </div>
-      <div class="cart-note-area">
-        <label>Order Note (optional)</label>
-        <textarea id="order-note" rows="2" placeholder="Special instructions..."></textarea>
-      </div>
+      <div id="cart-joint-row" class="cart-item" style="display:none"><div class="cart-item-img-box"><img src="product image.jpg" alt="Sandhibhadra Ghrit" onerror="this.parentElement.innerHTML='🌿'"></div><div class="cart-item-info"><span class="cit-tag cit-g">Joint Relief</span><div class="cart-item-name">Sandhibhadra Ghrit</div><div class="cart-item-unit-price">₹300 per jar</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('joint',-1)">&#8722;</button><span class="qty-num" id="qty-joint">1</span><button class="qty-btn" onclick="changeQty('joint',1)">+</button></div></div><div class="cart-item-right"><strong class="cart-item-total-price" id="total-joint">₹300</strong><span class="cart-remove-btn" onclick="removeFromCart('joint')">Remove</span></div></div>
+      <div id="cart-hair-row" class="cart-item" style="display:none"><div class="cart-item-img-box"><img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" loading="lazy" onerror="this.parentElement.innerHTML='💆'"></div><div class="cart-item-info"><span class="cit-tag cit-p">Hair Care</span><div class="cart-item-name">Kesh Kalyani Tel</div><div class="cart-item-unit-price">₹150 per bottle</div><div class="qty-row"><button class="qty-btn" onclick="changeQty('hair',-1)">&#8722;</button><span class="qty-num" id="qty-hair">1</span><button class="qty-btn" onclick="changeQty('hair',1)">+</button></div></div><div class="cart-item-right"><strong class="cart-item-total-price" id="total-hair">₹150</strong><span class="cart-remove-btn" onclick="removeFromCart('hair')">Remove</span></div></div>
+      <div class="cart-note-area"><label>Order Note (optional)</label><textarea id="order-note" rows="2" placeholder="Special instructions..."></textarea></div>
     </div>
   </div>
   <div class="cart-foot">
-    <div id="cart-summary" class="hidden">
-      <div class="cart-summary-row"><span>Subtotal</span><span id="subtotal-val">₹0</span></div>
-      <div class="cart-summary-row"><span>Delivery</span><span class="free-tag">FREE</span></div>
-      <div class="cart-total-row"><span>Total</span><span id="total-val">₹0</span></div>
-    </div>
-    <button id="checkout-btn" class="btn-checkout hidden" onclick="openPaymentModal()">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-      Proceed to Checkout
-    </button>
+    <div id="cart-summary" class="hidden"><div class="cart-summary-row"><span>Subtotal</span><span id="subtotal-val">₹0</span></div><div class="cart-summary-row"><span>Delivery</span><span class="free-tag">FREE</span></div><div class="cart-total-row"><span>Total</span><span id="total-val">₹0</span></div></div>
+    <button id="checkout-btn" class="btn-checkout hidden" onclick="openPaymentModal()"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>Proceed to Checkout</button>
     <button class="btn-continue-shopping" onclick="closeCart()">&larr; Continue Shopping</button>
   </div>
 </aside>
@@ -974,17 +836,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- PAYMENT MODAL -->
 <div class="pay-modal" id="payment-modal">
   <div class="pay-modal-box">
-    <div class="steps-header">
-      <div class="steps-row">
-        <div class="step-item active" id="s1"><div class="step-dot2">1</div><span class="step-lbl">विवरण</span></div>
-        <div class="step-line2" id="line12"></div>
-        <div class="step-item" id="s2"><div class="step-dot2">2</div><span class="step-lbl">भुगतान</span></div>
-        <div class="step-line2" id="line23"></div>
-        <div class="step-item" id="s3"><div class="step-dot2">3</div><span class="step-lbl">पुष्टि</span></div>
-      </div>
-    </div>
+    <div class="steps-header"><div class="steps-row"><div class="step-item active" id="s1"><div class="step-dot2">1</div><span class="step-lbl">विवरण</span></div><div class="step-line2" id="line12"></div><div class="step-item" id="s2"><div class="step-dot2">2</div><span class="step-lbl">भुगतान</span></div><div class="step-line2" id="line23"></div><div class="step-item" id="s3"><div class="step-dot2">3</div><span class="step-lbl">पुष्टि</span></div></div></div>
 
-    <!-- STEP 1 -->
     <div class="modal-step" id="modal-step-1">
       <div class="modal-h3">Delivery Details</div>
       <div class="modal-sub">कृपया अपनी जानकारी भरें।</div>
@@ -992,18 +845,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="field-group"><label class="field-label">WhatsApp Number *</label><input class="field-input" type="tel" id="cust-phone" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel"></div>
       <div class="field-group"><label class="field-label">Delivery Address *</label><textarea class="field-input" id="cust-address" rows="2" placeholder="Full address with pin code" style="resize:none"></textarea></div>
       <div class="error-box" id="details-error"></div>
-      <div class="modal-btns">
-        <button class="btn-modal-cancel" onclick="closePaymentModal()">Cancel</button>
-        <button class="btn-modal-next" onclick="goToPaymentStep()">Proceed to Payment &rarr;</button>
-      </div>
+      <div class="modal-btns"><button class="btn-modal-cancel" onclick="closePaymentModal()">Cancel</button><button class="btn-modal-next" onclick="goToPaymentStep()">Proceed to Payment &rarr;</button></div>
     </div>
 
-    <!-- STEP 2 -->
     <div class="modal-step hidden" id="modal-step-2">
       <div class="modal-h3">Complete Payment</div>
       <div class="modal-sub">Choose your preferred payment method.</div>
       <div class="pay-order-summary" id="pay-order-summary"></div>
-      <button class="btn-razorpay" id="btn-razorpay-pay" onclick="payWithRazorpay()">
+      <button class="btn-razorpay" onclick="payWithRazorpay()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
         <span>Pay <span id="rzp-pay-amount">₹0</span> Online</span>
         <span class="rzp-logo-text">via <span>Razorpay</span></span>
@@ -1013,29 +862,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <svg fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
         Order via WhatsApp (Pay Later)
       </button>
-      <div class="rzp-badge-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        <span>Secured by <strong>Razorpay</strong> &middot; UPI, Cards, Netbanking</span>
-      </div>
-      <div style="text-align:center;margin-top:10px">
-        <button class="btn-modal-cancel" onclick="showStep(1)" style="flex:none;padding:8px 20px;font-size:12px">&larr; Edit Details</button>
-      </div>
+      <div class="rzp-badge-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg><span>Secured by <strong>Razorpay</strong> · UPI, Cards, Netbanking</span></div>
+      <div style="text-align:center;margin-top:10px"><button class="btn-modal-cancel" onclick="showStep(1)" style="flex:none;padding:8px 20px;font-size:12px">&larr; Edit Details</button></div>
     </div>
 
-    <!-- STEP 3 -->
     <div class="modal-step hidden" id="modal-step-3">
       <div class="success-wrap">
-        <svg class="tick" viewBox="0 0 52 52" fill="none">
-          <circle class="tick-circle" cx="26" cy="26" r="25" stroke="#16a34a" stroke-width="2"/>
-          <path class="tick-check" d="M14 27l8 8 16-16" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg class="tick" viewBox="0 0 52 52" fill="none"><circle class="tick-circle" cx="26" cy="26" r="25" stroke="#16a34a" stroke-width="2"/><path class="tick-check" d="M14 27l8 8 16-16" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div class="ty-title" id="ty-title">आपका धन्यवाद!</div>
         <div class="ty-line1" id="ty-line1">आपका ऑर्डर सफलतापूर्वक प्राप्त हो गया है।</div>
         <div class="ty-divider"></div>
-        <div class="ty-payment-id hidden" id="ty-payment-id">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          Payment ID: <code id="ty-payment-id-val"></code>
-        </div>
+        <div class="ty-payment-id hidden" id="ty-payment-id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Payment ID: <code id="ty-payment-id-val"></code></div>
         <div class="ty-msg" id="ty-msg"></div>
         <div class="ty-box"><span>🌿</span><span>Shree Narayan Ayurveda के उत्पाद का उपयोग करने के लिए आपका बहुत-बहुत धन्यवाद!</span></div>
         <button class="btn-close-success" onclick="closePaymentModal();clearCart()">बंद करें</button>
@@ -1047,74 +884,33 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- JAVASCRIPT -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-var MERCHANT = {
-  waPhone: '919428686034',
-  razorpayKey: 'rzp_live_Smry3dqE17zuAn'
-};
-
+var MERCHANT = { waPhone: '919428686034', razorpayKey: 'rzp_live_Smry3dqE17zuAn' };
+var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzOQeWTtLfg-ZAheqMpL1dtPXvwvSU4krw8Ouvig1KapEJeivC3jRWmmdM3CJslB_bBmA/exec';
 var PRICES = { joint: 300, hair: 150 };
 var cart = { joint: 0, hair: 0 };
 var customerDetails = { name: '', phone: '', address: '' };
 
-window.addEventListener('scroll', function(){
-  var nav = document.getElementById('main-nav');
-  if(window.scrollY > 40) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-},{passive:true});
+window.addEventListener('scroll', function(){ var nav = document.getElementById('main-nav'); if(window.scrollY > 40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); },{passive:true});
 
-function addToCart(type){
-  if(type==='joint') cart.joint++;
-  if(type==='hair') cart.hair++;
-  refreshCartUI(); openCart();
-}
-function changeQty(type,d){
-  if(type==='joint') cart.joint=Math.max(0,cart.joint+d);
-  if(type==='hair') cart.hair=Math.max(0,cart.hair+d);
-  refreshCartUI();
-}
-function removeFromCart(type){
-  if(type==='joint') cart.joint=0;
-  if(type==='hair') cart.hair=0;
-  refreshCartUI();
-}
+function addToCart(type){ if(type==='joint') cart.joint++; if(type==='hair') cart.hair++; refreshCartUI(); openCart(); }
+function changeQty(type,d){ if(type==='joint') cart.joint=Math.max(0,cart.joint+d); if(type==='hair') cart.hair=Math.max(0,cart.hair+d); refreshCartUI(); }
+function removeFromCart(type){ if(type==='joint') cart.joint=0; if(type==='hair') cart.hair=0; refreshCartUI(); }
 function clearCart(){ cart.joint=0; cart.hair=0; refreshCartUI(); }
 function getTotal(){ return cart.joint*PRICES.joint + cart.hair*PRICES.hair; }
-
-function getItemsDescription(){
-  var parts = [];
-  if(cart.joint > 0) parts.push('Sandhibhadra Ghrit x' + cart.joint);
-  if(cart.hair > 0) parts.push('Kesh Kalyani Tel x' + cart.hair);
-  return parts.join(', ') || 'Ayurvedic Products';
-}
+function getItemsDescription(){ var p=[]; if(cart.joint>0) p.push('Sandhibhadra Ghrit x'+cart.joint); if(cart.hair>0) p.push('Kesh Kalyani Tel x'+cart.hair); return p.join(', ')||'Ayurvedic Products'; }
 
 function refreshCartUI(){
-  var hasAny = cart.joint>0||cart.hair>0;
-  var total = getTotal();
-  var count = cart.joint+cart.hair;
-  var badge=document.getElementById('cart-count');
-  badge.textContent=count; badge.style.display=count>0?'flex':'none';
+  var hasAny=cart.joint>0||cart.hair>0, total=getTotal(), count=cart.joint+cart.hair;
+  var badge=document.getElementById('cart-count'); badge.textContent=count; badge.style.display=count>0?'flex':'none';
   document.getElementById('cart-empty').classList.toggle('hidden',hasAny);
   document.getElementById('cart-has-items').classList.toggle('hidden',!hasAny);
-  var jr=document.getElementById('cart-joint-row');
-  jr.style.display=cart.joint>0?'flex':'none';
-  if(cart.joint>0){
-    document.getElementById('qty-joint').textContent=cart.joint;
-    document.getElementById('total-joint').textContent='₹'+(cart.joint*PRICES.joint);
-  }
-  var hr=document.getElementById('cart-hair-row');
-  hr.style.display=cart.hair>0?'flex':'none';
-  if(cart.hair>0){
-    document.getElementById('qty-hair').textContent=cart.hair;
-    document.getElementById('total-hair').textContent='₹'+(cart.hair*PRICES.hair);
-  }
+  var jr=document.getElementById('cart-joint-row'); jr.style.display=cart.joint>0?'flex':'none';
+  if(cart.joint>0){ document.getElementById('qty-joint').textContent=cart.joint; document.getElementById('total-joint').textContent='₹'+(cart.joint*PRICES.joint); }
+  var hr=document.getElementById('cart-hair-row'); hr.style.display=cart.hair>0?'flex':'none';
+  if(cart.hair>0){ document.getElementById('qty-hair').textContent=cart.hair; document.getElementById('total-hair').textContent='₹'+(cart.hair*PRICES.hair); }
   var se=document.getElementById('cart-summary'),ce=document.getElementById('checkout-btn');
-  if(hasAny){
-    se.classList.remove('hidden'); ce.classList.remove('hidden');
-    document.getElementById('subtotal-val').textContent='₹'+total;
-    document.getElementById('total-val').textContent='₹'+total;
-  } else {
-    se.classList.add('hidden'); ce.classList.add('hidden');
-  }
+  if(hasAny){ se.classList.remove('hidden'); ce.classList.remove('hidden'); document.getElementById('subtotal-val').textContent='₹'+total; document.getElementById('total-val').textContent='₹'+total; }
+  else { se.classList.add('hidden'); ce.classList.add('hidden'); }
 }
 
 function openCart(){ document.getElementById('cart-drawer').classList.add('open'); document.getElementById('cart-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
@@ -1123,156 +919,112 @@ function openPaymentModal(){ closeCart(); showStep(1); document.getElementById('
 function closePaymentModal(){ document.getElementById('payment-modal').classList.remove('open'); document.body.style.overflow=''; setTimeout(function(){showStep(1);},300); }
 
 function showStep(n){
-  for(var i=1;i<=3;i++){
-    document.getElementById('modal-step-'+i).classList.toggle('hidden',i!==n);
-    var si=document.getElementById('s'+i); si.classList.remove('active','done');
-    if(i<n) si.classList.add('done'); if(i===n) si.classList.add('active');
-  }
+  for(var i=1;i<=3;i++){ document.getElementById('modal-step-'+i).classList.toggle('hidden',i!==n); var si=document.getElementById('s'+i); si.classList.remove('active','done'); if(i<n) si.classList.add('done'); if(i===n) si.classList.add('active'); }
   var l12=document.getElementById('line12'); if(l12) l12.classList.toggle('done',n>=2);
   var l23=document.getElementById('line23'); if(l23) l23.classList.toggle('done',n>=3);
 }
 
 function goToPaymentStep(){
-  var name=document.getElementById('cust-name').value.trim();
-  var phone=document.getElementById('cust-phone').value.trim();
-  var address=document.getElementById('cust-address').value.trim();
-  var errEl=document.getElementById('details-error');
+  var name=document.getElementById('cust-name').value.trim(), phone=document.getElementById('cust-phone').value.trim(), address=document.getElementById('cust-address').value.trim(), errEl=document.getElementById('details-error');
   if(!name||!phone||!address){ errEl.textContent='कृपया सभी आवश्यक फ़ील्ड भरें।'; errEl.style.display='block'; return; }
   if(!/^[6-9]\d{9}$/.test(phone)){ errEl.textContent='कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें।'; errEl.style.display='block'; return; }
   errEl.style.display='none';
-  customerDetails.name = name;
-  customerDetails.phone = phone;
-  customerDetails.address = address;
-  var total = getTotal();
-  document.getElementById('rzp-pay-amount').textContent = '₹' + total;
-  var summaryHTML = '<div class="pay-summary-title">Order Summary</div>';
-  if(cart.joint > 0) summaryHTML += '<div class="pay-item-row"><span class="pay-item-name">Sandhibhadra Ghrit</span><span class="pay-item-qty">x'+cart.joint+'</span><span class="pay-item-amt">₹'+(cart.joint*PRICES.joint)+'</span></div>';
-  if(cart.hair > 0) summaryHTML += '<div class="pay-item-row"><span class="pay-item-name">Kesh Kalyani Tel</span><span class="pay-item-qty">x'+cart.hair+'</span><span class="pay-item-amt">₹'+(cart.hair*PRICES.hair)+'</span></div>';
-  summaryHTML += '<div class="pay-total-divider"></div><div class="pay-total-row"><span>Total</span><span>₹'+total+'</span></div>';
-  document.getElementById('pay-order-summary').innerHTML = summaryHTML;
+  customerDetails.name=name; customerDetails.phone=phone; customerDetails.address=address;
+  var total=getTotal(); document.getElementById('rzp-pay-amount').textContent='₹'+total;
+  var s='<div class="pay-summary-title">Order Summary</div>';
+  if(cart.joint>0) s+='<div class="pay-item-row"><span class="pay-item-name">Sandhibhadra Ghrit</span><span class="pay-item-qty">x'+cart.joint+'</span><span class="pay-item-amt">₹'+(cart.joint*PRICES.joint)+'</span></div>';
+  if(cart.hair>0) s+='<div class="pay-item-row"><span class="pay-item-name">Kesh Kalyani Tel</span><span class="pay-item-qty">x'+cart.hair+'</span><span class="pay-item-amt">₹'+(cart.hair*PRICES.hair)+'</span></div>';
+  s+='<div class="pay-total-divider"></div><div class="pay-total-row"><span>Total</span><span>₹'+total+'</span></div>';
+  document.getElementById('pay-order-summary').innerHTML=s;
   showStep(2);
 }
 
+/* ===== GOOGLE SHEETS LOGGING ===== */
+function logOrderToSheet(name, phone, address, items, total, paymentId, method){
+  fetch(SHEET_URL, {
+    method: 'POST',
+    body: JSON.stringify({ name:name, phone:phone, address:address, items:items, total:total, paymentId:paymentId, method:method })
+  }).then(function(r){ return r.text(); })
+    .then(function(d){ console.log('Sheet logged:', d); })
+    .catch(function(err){ console.log('Sheet log error:', err); });
+}
+
+/* ===== RAZORPAY ===== */
 function payWithRazorpay(){
-  var total = getTotal();
-  if(total <= 0) return;
+  var total=getTotal(); if(total<=0) return;
   var options = {
-    key: MERCHANT.razorpayKey,
-    amount: total * 100,
-    currency: 'INR',
-    name: 'Shree Narayan Ayurveda',
-    description: getItemsDescription(),
+    key: MERCHANT.razorpayKey, amount: total*100, currency: 'INR',
+    name: 'Shree Narayan Ayurveda', description: getItemsDescription(),
     image: 'https://i.ibb.co/fYQdWNBJ/logo.png',
-    handler: function(response){
-      onPaymentSuccess(response.razorpay_payment_id || 'N/A');
-    },
-    prefill: {
-      name: customerDetails.name,
-      contact: '91' + customerDetails.phone
-    },
-    notes: {
-      address: customerDetails.address,
-      items: getItemsDescription()
-    },
+    handler: function(response){ onPaymentSuccess(response.razorpay_payment_id||'N/A'); },
+    prefill: { name: customerDetails.name, contact: '91'+customerDetails.phone },
+    notes: { address: customerDetails.address, items: getItemsDescription() },
     theme: { color: '#0f1f14' },
-    modal: {
-      ondismiss: function(){ console.log('Payment dismissed'); }
-    }
+    modal: { ondismiss: function(){ console.log('Payment dismissed'); } }
   };
   try {
     var rzp = new Razorpay(options);
-    rzp.on('payment.failed', function(response){
-      alert('Payment failed: ' + (response.error.description || 'Please try again.'));
-    });
+    rzp.on('payment.failed', function(response){ alert('Payment failed: '+(response.error.description||'Please try again.')); });
     rzp.open();
-  } catch(e) {
-    alert('Unable to open payment gateway. Please use WhatsApp to order.');
-    console.error('Razorpay error:', e);
-  }
+  } catch(e) { alert('Unable to open payment. Please use WhatsApp to order.'); console.error('Razorpay error:', e); }
 }
 
 function onPaymentSuccess(paymentId){
   sendWhatsAppWithPayment(paymentId);
-  document.getElementById('ty-title').textContent = 'भुगतान सफल!';
-  document.getElementById('ty-line1').textContent = 'आपका भुगतान सफलतापूर्वक हो गया है।';
-  document.getElementById('ty-msg').innerHTML = 'आपका ऑर्डर जल्द ही भेजा जाएगा।<br>हमारी टीम डिलीवरी के लिए आपसे संपर्क करेगी।';
-  var pidEl = document.getElementById('ty-payment-id');
-  pidEl.classList.remove('hidden');
-  document.getElementById('ty-payment-id-val').textContent = paymentId;
-  showStep(3);
-  incrementOrderStat();
+  logOrderToSheet(customerDetails.name, customerDetails.phone, customerDetails.address, getItemsDescription(), '₹'+getTotal(), paymentId, 'Razorpay Online');
+  document.getElementById('ty-title').textContent='भुगतान सफल!';
+  document.getElementById('ty-line1').textContent='आपका भुगतान सफलतापूर्वक हो गया है।';
+  document.getElementById('ty-msg').innerHTML='आपका ऑर्डर जल्द ही भेजा जाएगा।<br>हमारी टीम डिलीवरी के लिए आपसे संपर्क करेगी।';
+  var pidEl=document.getElementById('ty-payment-id'); pidEl.classList.remove('hidden');
+  document.getElementById('ty-payment-id-val').textContent=paymentId;
+  showStep(3); incrementOrderStat();
 }
 
 function sendWhatsAppOrder(){
-  var total = getTotal();
-  var note = (document.getElementById('order-note')||{value:''}).value.trim();
-  var lines = ['🌿 *नया ऑर्डर — Shree Narayan Ayurveda*',''];
+  var total=getTotal(), note=(document.getElementById('order-note')||{value:''}).value.trim();
+  var lines=['🌿 *नया ऑर्डर — Shree Narayan Ayurveda*',''];
   if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
-  if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
-  lines.push(''); lines.push('👤 *नाम:* '+customerDetails.name); lines.push('📞 *WhatsApp:* '+customerDetails.phone);
-  lines.push('💰 *कुल राशि:* ₹'+total); lines.push('📍 *पता:* '+customerDetails.address);
+  if(cart.hair>0) lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
+  lines.push('','👤 *नाम:* '+customerDetails.name,'📞 *WhatsApp:* '+customerDetails.phone,'💰 *कुल राशि:* ₹'+total,'📍 *पता:* '+customerDetails.address);
   if(note) lines.push('📝 *नोट:* '+note);
-  lines.push(''); lines.push('💳 *भुगतान:* WhatsApp पर भुगतान करेंगे');
+  lines.push('','💳 *भुगतान:* WhatsApp पर भुगतान करेंगे');
   window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
-  document.getElementById('ty-title').textContent = 'आपका धन्यवाद!';
-  document.getElementById('ty-line1').textContent = 'आपका ऑर्डर WhatsApp पर भेज दिया गया है।';
-  document.getElementById('ty-msg').innerHTML = 'हमारी टीम जल्द ही आपसे भुगतान और डिलीवरी के लिए संपर्क करेगी।<br>कृपया WhatsApp चेक करें।';
+  logOrderToSheet(customerDetails.name, customerDetails.phone, customerDetails.address, getItemsDescription(), '₹'+total, 'WhatsApp Order', 'WhatsApp (Pay Later)');
+  document.getElementById('ty-title').textContent='आपका धन्यवाद!';
+  document.getElementById('ty-line1').textContent='आपका ऑर्डर WhatsApp पर भेज दिया गया है।';
+  document.getElementById('ty-msg').innerHTML='हमारी टीम जल्द ही आपसे भुगतान और डिलीवरी के लिए संपर्क करेगी।<br>कृपया WhatsApp चेक करें।';
   document.getElementById('ty-payment-id').classList.add('hidden');
-  showStep(3);
-  incrementOrderStat();
+  showStep(3); incrementOrderStat();
 }
 
 function sendWhatsAppWithPayment(paymentId){
-  var total = getTotal();
-  var note = (document.getElementById('order-note')||{value:''}).value.trim();
-  var lines = ['✅ *PAYMENT RECEIVED — Shree Narayan Ayurveda*',''];
-  lines.push('🆔 *Payment ID:* '+paymentId); lines.push('');
+  var total=getTotal(), note=(document.getElementById('order-note')||{value:''}).value.trim();
+  var lines=['✅ *PAYMENT RECEIVED — Shree Narayan Ayurveda*','','🆔 *Payment ID:* '+paymentId,''];
   if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
-  if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
-  lines.push(''); lines.push('👤 *नाम:* '+customerDetails.name); lines.push('📞 *WhatsApp:* '+customerDetails.phone);
-  lines.push('💰 *कुल भुगतान:* ₹'+total); lines.push('📍 *पता:* '+customerDetails.address);
+  if(cart.hair>0) lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
+  lines.push('','👤 *नाम:* '+customerDetails.name,'📞 *WhatsApp:* '+customerDetails.phone,'💰 *कुल भुगतान:* ₹'+total,'📍 *पता:* '+customerDetails.address);
   if(note) lines.push('📝 *नोट:* '+note);
-  lines.push(''); lines.push('✅ _ऑनलाइन भुगतान प्राप्त हो गया है। कृपया ऑर्डर भेजें।_');
+  lines.push('','✅ _ऑनलाइन भुगतान प्राप्त हो गया है। कृपया ऑर्डर भेजें।_');
   window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
 }
 
-function switchTab(tab,btn){
-  document.querySelectorAll('.how-tab').forEach(function(b){b.classList.remove('active');});
-  document.querySelectorAll('.how-content').forEach(function(c){c.classList.remove('active');});
-  btn.classList.add('active');
-  document.getElementById('htab-'+tab).classList.add('active');
-}
+function switchTab(tab,btn){ document.querySelectorAll('.how-tab').forEach(function(b){b.classList.remove('active');}); document.querySelectorAll('.how-content').forEach(function(c){c.classList.remove('active');}); btn.classList.add('active'); document.getElementById('htab-'+tab).classList.add('active'); }
 
 (function(){
-  var today=new Date().toISOString().slice(0,10);
-  var sd=localStorage.getItem('sna_day');
+  var today=new Date().toISOString().slice(0,10), sd=localStorage.getItem('sna_day');
   if(sd!==today){ localStorage.setItem('sna_day',today); localStorage.removeItem('sna_visitors'); localStorage.removeItem('sna_orders'); }
   function hc(s){ var h=0; for(var i=0;i<s.length;i++){h=Math.imul(31,h)+s.charCodeAt(i)|0;} return h; }
-  var bv=80+Math.floor(Math.abs(hc(today))%120);
-  var sv=parseInt(localStorage.getItem('sna_visitors')||'0')+1; localStorage.setItem('sna_visitors',sv);
-  var tv=bv+sv; var ao=Math.floor(tv*0.07);
-  var so=parseInt(localStorage.getItem('sna_orders')||'0'); var to=Math.max(so,ao);
-  var ds=Math.floor((new Date()-new Date('2024-01-01'))/86400000);
-  var hc2=Math.max(500,2000+Math.floor(ds*1.2));
-  function anim(el,t,suf,dur){
-    var s=0,st=Math.ceil(t/(dur/16)),tm=setInterval(function(){
-      s=Math.min(s+st,t);el.innerHTML=s.toLocaleString('en-IN')+(suf||'');if(s>=t)clearInterval(tm);
-    },16);
-  }
-  window.addEventListener('DOMContentLoaded',function(){
-    var ec=document.getElementById('stat-customers'),ev=document.getElementById('stat-visitors'),eo=document.getElementById('stat-orders');
-    if(ec) anim(ec,hc2,'<span>+</span>',1800);
-    if(ev) anim(ev,tv,'',1400);
-    if(eo) anim(eo,to,'',1200);
-  });
+  var bv=80+Math.floor(Math.abs(hc(today))%120), sv=parseInt(localStorage.getItem('sna_visitors')||'0')+1; localStorage.setItem('sna_visitors',sv);
+  var tv=bv+sv, ao=Math.floor(tv*0.07), so=parseInt(localStorage.getItem('sna_orders')||'0'), to=Math.max(so,ao);
+  var ds=Math.floor((new Date()-new Date('2024-01-01'))/86400000), hc2=Math.max(500,2000+Math.floor(ds*1.2));
+  function anim(el,t,suf,dur){ var s=0,st=Math.ceil(t/(dur/16)),tm=setInterval(function(){ s=Math.min(s+st,t);el.innerHTML=s.toLocaleString('en-IN')+(suf||'');if(s>=t)clearInterval(tm); },16); }
+  window.addEventListener('DOMContentLoaded',function(){ var ec=document.getElementById('stat-customers'),ev=document.getElementById('stat-visitors'),eo=document.getElementById('stat-orders'); if(ec) anim(ec,hc2,'<span>+</span>',1800); if(ev) anim(ev,tv,'',1400); if(eo) anim(eo,to,'',1200); });
   setInterval(function(){ var v=parseInt(localStorage.getItem('sna_visitors')||'0')+1; localStorage.setItem('sna_visitors',v); var el=document.getElementById('stat-visitors'); if(el) el.textContent=(bv+v).toLocaleString('en-IN'); },45000);
   setInterval(function(){ var o=parseInt(localStorage.getItem('sna_orders')||'0')+1; localStorage.setItem('sna_orders',o); var el=document.getElementById('stat-orders'); if(el) el.textContent=Math.max(o,ao)+''; },240000);
   window.incrementOrderStat=function(){ var o=parseInt(localStorage.getItem('sna_orders')||'0')+1; localStorage.setItem('sna_orders',o); var el=document.getElementById('stat-orders'); if(el) el.textContent=Math.max(o,ao)+''; };
 })();
 
-document.getElementById('mobile-menu-btn').addEventListener('click',function(){
-  document.getElementById('mobile-menu').classList.toggle('open');
-});
+document.getElementById('mobile-menu-btn').addEventListener('click',function(){ document.getElementById('mobile-menu').classList.toggle('open'); });
 function closeMobileMenu(){ document.getElementById('mobile-menu').classList.remove('open'); }
 document.getElementById('open-cart-btn').addEventListener('click',openCart);
 
@@ -1280,33 +1032,14 @@ document.getElementById('open-cart-btn').addEventListener('click',openCart);
   var track=document.querySelector('.vtrack'); if(!track) return;
   var tx=0,tt=0;
   track.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;tt=Date.now();track.style.animationPlayState='paused';},{passive:true});
-  track.addEventListener('touchend',function(e){
-    track.style.animationPlayState='running';
-    if(Math.abs(e.changedTouches[0].clientX-tx)<8&&Date.now()-tt<300){
-      var card=e.target.closest('.vcard'); if(card&&card.dataset.videoid) openVideoModal(card.dataset.videoid);
-    }
-  },{passive:true});
+  track.addEventListener('touchend',function(e){ track.style.animationPlayState='running'; if(Math.abs(e.changedTouches[0].clientX-tx)<8&&Date.now()-tt<300){ var card=e.target.closest('.vcard'); if(card&&card.dataset.videoid) openVideoModal(card.dataset.videoid); } },{passive:true});
   track.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});
   track.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});
-  track.addEventListener('click',function(e){
-    var card=e.target.closest('.vcard'); if(card&&card.dataset.videoid) openVideoModal(card.dataset.videoid);
-  });
+  track.addEventListener('click',function(e){ var card=e.target.closest('.vcard'); if(card&&card.dataset.videoid) openVideoModal(card.dataset.videoid); });
 })();
-function openVideoModal(id){
-  document.getElementById('video-modal-iframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
-  document.getElementById('video-modal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeVideoModal(e){
-  if(e&&e.target!==document.getElementById('video-modal')) return;
-  document.getElementById('video-modal-iframe').src='';
-  document.getElementById('video-modal').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){ closeCart(); closePaymentModal(); closeVideoModal(); }
-});
+function openVideoModal(id){ document.getElementById('video-modal-iframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1'; document.getElementById('video-modal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeVideoModal(e){ if(e&&e.target!==document.getElementById('video-modal')) return; document.getElementById('video-modal-iframe').src=''; document.getElementById('video-modal').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeCart(); closePaymentModal(); closeVideoModal(); } });
 </script>
 </body>
 </html>
