@@ -19,7 +19,6 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
 
 <style>
-/* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'DM Sans',sans-serif;color:#1c1c1c;background:#faf8f3;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -27,31 +26,17 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
-/* ===== CSS VARIABLES ===== */
 :root{
-  --green-deep:#0f1f14;
-  --green-mid:#1a3a22;
-  --green-light:#2d5a3a;
-  --gold:#c9963e;
-  --gold-light:#e8b96a;
-  --gold-pale:#fdf3e0;
-  --cream:#faf8f3;
-  --cream-dark:#f2ede0;
-  --text:#1c1c1c;
-  --text-mid:#4a4a4a;
-  --text-light:#888;
-  --purple:#5b21b6;
-  --purple-light:#7c3aed;
-  --radius:16px;
-  --radius-lg:28px;
-  --shadow:0 4px 24px rgba(0,0,0,.08);
-  --shadow-lg:0 16px 48px rgba(0,0,0,.14);
+  --green-deep:#0f1f14;--green-mid:#1a3a22;--green-light:#2d5a3a;
+  --gold:#c9963e;--gold-light:#e8b96a;--gold-pale:#fdf3e0;
+  --cream:#faf8f3;--cream-dark:#f2ede0;
+  --text:#1c1c1c;--text-mid:#4a4a4a;--text-light:#888;
+  --purple:#5b21b6;--purple-light:#7c3aed;
+  --radius:16px;--radius-lg:28px;
+  --shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.14);
 }
-
-/* ===== TYPOGRAPHY ===== */
 .serif{font-family:'Cormorant Garamond',serif}
 
-/* ===== KEYFRAMES ===== */
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(45,90,58,.5)}70%{box-shadow:0 0 0 14px rgba(45,90,58,0)}100%{box-shadow:0 0 0 0 rgba(45,90,58,0)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
@@ -59,65 +44,51 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes scrollTrack{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 @keyframes circledraw{0%{stroke-dashoffset:166}100%{stroke-dashoffset:0}}
 @keyframes checkmark{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
-@keyframes tickBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
 @keyframes badgePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-@keyframes drawBorder{from{opacity:0}to{opacity:1}}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ===== UTILITY ===== */
 .hidden{display:none!important}
 .pdot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:blink 2s infinite;display:inline-block}
 
-/* ===== ANNOUNCEMENT BAR ===== */
 .announce-bar{background:var(--green-deep);color:#d4af6e;font-size:12px;font-weight:500;letter-spacing:.06em;overflow:hidden;height:36px;display:flex;align-items:center}
 .announce-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite;gap:0}
 .announce-track span{padding:0 40px;display:inline-flex;align-items:center;gap:8px}
-.announce-track span::after{content:'✦';opacity:.5}
+.announce-track span::after{content:'\2726';opacity:.5}
 
-/* ===== STICKY NAV ===== */
 .nav{position:fixed;top:36px;left:0;width:100%;z-index:50;background:rgba(250,248,243,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,150,62,.18);transition:top .3s,box-shadow .3s}
 .nav.scrolled{top:0;box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 @media(min-width:768px){.nav-inner{padding:0 32px;height:76px}}
-
 .nav-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-logo{height:44px;width:auto}
 @media(min-width:768px){.nav-logo{height:52px}}
 .nav-brand-text .t1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--green-deep);display:block;line-height:1.1}
 .nav-brand-text .t2{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);display:block;margin-top:1px}
-
 .nav-links{display:none}
 @media(min-width:1024px){.nav-links{display:flex;gap:32px}}
 .nav-links a{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-mid);transition:color .2s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--gold);transition:width .2s}
 .nav-links a:hover{color:var(--green-deep)}
 .nav-links a:hover::after{width:100%}
-
 .nav-right{display:flex;align-items:center;gap:10px}
 .cart-btn{position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:transparent;transition:background .2s;color:var(--green-deep)}
 .cart-btn:hover{background:var(--cream-dark)}
 .cart-btn svg{width:22px;height:22px}
 .cart-badge{position:absolute;top:-2px;right:-2px;background:var(--gold);color:#fff;font-size:9px;font-weight:800;width:17px;height:17px;border-radius:50%;display:none;align-items:center;justify-content:center}
-
 .hamburger{display:flex;width:40px;height:40px;align-items:center;justify-content:center;color:var(--green-deep)}
 @media(min-width:1024px){.hamburger{display:none}}
 .hamburger svg{width:22px;height:22px}
-
 .btn-nav-shop{background:var(--green-deep);color:#fff;padding:9px 20px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;transition:background .2s,transform .15s;white-space:nowrap}
 .btn-nav-shop:hover{background:var(--green-light);transform:translateY(-1px)}
 @media(max-width:480px){.btn-nav-shop{display:none}}
-
-/* Mobile Menu */
 .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:16px 20px 20px;z-index:49;box-shadow:0 8px 24px rgba(0,0,0,.1)}
 .mobile-menu.open{display:block;animation:fadeUp .2s ease}
 .mobile-menu a,.mobile-menu button{display:block;width:100%;padding:11px 0;color:var(--text-mid);font-weight:600;font-size:15px;border-bottom:1px solid #f3f4f6}
 .mobile-menu a:last-of-type,.mobile-menu button.btn-mobile-last{border-bottom:none}
 .btn-mobile-order{margin-top:10px;background:var(--green-deep);color:#fff!important;padding:13px;border-radius:12px;text-align:center;font-weight:700;border-bottom:none!important}
 
-/* ===== HERO ===== */
 .hero{padding-top:calc(36px + 68px);background:var(--cream);position:relative;overflow:hidden}
 @media(min-width:768px){.hero{padding-top:calc(36px + 76px)}}
 .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
@@ -126,35 +97,26 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hero-blob-2{width:400px;height:400px;background:radial-gradient(circle,#2d5a3a15,transparent 70%);bottom:0;left:-80px}
 .hero-deco{position:absolute;top:60px;right:10%;opacity:.07;font-family:'Cormorant Garamond',serif;font-size:180px;font-weight:700;color:var(--green-deep);line-height:1;pointer-events:none;white-space:nowrap}
 @media(max-width:768px){.hero-deco{font-size:80px;top:20px;right:5%}}
-
 .hero-inner{max-width:1280px;margin:0 auto;padding:52px 20px 0;position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
 @media(min-width:768px){.hero-inner{padding:64px 32px 0;grid-template-columns:1.1fr 0.9fr;gap:56px;text-align:left}}
-
 .hero-kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(201,150,62,.3);border-radius:999px;padding:5px 14px 5px 5px;font-size:11px;font-weight:600;color:var(--green-mid);letter-spacing:.05em;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .hero-kicker img{height:22px;width:22px;border-radius:50%}
 .hero-kicker .dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:blink 2s infinite}
-
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,4.4rem);color:var(--green-deep);line-height:1.08;font-weight:700;margin-bottom:18px}
 .hero-h1 em{font-style:italic;color:var(--gold)}
-
 .hero-sub{font-size:clamp(14px,1.8vw,16px);color:var(--text-mid);line-height:1.8;font-weight:400;max-width:460px;margin-bottom:30px}
 @media(max-width:768px){.hero-sub{margin-left:auto;margin-right:auto}}
-
 .trust-strip{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:32px;justify-content:center}
 @media(min-width:768px){.trust-strip{justify-content:flex-start}}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--text-mid)}
 .trust-item span.icon{width:22px;height:22px;background:var(--gold-pale);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
-
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:36px}
 @media(min-width:768px){.hero-btns{justify-content:flex-start}}
-
 .btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--green-deep);color:#fff;padding:14px 28px;border-radius:14px;font-weight:700;font-size:15px;letter-spacing:.02em;box-shadow:0 8px 28px rgba(15,31,20,.3);transition:transform .15s,box-shadow .2s,background .2s;cursor:pointer;border:none;font-family:inherit}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(15,31,20,.4);background:var(--green-light)}
 .btn-wa{display:inline-flex;align-items:center;gap:9px;border:1.5px solid #25d366;color:#25d366;padding:12px 24px;border-radius:14px;font-weight:700;font-size:14px;transition:all .2s}
 .btn-wa:hover{background:#25d366;color:#fff}
 .btn-wa svg{width:17px;height:17px}
-
-/* Hero product mini-cards */
 .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hero-pcard{background:#fff;border-radius:18px;padding:14px 12px 16px;text-align:center;border:1.5px solid #ede9df;cursor:pointer;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
 .hero-pcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1);border-color:var(--gold)}
@@ -164,8 +126,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hpc-price{font-weight:800;font-size:18px;color:var(--gold);letter-spacing:-.02em}
 .hpc-hint{font-size:10px;color:var(--text-light);margin-top:2px}
 .new-badge{position:absolute;top:9px;left:9px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:8px;font-weight:800;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.1em;animation:badgePulse 2s ease-in-out infinite}
-
-/* Hero right */
 .hero-img-side{display:flex;align-items:center;justify-content:center;padding-bottom:40px;position:relative}
 @media(min-width:768px){.hero-img-side{padding-bottom:0}}
 .hero-img-frame{position:relative;width:100%;max-width:420px}
@@ -176,7 +136,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hbf-t1{font-size:11px;font-weight:700;color:var(--green-deep)}
 .hbf-t2{font-size:9px;color:var(--text-light);margin-top:1px}
 
-/* ===== STATS SECTION ===== */
 .stats-section{background:var(--green-deep);padding:28px 20px}
 @media(min-width:768px){.stats-section{padding:28px 32px}}
 .stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border-radius:20px;overflow:hidden}
@@ -191,7 +150,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .stat-live{display:inline-flex;align-items:center;gap:5px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);border-radius:999px;padding:3px 9px;font-size:9px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
 .stat-live-dot{width:5px;height:5px;background:#22c55e;border-radius:50%;animation:blink 1.5s infinite}
 
-/* ===== SECTION BASE ===== */
 .section{padding:72px 20px}
 @media(min-width:768px){.section{padding:96px 32px}}
 .section-inner{max-width:1280px;margin:0 auto}
@@ -200,7 +158,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sec-h2 em{font-style:italic;color:var(--gold)}
 .sec-p{font-size:15px;color:var(--text-mid);line-height:1.8;max-width:520px}
 
-/* ===== HOW TO ORDER STRIP ===== */
 .order-flow-section{background:var(--gold-pale);border-top:1px solid rgba(201,150,62,.2);border-bottom:1px solid rgba(201,150,62,.2);padding:36px 20px}
 .order-flow-inner{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px}
 @media(min-width:768px){.order-flow-inner{flex-direction:row;justify-content:center;gap:0}}
@@ -212,12 +169,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ofs-arrow{font-size:20px;color:var(--gold);padding:0 12px;flex-shrink:0;display:none}
 @media(min-width:768px){.ofs-arrow{display:block}}
 
-/* ===== PRODUCTS SECTION ===== */
 .products-section{background:#fff;padding:72px 20px}
 @media(min-width:768px){.products-section{padding:96px 32px}}
 .products-grid{display:grid;grid-template-columns:1fr;gap:32px;max-width:1280px;margin:0 auto}
 @media(min-width:768px){.products-grid{grid-template-columns:1fr 1fr}}
-
 .prod-card{border-radius:28px;overflow:hidden;background:var(--cream);border:1.5px solid #ede9df;transition:transform .3s,box-shadow .3s;position:relative}
 .prod-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,.1)}
 .prod-card.purple-card{background:#faf8ff;border-color:#e9e3f8}
@@ -228,7 +183,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .prod-new-label{position:absolute;top:16px;left:16px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;font-size:10px;font-weight:800;padding:5px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:.1em;animation:badgePulse 2s ease-in-out infinite}
 .prod-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,20,.5),transparent 50%);opacity:0;transition:opacity .3s}
 .prod-card:hover .prod-img-overlay{opacity:1}
-
 .prod-body{padding:24px}
 @media(min-width:768px){.prod-body{padding:30px}}
 .prod-tags{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
@@ -237,21 +191,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ptag-gold{background:#fef9ec;color:#92400e;border:1px solid #fde68a}
 .ptag-purple{background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe}
 .ptag-red{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;animation:badgePulse 2s ease-in-out infinite}
-
 .prod-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--green-deep);font-weight:700;margin-bottom:8px}
 .prod-desc{font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:20px}
 .prod-feats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:22px}
 .prod-feat{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--text);font-weight:500;line-height:1.4}
 .pfi{font-size:14px;flex-shrink:0;margin-top:1px}
-
 .divider-thin{height:1px;background:linear-gradient(90deg,transparent,#ede9df,transparent);margin:18px 0}
-
 .prod-price-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
 .prod-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--green-deep);letter-spacing:-.04em;line-height:1}
 .prod-price.purple{color:var(--purple-light)}
 .prod-price-sub{font-size:11px;color:var(--text-light);margin-top:2px}
 .prod-stock{display:flex;align-items:center;gap:6px;font-size:11px;color:#16a34a;font-weight:700}
-
 .btn-cart{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:14px;border-radius:14px;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .2s,filter .2s;cursor:pointer;border:none;font-family:inherit;letter-spacing:.02em}
 .btn-cart:hover{transform:translateY(-2px)}
 .btn-cart svg{width:17px;height:17px}
@@ -260,26 +210,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-purple{background:linear-gradient(135deg,#6d28d9,#5b21b6);color:#fff;box-shadow:0 8px 24px rgba(109,40,217,.28)}
 .btn-purple:hover{box-shadow:0 14px 32px rgba(109,40,217,.38)}
 
-/* ===== BENEFITS SECTIONS ===== */
 .two-col{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;max-width:1280px;margin:0 auto}
 @media(min-width:1024px){.two-col{grid-template-columns:1fr 1fr;gap:72px}}
 .two-col.reverse{direction:rtl}
 .two-col.reverse>*{direction:ltr}
-
 .bens-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
 .ben-card{background:#fff;border-radius:16px;padding:16px;display:flex;align-items:flex-start;gap:10px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid #ede9df;transition:box-shadow .2s}
 .ben-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.1)}
 .ben-icon{font-size:28px;flex-shrink:0;line-height:1}
 .ben-card h5{font-weight:700;font-size:12px;color:var(--green-deep);margin-bottom:3px}
 .ben-card p{font-size:11px;color:var(--text-light);line-height:1.5}
-
 .round-img{width:100%;border-radius:2.5rem;box-shadow:0 24px 64px rgba(0,0,0,.14)}
-
-/* Hair section */
 .hair-section{background:linear-gradient(160deg,#faf8ff,#f0ecff)}
 .hair-section .ben-card{background:#fff;border-color:#e9e3f8}
-
-/* Pain images */
 .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
 .pain-img-card{border-radius:18px;overflow:hidden;height:170px;position:relative}
 @media(min-width:480px){.pain-img-card{height:200px}}
@@ -288,7 +231,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pain-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 50%)}
 .pain-label{position:absolute;bottom:10px;left:12px;color:#fff;font-weight:700;font-size:12px}
 
-/* ===== HOW TO USE ===== */
 .howto-section{background:var(--green-deep);padding:72px 20px}
 @media(min-width:768px){.howto-section{padding:96px 32px}}
 .howto-inner{max-width:1280px;margin:0 auto}
@@ -307,25 +249,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .how-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--gold);border-radius:12px;padding:14px;font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:8px}
 .how-note strong{display:block;color:var(--gold-light);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:4px}
 
-/* ===== REVIEWS ===== */
 .reviews-section{background:var(--cream-dark);padding:72px 20px}
 @media(min-width:768px){.reviews-section{padding:96px 32px}}
 .reviews-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1280px;margin:0 auto}
 @media(min-width:640px){.reviews-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1024px){.reviews-grid{grid-template-columns:repeat(3,1fr)}}
-
 .review-card{background:#fff;padding:22px;border-radius:20px;border:1px solid #ede9df;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:box-shadow .25s,transform .25s}
 .review-card:hover{box-shadow:0 10px 28px rgba(0,0,0,.09);transform:translateY(-3px)}
 .rev-type{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;padding:4px 11px;border-radius:999px;display:inline-block;margin-bottom:12px}
 .stars{display:flex;gap:2px;margin-bottom:10px;color:#f59e0b}
 .stars svg{width:14px;height:14px;fill:currentColor}
-.rev-quote{color:var(--text-mid);font-style:italic;line-height:1.75;font-size:13px;margin-bottom:18px;font-family:'Cormorant Garamond',serif;font-size:15px}
+.rev-quote{color:var(--text-mid);font-style:italic;line-height:1.75;font-size:15px;margin-bottom:18px;font-family:'Cormorant Garamond',serif}
 .reviewer{display:flex;align-items:center;gap:10px}
 .rev-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--green-deep);font-size:12px;flex-shrink:0}
 .rev-name{font-weight:700;color:var(--green-deep);font-size:13px}
 .rev-role{font-size:9px;color:var(--text-light);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
 
-/* ===== VIDEOS ===== */
 .videos-section{background:linear-gradient(135deg,#0a1a10,var(--green-deep));padding:56px 0}
 .vhead{text-align:center;padding:0 20px;margin-bottom:36px}
 .vhead .sec-tag{color:var(--gold-light)}
@@ -344,8 +283,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .vplay-circle{width:50px;height:50px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:transform .2s}
 .vcard:hover .vplay-circle{transform:scale(1.1)}
 .vplay-circle svg{width:20px;height:20px;color:var(--green-deep);margin-left:3px}
-
-/* Video modal */
 .vmodal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px)}
 .vmodal.open{opacity:1;pointer-events:auto}
 .vmodal-box{position:relative;width:100%;max-width:375px;animation:scaleIn .3s ease}
@@ -354,7 +291,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .vmodal-frame{position:relative;width:100%;padding-top:177.77%;border-radius:20px;overflow:hidden;background:#000}
 .vmodal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 
-/* ===== FOOTER ===== */
 .footer{background:var(--green-deep);color:#fff;padding:64px 20px 28px}
 @media(min-width:768px){.footer{padding:80px 32px 28px}}
 .footer-inner{max-width:1280px;margin:0 auto}
@@ -377,12 +313,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
 .footer-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,150,62,.3),transparent);margin-bottom:48px}
 
-/* ===== WHATSAPP FLOAT ===== */
 .wa-float{position:fixed;bottom:22px;right:22px;z-index:100;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.4);animation:pulse-green 2.5s infinite;transition:transform .2s}
 .wa-float:hover{transform:scale(1.08)}
 .wa-float svg{width:28px;height:28px}
 
-/* ===== CART OVERLAY & DRAWER ===== */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
 .cart-overlay.open{opacity:1;pointer-events:auto}
 .cart-drawer{position:fixed;top:0;right:0;height:100%;width:100%;max-width:420px;background:#fff;z-index:300;box-shadow:-8px 0 48px rgba(0,0,0,.15);display:flex;flex-direction:column;overflow:hidden;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
@@ -405,7 +339,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .cit-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:2px 8px;border-radius:999px;display:inline-block;margin-bottom:4px}
 .cit-g{background:#f0fdf4;color:#15803d}
 .cit-p{background:#f5f3ff;color:#6d28d9}
-.cit-r{background:#fef2f2;color:#dc2626}
 .cart-item-name{font-weight:700;font-size:13px;color:var(--green-deep);margin-bottom:1px}
 .cart-item-unit-price{font-size:11px;color:var(--text-light)}
 .qty-row{display:flex;align-items:center;gap:8px;margin-top:6px}
@@ -429,7 +362,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-continue-shopping{width:100%;text-align:center;color:var(--text-light);font-size:12px;font-weight:600;padding:6px;cursor:pointer}
 .btn-continue-shopping:hover{color:var(--green-deep)}
 
-/* ===== PAYMENT MODAL ===== */
 .pay-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px)}
 .pay-modal.open{opacity:1;pointer-events:auto}
 .pay-modal-box{background:#fff;border-radius:24px;width:100%;max-width:440px;max-height:92vh;overflow-y:auto;animation:scaleIn .3s ease;box-shadow:0 24px 72px rgba(0,0,0,.3)}
@@ -458,7 +390,35 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-modal-next{flex:2;padding:12px;border-radius:12px;background:linear-gradient(135deg,var(--green-deep),var(--green-light));color:#fff;font-weight:700;font-size:13px;cursor:pointer;border:none;font-family:inherit;transition:filter .2s}
 .btn-modal-next:hover{filter:brightness(1.1)}
 
-/* Success */
+.pay-order-summary{background:var(--cream);border-radius:16px;padding:16px;margin-bottom:20px;border:1px solid #ede9df}
+.pay-summary-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--text-light);margin-bottom:10px}
+.pay-item-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px}
+.pay-item-row:not(:last-child){border-bottom:1px solid #ede9df}
+.pay-item-name{color:var(--text);font-weight:600}
+.pay-item-qty{color:var(--text-light);font-size:11px}
+.pay-item-amt{font-weight:700;color:var(--green-deep)}
+.pay-total-divider{height:2px;background:var(--green-deep);margin:8px 0;border-radius:2px}
+.pay-total-row{display:flex;justify-content:space-between;font-size:16px;font-weight:800;color:var(--green-deep);padding-top:4px}
+
+.btn-razorpay{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:14px;background:linear-gradient(135deg,#072654,#0a3a7a);color:#fff;font-weight:700;font-size:15px;letter-spacing:.02em;cursor:pointer;border:none;font-family:inherit;box-shadow:0 8px 28px rgba(7,38,84,.3);transition:transform .15s,box-shadow .2s,filter .2s;margin-bottom:6px}
+.btn-razorpay:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(7,38,84,.4);filter:brightness(1.1)}
+.btn-razorpay .rzp-logo-text{font-weight:800;letter-spacing:.04em}
+.btn-razorpay .rzp-logo-text span{color:#3395ff}
+.btn-razorpay svg{width:20px;height:20px}
+
+.pay-or-divider{display:flex;align-items:center;gap:14px;margin:14px 0}
+.pay-or-divider::before,.pay-or-divider::after{content:'';flex:1;height:1px;background:#e5e7eb}
+.pay-or-divider span{font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.15em}
+
+.btn-wa-pay{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;padding:13px;border-radius:14px;border:1.5px solid #25d366;color:#25d366;font-weight:700;font-size:14px;cursor:pointer;background:#fff;font-family:inherit;transition:all .2s}
+.btn-wa-pay:hover{background:#25d366;color:#fff}
+.btn-wa-pay svg{width:17px;height:17px}
+
+.rzp-badge-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding:10px;background:#f8fafc;border-radius:10px;border:1px solid #e5e7eb}
+.rzp-badge-row svg{width:16px;height:16px;color:#072654}
+.rzp-badge-row span{font-size:10px;color:var(--text-light);font-weight:600}
+.rzp-badge-row strong{color:var(--green-deep)}
+
 .success-wrap{text-align:center;padding:8px 0}
 .tick{width:62px;height:62px;margin:0 auto 16px}
 .tick-circle{stroke-dasharray:166;stroke-dashoffset:166;animation:circledraw .6s .1s ease forwards}
@@ -468,10 +428,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ty-divider{width:44px;height:2.5px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:999px;margin:0 auto 12px}
 .ty-msg{font-size:13px;color:var(--text-mid);line-height:1.85;margin-bottom:14px}
 .ty-box{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:11px 13px;font-size:12px;color:#15803d;font-weight:600;text-align:left;margin-bottom:18px;line-height:1.6}
+.ty-payment-id{display:flex;align-items:center;gap:6px;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 13px;font-size:11px;color:#1e40af;font-weight:700;margin-bottom:14px;justify-content:center}
+.ty-payment-id code{background:#dbeafe;padding:2px 8px;border-radius:6px;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:.03em}
 .btn-close-success{width:100%;padding:12px;border-radius:12px;background:#f3f4f6;color:var(--text);font-weight:700;font-size:13px;cursor:pointer;border:none;font-family:inherit;transition:background .2s}
 .btn-close-success:hover{background:#e5e7eb}
 
-/* ===== TRUST BADGE SECTION ===== */
 .trust-section{background:#fff;padding:48px 20px;border-top:1px solid #ede9df}
 .trust-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(min-width:640px){.trust-inner{grid-template-columns:repeat(4,1fr)}}
@@ -480,7 +441,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .trust-card-title{font-weight:700;font-size:13px;color:var(--green-deep);margin-bottom:4px}
 .trust-card-text{font-size:11px;color:var(--text-light);line-height:1.5}
 
-/* ===== RESPONSIVE HELPERS ===== */
 @media(max-width:767px){
   .hero-h1{text-align:center}
   .hero-kicker{justify-content:center}
@@ -493,26 +453,25 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </head>
 <body>
 
-<!-- Announcement Bar -->
 <div class="announce-bar">
   <div class="announce-track">
-    <span>🌿 Free Delivery Across India</span>
-    <span>✦ 100% Ayurvedic &mdash; No Chemicals</span>
-    <span>🏺 Handcrafted in Patan, Gujarat</span>
-    <span>⚡ Order on WhatsApp in seconds</span>
-    <span>🌿 Free Delivery Across India</span>
-    <span>✦ 100% Ayurvedic &mdash; No Chemicals</span>
-    <span>🏺 Handcrafted in Patan, Gujarat</span>
-    <span>⚡ Order on WhatsApp in seconds</span>
+    <span>Free Delivery Across India</span>
+    <span>100% Ayurvedic - No Chemicals</span>
+    <span>Handcrafted in Patan, Gujarat</span>
+    <span>Pay Online or Order on WhatsApp</span>
+    <span>Secure Razorpay Payments</span>
+    <span>Free Delivery Across India</span>
+    <span>100% Ayurvedic - No Chemicals</span>
+    <span>Handcrafted in Patan, Gujarat</span>
+    <span>Pay Online or Order on WhatsApp</span>
+    <span>Secure Razorpay Payments</span>
   </div>
 </div>
 
-<!-- WhatsApp Float -->
 <a href="https://wa.me/919428686034?text=Hello%20Shree%20Narayan%20Ayurveda" class="wa-float" aria-label="WhatsApp">
   <svg fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
 </a>
 
-<!-- ===== NAV ===== -->
 <nav class="nav" id="main-nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand" aria-label="Home">
@@ -546,11 +505,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <a href="#joint" onclick="closeMobileMenu()">Joint Relief</a>
     <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
     <a href="#testimonials" onclick="closeMobileMenu()">Videos</a>
-    <button class="btn-mobile-order btn-mobile-last" onclick="closeMobileMenu();openCart()">Shop Now &rarr;</button>
+    <button class="btn-mobile-order btn-mobile-last" onclick="closeMobileMenu();openCart()">Shop Now</button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-blob hero-blob-1"></div>
@@ -558,22 +516,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
   <div class="hero-deco">आयुर्वेद</div>
   <div class="hero-inner">
-    <!-- Left -->
     <div>
       <div class="hero-kicker">
         <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="logo">
         <span class="dot"></span>
-        Patan, Gujarat — Est. Tradition
+        Patan, Gujarat
       </div>
       <h1 class="hero-h1">Ancient Wisdom,<br><em>Real Results.</em></h1>
       <p class="hero-sub">Two powerful Ayurvedic products handcrafted from pure herbs — one heals your joints, one transforms your hair. No chemicals. No side effects.</p>
-
       <div class="trust-strip">
         <div class="trust-item"><span class="icon">✓</span> 500+ Happy Customers</div>
         <div class="trust-item"><span class="icon">🚚</span> Free Delivery</div>
         <div class="trust-item"><span class="icon">🌿</span> 100% Ayurvedic</div>
       </div>
-
       <div class="hero-btns">
         <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" style="width:16px;height:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -584,7 +539,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           WhatsApp Us
         </a>
       </div>
-
       <div class="hero-cards">
         <div class="hero-pcard" onclick="addToCart('joint')">
           <img src="product image.jpg" alt="Sandhibhadra Ghrit" fetchpriority="high" onerror="this.style.background='#e8e0d0';this.alt='Sandhibhadra Ghrit'">
@@ -601,11 +555,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
       </div>
     </div>
-
-    <!-- Right -->
     <div class="hero-img-side">
       <div class="hero-img-frame">
-        <img src="hairoil.jpg" alt="Kesh Kalyani Tel — New Launch" class="hero-main-img" fetchpriority="high" onerror="this.style.background='#ede9df'">
+        <img src="hairoil.jpg" alt="Kesh Kalyani Tel" class="hero-main-img" fetchpriority="high" onerror="this.style.background='#ede9df'">
         <div class="hero-badge-float">
           <div class="hbf-icon">🏺</div>
           <div>
@@ -618,7 +570,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== STATS ===== -->
 <section class="stats-section">
   <div class="stats-inner">
     <div class="stat-card">
@@ -641,7 +592,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== HOW TO ORDER ===== -->
 <section class="order-flow-section">
   <div class="order-flow-inner">
     <div class="order-flow-step">
@@ -656,7 +606,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="ofs-arrow">→</div>
     <div class="order-flow-step">
       <div class="ofs-num">3</div>
-      <div class="ofs-text">Place via WhatsApp<span>Enter delivery details</span></div>
+      <div class="ofs-text">Pay Online<span>Secure Razorpay</span></div>
     </div>
     <div class="ofs-arrow">→</div>
     <div class="order-flow-step">
@@ -666,7 +616,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== PRODUCTS ===== -->
 <section id="products" class="products-section">
   <div style="max-width:1280px;margin:0 auto 48px;text-align:center">
     <div class="sec-tag">Our Products</div>
@@ -674,7 +623,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <p class="sec-p" style="margin:0 auto">Two time-tested formulations from ancient herbs — crafted for real results, backed by Ayurvedic tradition.</p>
   </div>
   <div class="products-grid">
-    <!-- Sandhibhadra Ghrit -->
     <div class="prod-card">
       <div class="prod-img-wrap">
         <img src="product image.jpg" alt="Sandhibhadra Ghrit" class="prod-img" loading="lazy" onerror="this.style.background='#e8e0d0'">
@@ -682,8 +630,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
       <div class="prod-body">
         <div class="prod-tags">
-          <span class="ptag ptag-green">🦴 Joint Relief</span>
-          <span class="ptag ptag-gold">⭐ Bestseller</span>
+          <span class="ptag ptag-green">Joint Relief</span>
+          <span class="ptag ptag-gold">Bestseller</span>
         </div>
         <h3 class="prod-name">Sandhibhadra Ghrit</h3>
         <p class="prod-desc">100% Ayurvedic medicated ghee that deeply nourishes worn-out joints and restores strength to tired muscles — naturally, without side effects.</p>
@@ -707,17 +655,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </button>
       </div>
     </div>
-
-    <!-- Kesh Kalyani Tel -->
     <div class="prod-card purple-card">
       <div class="prod-img-wrap">
         <img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" class="prod-img" loading="lazy" onerror="this.style.background='#ede9f8'">
         <div class="prod-img-overlay"></div>
-        <div class="prod-new-label">🎉 New Launch</div>
+        <div class="prod-new-label">New Launch</div>
       </div>
       <div class="prod-body">
         <div class="prod-tags">
-          <span class="ptag ptag-purple">💆 Hair Care</span>
+          <span class="ptag ptag-purple">Hair Care</span>
           <span class="ptag ptag-red">New Launch</span>
         </div>
         <h3 class="prod-name">Kesh Kalyani Tel</h3>
@@ -745,7 +691,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== HAIR BENEFITS ===== -->
 <section id="hair" class="section hair-section">
   <div class="section-inner">
     <div class="two-col">
@@ -768,7 +713,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== JOINT BENEFITS ===== -->
 <section id="joint" class="section" style="background:var(--cream)">
   <div class="section-inner">
     <div class="two-col reverse">
@@ -794,7 +738,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== HOW TO USE ===== -->
 <section id="howto" class="howto-section">
   <div class="howto-inner">
     <div style="text-align:center;margin-bottom:32px">
@@ -802,8 +745,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <h2 class="sec-h2" style="color:#fff">How to Use</h2>
     </div>
     <div class="how-tabs">
-      <button class="how-tab active" onclick="switchTab('joint',this)">🦴 Sandhibhadra Ghrit</button>
-      <button class="how-tab" onclick="switchTab('hair',this)">💆 Kesh Kalyani Tel</button>
+      <button class="how-tab active" onclick="switchTab('joint',this)">Sandhibhadra Ghrit</button>
+      <button class="how-tab" onclick="switchTab('hair',this)">Kesh Kalyani Tel</button>
     </div>
     <div class="how-content active" id="htab-joint">
       <div><img src="howtoapply.png" alt="How to apply Sandhibhadra Ghrit" class="how-img" loading="lazy" onerror="this.style.background='#1a3a22'"></div>
@@ -811,7 +754,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="how-steps">
           <div class="how-step"><div class="snum">1</div><p class="stxt">Take a small amount on your palm and <strong>warm it slightly</strong> by rubbing hands together.</p></div>
           <div class="how-step"><div class="snum">2</div><p class="stxt">Massage on the affected area — <strong>knees, lower back or joints</strong> — in circular motion for 10 minutes.</p></div>
-          <div class="how-step"><div class="snum">3</div><p class="stxt">Apply <strong>every night before sleeping</strong> for best results. 15–30 days shows significant improvement.</p></div>
+          <div class="how-step"><div class="snum">3</div><p class="stxt">Apply <strong>every night before sleeping</strong> for best results. 15-30 days shows significant improvement.</p></div>
         </div>
         <div class="how-note"><strong>Safety Note</strong>Not for small children. For sensitive skin, mix with lukewarm plain ghee before use.</div>
       </div>
@@ -821,8 +764,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div>
         <div class="how-steps">
           <div class="how-step"><div class="snum">1</div><p class="stxt">Apply Kesh Kalyani Tel <strong>directly to scalp</strong> — part your hair to ensure it reaches the roots.</p></div>
-          <div class="how-step"><div class="snum">2</div><p class="stxt"><strong>Gently massage for 10–15 minutes</strong> using fingertips to improve blood circulation and absorption.</p></div>
-          <div class="how-step"><div class="snum">3</div><p class="stxt">Leave for <strong>at least 1–2 hours or overnight</strong>. Wash with mild shampoo. Use 3 times a week.</p></div>
+          <div class="how-step"><div class="snum">2</div><p class="stxt"><strong>Gently massage for 10-15 minutes</strong> using fingertips to improve blood circulation and absorption.</p></div>
+          <div class="how-step"><div class="snum">3</div><p class="stxt">Leave for <strong>at least 1-2 hours or overnight</strong>. Wash with mild shampoo. Use 3 times a week.</p></div>
         </div>
         <div class="how-note"><strong>Pro Tip</strong>Warm the oil slightly before application for deeper penetration into scalp and hair roots.</div>
       </div>
@@ -830,7 +773,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== REVIEWS ===== -->
 <section id="reviews" class="reviews-section">
   <div style="max-width:1280px;margin:0 auto 48px;text-align:center">
     <div class="sec-tag">Customer Reviews</div>
@@ -839,37 +781,37 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
   <div class="reviews-grid">
     <div class="review-card">
-      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">🦴 Sandhibhadra Ghrit</span>
+      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">Sandhibhadra Ghrit</span>
       <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"My mother was struggling with knee pain for 5 years. After just 15 days, she can now walk comfortably around the house."</p>
       <div class="reviewer"><div class="rev-av" style="background:#fef3c7">JV</div><div><div class="rev-name">Jigar Vanza</div><div class="rev-role">Verified Buyer · Ahmedabad</div></div></div>
     </div>
     <div class="review-card">
-      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">💆 Kesh Kalyani Tel</span>
+      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">Kesh Kalyani Tel</span>
       <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"Kesh Kalyani Tel is amazing! I was losing so much hair daily. After 1 month, hair fall reduced drastically and new hair is growing!"</p>
       <div class="reviewer"><div class="rev-av" style="background:#f5f3ff">PD</div><div><div class="rev-name">Priya Desai</div><div class="rev-role">Verified Buyer · Surat</div></div></div>
     </div>
     <div class="review-card">
-      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">🦴 Sandhibhadra Ghrit</span>
-      <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">Sandhibhadra Ghrit</span>
+      <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"Being a doctor, I am very selective about Ayurvedic products. Sandhibhadra Ghrit has the right balance of herbs. Excellent for joint nourishment."</p>
       <div class="reviewer"><div class="rev-av" style="background:#dbeafe">MS</div><div><div class="rev-name">Dr. Mansi Shah</div><div class="rev-role">Medical Professional · Vadodara</div></div></div>
     </div>
     <div class="review-card">
-      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">💆 Kesh Kalyani Tel</span>
+      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">Kesh Kalyani Tel</span>
       <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"Maine Kesh Kalyani Tel try kiya aur sirf 3 hafte mein fark dikhne laga. Baal ab zyada ghane aur mazboot hain. Bahut acha product!"</p>
       <div class="reviewer"><div class="rev-av" style="background:#fef3c7">RS</div><div><div class="rev-name">Rajesh Shah</div><div class="rev-role">Verified Buyer · Patan</div></div></div>
     </div>
     <div class="review-card">
-      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">🦴 Sandhibhadra Ghrit</span>
+      <span class="rev-type" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">Sandhibhadra Ghrit</span>
       <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"Excellent for lower back stiffness. I use it every night before sleeping. The relief is almost immediate and the aroma is very authentic Ayurvedic."</p>
       <div class="reviewer"><div class="rev-av" style="background:#dcfce7">PS</div><div><div class="rev-name">Pankaj Sutariya</div><div class="rev-role">Verified Buyer · Mehsana</div></div></div>
     </div>
     <div class="review-card">
-      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">💆 Kesh Kalyani Tel</span>
+      <span class="rev-type" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ede9fe">Kesh Kalyani Tel</span>
       <div class="stars"><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
       <p class="rev-quote">"This hair oil smells so authentic and natural. My scalp feels nourished and my hair has become shinier and smoother. Will definitely reorder!"</p>
       <div class="reviewer"><div class="rev-av" style="background:#fce7f3">NK</div><div><div class="rev-name">Nisha Kapoor</div><div class="rev-role">Verified Buyer · Rajkot</div></div></div>
@@ -877,13 +819,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== TRUST BADGES ===== -->
 <section class="trust-section">
   <div class="trust-inner">
     <div class="trust-card">
-      <div class="trust-card-icon">🌿</div>
-      <div class="trust-card-title">100% Ayurvedic</div>
-      <div class="trust-card-text">Pure herbs, zero chemicals, zero side effects</div>
+      <div class="trust-card-icon">🔒</div>
+      <div class="trust-card-title">Secure Payment</div>
+      <div class="trust-card-text">Razorpay secured, 100% safe checkout</div>
     </div>
     <div class="trust-card">
       <div class="trust-card-icon">🚚</div>
@@ -891,9 +832,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="trust-card-text">Pan-India free delivery on all orders</div>
     </div>
     <div class="trust-card">
-      <div class="trust-card-icon">🏺</div>
-      <div class="trust-card-title">Handcrafted</div>
-      <div class="trust-card-text">Made with care in Patan, Gujarat</div>
+      <div class="trust-card-icon">🌿</div>
+      <div class="trust-card-title">100% Ayurvedic</div>
+      <div class="trust-card-text">Pure herbs, zero chemicals, zero side effects</div>
     </div>
     <div class="trust-card">
       <div class="trust-card-icon">💬</div>
@@ -903,12 +844,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- ===== VIDEOS ===== -->
 <section id="testimonials" class="videos-section">
   <div class="vhead">
     <div class="sec-tag">Real Results</div>
     <h2 class="sec-h2">What Our Customers Say</h2>
-    <p>Watch real people share their experience with Shree Narayan Ayurveda products</p>
+    <p>Watch real people share their experience</p>
   </div>
   <div class="vtrack-wrap">
     <div class="vtrack">
@@ -926,7 +866,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </section>
 
-<!-- Video Modal -->
 <div class="vmodal" id="video-modal" onclick="closeVideoModal(event)">
   <div class="vmodal-box">
     <button class="vmodal-close" onclick="closeVideoModal()">✕</button>
@@ -936,7 +875,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-divider"></div>
@@ -950,8 +888,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
       <div>
         <div class="footer-col-h">Our Products</div>
-        <button class="footer-link" onclick="addToCart('joint')">🦴 Sandhibhadra Ghrit — ₹300</button>
-        <button class="footer-link" onclick="addToCart('hair')">💆 Kesh Kalyani Tel — ₹150</button>
+        <button class="footer-link" onclick="addToCart('joint')">Sandhibhadra Ghrit — ₹300</button>
+        <button class="footer-link" onclick="addToCart('hair')">Kesh Kalyani Tel — ₹150</button>
       </div>
       <div>
         <div class="footer-col-h">Visit Our Store</div>
@@ -966,13 +904,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Shree Narayan Ayurveda. All rights reserved.</span>
+      <span>&copy; 2026 Shree Narayan Ayurveda. All rights reserved.</span>
       <span>Made with 🌿 in Patan, Gujarat</span>
     </div>
   </div>
 </footer>
 
-<!-- ===== CART ===== -->
+<!-- CART DRAWER -->
 <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
 <aside class="cart-drawer" id="cart-drawer">
   <div class="cart-head">
@@ -988,11 +926,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div id="cart-joint-row" class="cart-item" style="display:none">
         <div class="cart-item-img-box"><img src="product image.jpg" alt="Sandhibhadra Ghrit" onerror="this.parentElement.innerHTML='🌿'"></div>
         <div class="cart-item-info">
-          <span class="cit-tag cit-g">🦴 Joint Relief</span>
+          <span class="cit-tag cit-g">Joint Relief</span>
           <div class="cart-item-name">Sandhibhadra Ghrit</div>
           <div class="cart-item-unit-price">₹300 per jar</div>
           <div class="qty-row">
-            <button class="qty-btn" onclick="changeQty('joint',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('joint',-1)">&#8722;</button>
             <span class="qty-num" id="qty-joint">1</span>
             <button class="qty-btn" onclick="changeQty('joint',1)">+</button>
           </div>
@@ -1002,11 +940,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div id="cart-hair-row" class="cart-item" style="display:none">
         <div class="cart-item-img-box"><img src="keshkalyanioilnew.jpg" alt="Kesh Kalyani Tel" loading="lazy" onerror="this.parentElement.innerHTML='💆'"></div>
         <div class="cart-item-info">
-          <span class="cit-tag cit-p">💆 Hair Care</span>
+          <span class="cit-tag cit-p">Hair Care</span>
           <div class="cart-item-name">Kesh Kalyani Tel</div>
           <div class="cart-item-unit-price">₹150 per bottle</div>
           <div class="qty-row">
-            <button class="qty-btn" onclick="changeQty('hair',-1)">−</button>
+            <button class="qty-btn" onclick="changeQty('hair',-1)">&#8722;</button>
             <span class="qty-num" id="qty-hair">1</span>
             <button class="qty-btn" onclick="changeQty('hair',1)">+</button>
           </div>
@@ -1027,44 +965,78 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
     <button id="checkout-btn" class="btn-checkout hidden" onclick="openPaymentModal()">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-      Proceed to Order
+      Proceed to Checkout
     </button>
-    <button class="btn-continue-shopping" onclick="closeCart()">← Continue Shopping</button>
+    <button class="btn-continue-shopping" onclick="closeCart()">&larr; Continue Shopping</button>
   </div>
 </aside>
 
-<!-- ===== PAYMENT MODAL ===== -->
+<!-- PAYMENT MODAL -->
 <div class="pay-modal" id="payment-modal">
   <div class="pay-modal-box">
     <div class="steps-header">
       <div class="steps-row">
         <div class="step-item active" id="s1"><div class="step-dot2">1</div><span class="step-lbl">विवरण</span></div>
         <div class="step-line2" id="line12"></div>
-        <div class="step-item" id="s2"><div class="step-dot2">2</div><span class="step-lbl">पुष्टि</span></div>
+        <div class="step-item" id="s2"><div class="step-dot2">2</div><span class="step-lbl">भुगतान</span></div>
+        <div class="step-line2" id="line23"></div>
+        <div class="step-item" id="s3"><div class="step-dot2">3</div><span class="step-lbl">पुष्टि</span></div>
       </div>
     </div>
+
+    <!-- STEP 1 -->
     <div class="modal-step" id="modal-step-1">
       <div class="modal-h3">Delivery Details</div>
-      <div class="modal-sub">हमारी टीम आपसे भुगतान के लिए संपर्क करेगी।</div>
+      <div class="modal-sub">कृपया अपनी जानकारी भरें।</div>
       <div class="field-group"><label class="field-label">Full Name *</label><input class="field-input" type="text" id="cust-name" placeholder="e.g. Ramesh Patel" autocomplete="name"></div>
       <div class="field-group"><label class="field-label">WhatsApp Number *</label><input class="field-input" type="tel" id="cust-phone" placeholder="10-digit mobile number" maxlength="10" autocomplete="tel"></div>
       <div class="field-group"><label class="field-label">Delivery Address *</label><textarea class="field-input" id="cust-address" rows="2" placeholder="Full address with pin code" style="resize:none"></textarea></div>
       <div class="error-box" id="details-error"></div>
       <div class="modal-btns">
         <button class="btn-modal-cancel" onclick="closePaymentModal()">Cancel</button>
-        <button class="btn-modal-next" onclick="placeOrder()">ऑर्डर करें 🌿</button>
+        <button class="btn-modal-next" onclick="goToPaymentStep()">Proceed to Payment &rarr;</button>
       </div>
     </div>
+
+    <!-- STEP 2 -->
     <div class="modal-step hidden" id="modal-step-2">
+      <div class="modal-h3">Complete Payment</div>
+      <div class="modal-sub">Choose your preferred payment method.</div>
+      <div class="pay-order-summary" id="pay-order-summary"></div>
+      <button class="btn-razorpay" id="btn-razorpay-pay" onclick="payWithRazorpay()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span>Pay <span id="rzp-pay-amount">₹0</span> Online</span>
+        <span class="rzp-logo-text">via <span>Razorpay</span></span>
+      </button>
+      <div class="pay-or-divider"><span>or</span></div>
+      <button class="btn-wa-pay" onclick="sendWhatsAppOrder()">
+        <svg fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326z"/></svg>
+        Order via WhatsApp (Pay Later)
+      </button>
+      <div class="rzp-badge-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Secured by <strong>Razorpay</strong> &middot; UPI, Cards, Netbanking</span>
+      </div>
+      <div style="text-align:center;margin-top:10px">
+        <button class="btn-modal-cancel" onclick="showStep(1)" style="flex:none;padding:8px 20px;font-size:12px">&larr; Edit Details</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="modal-step hidden" id="modal-step-3">
       <div class="success-wrap">
         <svg class="tick" viewBox="0 0 52 52" fill="none">
           <circle class="tick-circle" cx="26" cy="26" r="25" stroke="#16a34a" stroke-width="2"/>
           <path class="tick-check" d="M14 27l8 8 16-16" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="ty-title">🙏 आपका धन्यवाद!</div>
-        <div class="ty-line1">आपका ऑर्डर सफलतापूर्वक प्राप्त हो गया है।</div>
+        <div class="ty-title" id="ty-title">आपका धन्यवाद!</div>
+        <div class="ty-line1" id="ty-line1">आपका ऑर्डर सफलतापूर्वक प्राप्त हो गया है।</div>
         <div class="ty-divider"></div>
-        <div class="ty-msg">आपका ऑर्डर भुगतान के बाद भेजा जाएगा।<br>हमारी टीम जल्द ही आपसे संपर्क करेगी।</div>
+        <div class="ty-payment-id hidden" id="ty-payment-id">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Payment ID: <code id="ty-payment-id-val"></code>
+        </div>
+        <div class="ty-msg" id="ty-msg"></div>
         <div class="ty-box"><span>🌿</span><span>Shree Narayan Ayurveda के उत्पाद का उपयोग करने के लिए आपका बहुत-बहुत धन्यवाद!</span></div>
         <button class="btn-close-success" onclick="closePaymentModal();clearCart()">बंद करें</button>
       </div>
@@ -1072,13 +1044,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   </div>
 </div>
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- JAVASCRIPT -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-var MERCHANT = { waPhone:'919428686034' };
-var PRICES = { joint:300, hair:150 };
-var cart = { joint:0, hair:0 };
+var MERCHANT = {
+  waPhone: '919428686034',
+  razorpayKey: 'rzp_live_Smry3dqE17zuAn'
+};
 
-// Nav scroll effect
+var PRICES = { joint: 300, hair: 150 };
+var cart = { joint: 0, hair: 0 };
+var customerDetails = { name: '', phone: '', address: '' };
+
 window.addEventListener('scroll', function(){
   var nav = document.getElementById('main-nav');
   if(window.scrollY > 40) nav.classList.add('scrolled');
@@ -1102,6 +1079,13 @@ function removeFromCart(type){
 }
 function clearCart(){ cart.joint=0; cart.hair=0; refreshCartUI(); }
 function getTotal(){ return cart.joint*PRICES.joint + cart.hair*PRICES.hair; }
+
+function getItemsDescription(){
+  var parts = [];
+  if(cart.joint > 0) parts.push('Sandhibhadra Ghrit x' + cart.joint);
+  if(cart.hair > 0) parts.push('Kesh Kalyani Tel x' + cart.hair);
+  return parts.join(', ') || 'Ayurvedic Products';
+}
 
 function refreshCartUI(){
   var hasAny = cart.joint>0||cart.hair>0;
@@ -1138,7 +1122,17 @@ function closeCart(){ document.getElementById('cart-drawer').classList.remove('o
 function openPaymentModal(){ closeCart(); showStep(1); document.getElementById('payment-modal').classList.add('open'); document.body.style.overflow='hidden'; }
 function closePaymentModal(){ document.getElementById('payment-modal').classList.remove('open'); document.body.style.overflow=''; setTimeout(function(){showStep(1);},300); }
 
-function placeOrder(){
+function showStep(n){
+  for(var i=1;i<=3;i++){
+    document.getElementById('modal-step-'+i).classList.toggle('hidden',i!==n);
+    var si=document.getElementById('s'+i); si.classList.remove('active','done');
+    if(i<n) si.classList.add('done'); if(i===n) si.classList.add('active');
+  }
+  var l12=document.getElementById('line12'); if(l12) l12.classList.toggle('done',n>=2);
+  var l23=document.getElementById('line23'); if(l23) l23.classList.toggle('done',n>=3);
+}
+
+function goToPaymentStep(){
   var name=document.getElementById('cust-name').value.trim();
   var phone=document.getElementById('cust-phone').value.trim();
   var address=document.getElementById('cust-address').value.trim();
@@ -1146,29 +1140,100 @@ function placeOrder(){
   if(!name||!phone||!address){ errEl.textContent='कृपया सभी आवश्यक फ़ील्ड भरें।'; errEl.style.display='block'; return; }
   if(!/^[6-9]\d{9}$/.test(phone)){ errEl.textContent='कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें।'; errEl.style.display='block'; return; }
   errEl.style.display='none';
-  var note=(document.getElementById('order-note')||{value:''}).value.trim();
-  var total=getTotal();
-  var lines=['🌿 *नया ऑर्डर — Shree Narayan Ayurveda*',''];
-  if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
-  if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
-  lines.push('');
-  lines.push('👤 *नाम:* '+name);
-  lines.push('📞 *WhatsApp:* '+phone);
-  lines.push('💰 *कुल राशि:* ₹'+total);
-  lines.push('📍 *पता:* '+address);
-  if(note) lines.push('📝 *नोट:* '+note);
-  lines.push(''); lines.push('_भुगतान प्रक्रिया के लिए कृपया संपर्क करें।_');
-  window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
+  customerDetails.name = name;
+  customerDetails.phone = phone;
+  customerDetails.address = address;
+  var total = getTotal();
+  document.getElementById('rzp-pay-amount').textContent = '₹' + total;
+  var summaryHTML = '<div class="pay-summary-title">Order Summary</div>';
+  if(cart.joint > 0) summaryHTML += '<div class="pay-item-row"><span class="pay-item-name">Sandhibhadra Ghrit</span><span class="pay-item-qty">x'+cart.joint+'</span><span class="pay-item-amt">₹'+(cart.joint*PRICES.joint)+'</span></div>';
+  if(cart.hair > 0) summaryHTML += '<div class="pay-item-row"><span class="pay-item-name">Kesh Kalyani Tel</span><span class="pay-item-qty">x'+cart.hair+'</span><span class="pay-item-amt">₹'+(cart.hair*PRICES.hair)+'</span></div>';
+  summaryHTML += '<div class="pay-total-divider"></div><div class="pay-total-row"><span>Total</span><span>₹'+total+'</span></div>';
+  document.getElementById('pay-order-summary').innerHTML = summaryHTML;
   showStep(2);
 }
 
-function showStep(n){
-  for(var i=1;i<=2;i++){
-    document.getElementById('modal-step-'+i).classList.toggle('hidden',i!==n);
-    var si=document.getElementById('s'+i); si.classList.remove('active','done');
-    if(i<n) si.classList.add('done'); if(i===n) si.classList.add('active');
+function payWithRazorpay(){
+  var total = getTotal();
+  if(total <= 0) return;
+  var options = {
+    key: MERCHANT.razorpayKey,
+    amount: total * 100,
+    currency: 'INR',
+    name: 'Shree Narayan Ayurveda',
+    description: getItemsDescription(),
+    image: 'https://i.ibb.co/fYQdWNBJ/logo.png',
+    handler: function(response){
+      onPaymentSuccess(response.razorpay_payment_id || 'N/A');
+    },
+    prefill: {
+      name: customerDetails.name,
+      contact: '91' + customerDetails.phone
+    },
+    notes: {
+      address: customerDetails.address,
+      items: getItemsDescription()
+    },
+    theme: { color: '#0f1f14' },
+    modal: {
+      ondismiss: function(){ console.log('Payment dismissed'); }
+    }
+  };
+  try {
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response){
+      alert('Payment failed: ' + (response.error.description || 'Please try again.'));
+    });
+    rzp.open();
+  } catch(e) {
+    alert('Unable to open payment gateway. Please use WhatsApp to order.');
+    console.error('Razorpay error:', e);
   }
-  var l=document.getElementById('line12'); if(l) l.classList.toggle('done',n>=2);
+}
+
+function onPaymentSuccess(paymentId){
+  sendWhatsAppWithPayment(paymentId);
+  document.getElementById('ty-title').textContent = 'भुगतान सफल!';
+  document.getElementById('ty-line1').textContent = 'आपका भुगतान सफलतापूर्वक हो गया है।';
+  document.getElementById('ty-msg').innerHTML = 'आपका ऑर्डर जल्द ही भेजा जाएगा।<br>हमारी टीम डिलीवरी के लिए आपसे संपर्क करेगी।';
+  var pidEl = document.getElementById('ty-payment-id');
+  pidEl.classList.remove('hidden');
+  document.getElementById('ty-payment-id-val').textContent = paymentId;
+  showStep(3);
+  incrementOrderStat();
+}
+
+function sendWhatsAppOrder(){
+  var total = getTotal();
+  var note = (document.getElementById('order-note')||{value:''}).value.trim();
+  var lines = ['🌿 *नया ऑर्डर — Shree Narayan Ayurveda*',''];
+  if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
+  if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
+  lines.push(''); lines.push('👤 *नाम:* '+customerDetails.name); lines.push('📞 *WhatsApp:* '+customerDetails.phone);
+  lines.push('💰 *कुल राशि:* ₹'+total); lines.push('📍 *पता:* '+customerDetails.address);
+  if(note) lines.push('📝 *नोट:* '+note);
+  lines.push(''); lines.push('💳 *भुगतान:* WhatsApp पर भुगतान करेंगे');
+  window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
+  document.getElementById('ty-title').textContent = 'आपका धन्यवाद!';
+  document.getElementById('ty-line1').textContent = 'आपका ऑर्डर WhatsApp पर भेज दिया गया है।';
+  document.getElementById('ty-msg').innerHTML = 'हमारी टीम जल्द ही आपसे भुगतान और डिलीवरी के लिए संपर्क करेगी।<br>कृपया WhatsApp चेक करें।';
+  document.getElementById('ty-payment-id').classList.add('hidden');
+  showStep(3);
+  incrementOrderStat();
+}
+
+function sendWhatsAppWithPayment(paymentId){
+  var total = getTotal();
+  var note = (document.getElementById('order-note')||{value:''}).value.trim();
+  var lines = ['✅ *PAYMENT RECEIVED — Shree Narayan Ayurveda*',''];
+  lines.push('🆔 *Payment ID:* '+paymentId); lines.push('');
+  if(cart.joint>0) lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
+  if(cart.hair>0)  lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
+  lines.push(''); lines.push('👤 *नाम:* '+customerDetails.name); lines.push('📞 *WhatsApp:* '+customerDetails.phone);
+  lines.push('💰 *कुल भुगतान:* ₹'+total); lines.push('📍 *पता:* '+customerDetails.address);
+  if(note) lines.push('📝 *नोट:* '+note);
+  lines.push(''); lines.push('✅ _ऑनलाइन भुगतान प्राप्त हो गया है। कृपया ऑर्डर भेजें।_');
+  window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
 }
 
 function switchTab(tab,btn){
@@ -1178,7 +1243,6 @@ function switchTab(tab,btn){
   document.getElementById('htab-'+tab).classList.add('active');
 }
 
-// Stats
 (function(){
   var today=new Date().toISOString().slice(0,10);
   var sd=localStorage.getItem('sna_day');
@@ -1206,14 +1270,12 @@ function switchTab(tab,btn){
   window.incrementOrderStat=function(){ var o=parseInt(localStorage.getItem('sna_orders')||'0')+1; localStorage.setItem('sna_orders',o); var el=document.getElementById('stat-orders'); if(el) el.textContent=Math.max(o,ao)+''; };
 })();
 
-// Mobile menu
 document.getElementById('mobile-menu-btn').addEventListener('click',function(){
   document.getElementById('mobile-menu').classList.toggle('open');
 });
 function closeMobileMenu(){ document.getElementById('mobile-menu').classList.remove('open'); }
 document.getElementById('open-cart-btn').addEventListener('click',openCart);
 
-// Videos
 (function(){
   var track=document.querySelector('.vtrack'); if(!track) return;
   var tx=0,tt=0;
@@ -1230,7 +1292,6 @@ document.getElementById('open-cart-btn').addEventListener('click',openCart);
     var card=e.target.closest('.vcard'); if(card&&card.dataset.videoid) openVideoModal(card.dataset.videoid);
   });
 })();
-
 function openVideoModal(id){
   document.getElementById('video-modal-iframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';
   document.getElementById('video-modal').classList.add('open');
@@ -1243,13 +1304,8 @@ function closeVideoModal(e){
   document.body.style.overflow='';
 }
 
-// Close modals on Escape
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    closeCart();
-    closePaymentModal();
-    closeVideoModal();
-  }
+  if(e.key==='Escape'){ closeCart(); closePaymentModal(); closeVideoModal(); }
 });
 </script>
 </body>
