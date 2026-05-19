@@ -45,14 +45,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .hidden{display:none!important}
 .pdot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:blink 2s infinite;display:inline-block}
-
-/* ANNOUNCE */
 .announce-bar{background:var(--gd);color:#d4af6e;font-size:12px;font-weight:500;letter-spacing:.06em;overflow:hidden;height:36px;display:flex;align-items:center}
 .announce-track{display:flex;white-space:nowrap;animation:marquee 22s linear infinite}
 .announce-track span{padding:0 40px;display:inline-flex;align-items:center;gap:8px}
 .announce-track span::after{content:'\2726';opacity:.5}
-
-/* NAV */
 .nav{position:fixed;top:36px;left:0;width:100%;z-index:50;background:rgba(250,248,243,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,150,62,.18);transition:top .3s,box-shadow .3s}
 .nav.scrolled{top:0;box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -83,8 +79,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .mobile-menu.open{display:block;animation:fadeUp .2s ease}
 .mobile-menu a,.mobile-menu button{display:block;width:100%;padding:11px 0;color:var(--txm);font-weight:600;font-size:15px;border-bottom:1px solid #f3f4f6}
 .btn-mobile-order{margin-top:10px;background:var(--gd);color:#fff!important;padding:13px;border-radius:12px;text-align:center;font-weight:700;border-bottom:none!important}
-
-/* HERO */
 .hero{padding-top:calc(36px + 68px);background:var(--cream);position:relative;overflow:hidden}
 @media(min-width:768px){.hero{padding-top:calc(36px + 76px)}}
 .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
@@ -127,8 +121,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(max-width:480px){.hero-badge-float{left:8px}}
 .hbf-t1{font-size:11px;font-weight:700;color:var(--gd)}
 .hbf-t2{font-size:9px;color:var(--txl);margin-top:1px}
-
-/* STATS */
 .stats-section{background:var(--gd);padding:28px 20px}
 .stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border-radius:20px;overflow:hidden}
 @media(min-width:768px){.stats-inner{grid-template-columns:repeat(3,1fr)}}
@@ -141,8 +133,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .stat-label{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.15em}
 .stat-live{display:inline-flex;align-items:center;gap:5px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);border-radius:999px;padding:3px 9px;font-size:9px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
 .stat-live-dot{width:5px;height:5px;background:#22c55e;border-radius:50%;animation:blink 1.5s infinite}
-
-/* SECTION COMMON */
 .section{padding:72px 20px}
 @media(min-width:768px){.section{padding:96px 32px}}
 .section-inner{max-width:1280px;margin:0 auto}
@@ -150,8 +140,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sec-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4.5vw,3rem);color:var(--gd);line-height:1.15;margin-bottom:14px;font-weight:700}
 .sec-h2 em{font-style:italic;color:var(--gold)}
 .sec-p{font-size:15px;color:var(--txm);line-height:1.8;max-width:520px}
-
-/* ORDER FLOW */
 .order-flow-section{background:var(--goldp);border-top:1px solid rgba(201,150,62,.2);border-bottom:1px solid rgba(201,150,62,.2);padding:36px 20px}
 .order-flow-inner{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px}
 @media(min-width:768px){.order-flow-inner{flex-direction:row;justify-content:center;gap:0}}
@@ -162,8 +150,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ofs-text span{display:block;font-size:11px;color:var(--txm);font-weight:400;margin-top:1px}
 .ofs-arrow{font-size:20px;color:var(--gold);padding:0 12px;flex-shrink:0;display:none}
 @media(min-width:768px){.ofs-arrow{display:block}}
-
-/* PRODUCTS */
 .products-section{background:#fff;padding:72px 20px}
 @media(min-width:768px){.products-section{padding:96px 32px}}
 .products-grid{display:grid;grid-template-columns:1fr;gap:32px;max-width:1280px;margin:0 auto}
@@ -204,8 +190,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-green:hover{box-shadow:0 14px 32px rgba(15,31,20,.38)}
 .btn-purple{background:linear-gradient(135deg,#6d28d9,#5b21b6);color:#fff;box-shadow:0 8px 24px rgba(109,40,217,.28)}
 .btn-purple:hover{box-shadow:0 14px 32px rgba(109,40,217,.38)}
-
-/* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;max-width:1280px;margin:0 auto}
 @media(min-width:1024px){.two-col{grid-template-columns:1fr 1fr;gap:72px}}
 .two-col.reverse{direction:rtl}
@@ -226,8 +210,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pain-img-card:hover img{filter:grayscale(0)}
 .pain-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 50%)}
 .pain-label{position:absolute;bottom:10px;left:12px;color:#fff;font-weight:700;font-size:12px}
-
-/* HOW TO */
 .howto-section{background:var(--gd);padding:72px 20px}
 @media(min-width:768px){.howto-section{padding:96px 32px}}
 .howto-inner{max-width:1280px;margin:0 auto}
@@ -245,8 +227,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .stxt strong{color:#fff;font-weight:600}
 .how-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--gold);border-radius:12px;padding:14px;font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:8px}
 .how-note strong{display:block;color:var(--goldl);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:4px}
-
-/* REVIEWS */
 .reviews-section{background:var(--creamd);padding:72px 20px}
 @media(min-width:768px){.reviews-section{padding:96px 32px}}
 .reviews-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1280px;margin:0 auto}
@@ -262,8 +242,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .rev-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--gd);font-size:12px;flex-shrink:0}
 .rev-name{font-weight:700;color:var(--gd);font-size:13px}
 .rev-role{font-size:9px;color:var(--txl);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
-
-/* VIDEOS */
 .videos-section{background:linear-gradient(135deg,#0a1a10,var(--gd));padding:56px 0}
 .vhead{text-align:center;padding:0 20px;margin-bottom:36px}
 .vhead .sec-tag{color:var(--goldl)}
@@ -289,8 +267,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .vmodal-close:hover{background:rgba(255,255,255,.25)}
 .vmodal-frame{position:relative;width:100%;padding-top:177.77%;border-radius:20px;overflow:hidden;background:#000}
 .vmodal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
-
-/* FOOTER */
 .footer{background:var(--gd);color:#fff;padding:64px 20px 28px}
 @media(min-width:768px){.footer{padding:80px 32px 28px}}
 .footer-inner{max-width:1280px;margin:0 auto}
@@ -312,13 +288,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;color:rgba(255,255,255,.25);font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:600}
 @media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between}}
 .footer-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,150,62,.3),transparent);margin-bottom:48px}
-
-/* WA FLOAT */
 .wa-float{position:fixed;bottom:22px;right:22px;z-index:100;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.4);animation:pulseG 2.5s infinite;transition:transform .2s}
 .wa-float:hover{transform:scale(1.08)}
 .wa-float svg{width:28px;height:28px}
-
-/* CART */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
 .cart-overlay.open{opacity:1;pointer-events:auto}
 .cart-drawer{position:fixed;top:0;right:0;height:100%;width:100%;max-width:420px;background:#fff;z-index:300;box-shadow:-8px 0 48px rgba(0,0,0,.15);display:flex;flex-direction:column;overflow:hidden;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
@@ -363,8 +335,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-checkout svg{width:17px;height:17px}
 .btn-continue-shopping{width:100%;text-align:center;color:var(--txl);font-size:12px;font-weight:600;padding:6px;cursor:pointer}
 .btn-continue-shopping:hover{color:var(--gd)}
-
-/* PAYMENT MODAL */
 .pay-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:400;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px)}
 .pay-modal.open{opacity:1;pointer-events:auto}
 .pay-modal-box{background:#fff;border-radius:24px;width:100%;max-width:440px;max-height:92vh;overflow-y:auto;animation:scaleIn .3s ease;box-shadow:0 24px 72px rgba(0,0,0,.3)}
@@ -414,14 +384,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ty-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--gd);margin-bottom:8px}
 .ty-line1{font-size:13px;color:var(--txt);font-weight:600;margin-bottom:12px}
 .ty-divider{width:44px;height:2.5px;background:linear-gradient(90deg,var(--gold),var(--goldl));border-radius:999px;margin:0 auto 12px}
-.ty-msg{font-size:13px;color:var(--txm);line-height:1.85;margin-bottom:14px}
-.ty-box{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:11px 13px;font-size:12px;color:#15803d;font-weight:600;text-align:left;margin-bottom:18px;line-height:1.6}
-.ty-payment-id{display:flex;align-items:center;gap:6px;background:#f0f7ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 13px;font-size:11px;color:#1e40af;font-weight:700;margin-bottom:14px;justify-content:center}
-.ty-payment-id code{background:#dbeafe;padding:2px 8px;border-radius:6px;font-size:12px;letter-spacing:.03em}
 .btn-close-success{width:100%;padding:12px;border-radius:12px;background:#f3f4f6;color:var(--txt);font-weight:700;font-size:13px;cursor:pointer;border:none;font-family:inherit;transition:background .2s}
 .btn-close-success:hover{background:#e5e7eb}
-
-/* TRUST */
 .trust-section{background:#fff;padding:48px 20px;border-top:1px solid #ede9df}
 .trust-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media(min-width:640px){.trust-inner{grid-template-columns:repeat(4,1fr)}}
@@ -429,7 +393,27 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .trust-card-icon{font-size:32px;margin-bottom:8px}
 .trust-card-title{font-weight:700;font-size:13px;color:var(--gd);margin-bottom:4px}
 .trust-card-text{font-size:11px;color:var(--txl);line-height:1.5}
-
+.order-confirm-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:18px;padding:18px;margin:14px 0;text-align:left;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.occ-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.occ-logo-row{display:flex;align-items:center;gap:8px}
+.occ-order-no{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;color:var(--gold);background:var(--goldp);border:1px solid rgba(201,150,62,.25);border-radius:8px;padding:4px 10px;white-space:nowrap}
+.occ-section{margin-bottom:6px}
+.occ-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--txl);margin-bottom:7px}
+.occ-item-row{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;background:var(--cream);border-radius:10px;margin-bottom:5px;font-size:13px}
+.occ-item-name{font-weight:600;color:var(--gd)}
+.occ-item-meta{color:var(--txl);font-size:11px;margin-top:1px}
+.occ-item-price{font-weight:800;color:var(--gd);white-space:nowrap}
+.occ-divider{height:1px;background:#f0f0f0;margin:10px 0}
+.occ-row-total{display:flex;justify-content:space-between;font-size:12px;color:var(--txm);margin-bottom:4px}
+.occ-free{color:#16a34a;font-weight:700}
+.occ-grand{font-size:16px;font-weight:800;color:var(--gd);margin-top:6px;padding-top:8px;border-top:2px solid var(--gd)}
+.occ-detail-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:12px;padding:4px 0;border-bottom:1px solid #f5f5f5;gap:8px}
+.occ-detail-row span:first-child{color:var(--txl);font-weight:600;flex-shrink:0;min-width:80px}
+.occ-detail-row span:last-child,.occ-detail-row code{color:var(--gd);font-weight:600;text-align:right}
+.occ-addr-row span:last-child{font-size:11px;line-height:1.5}
+.occ-status-badge{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;padding:2px 9px;border-radius:999px;font-size:10px;font-weight:800}
+.occ-note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:10px 12px;font-size:11px;color:#92400e;line-height:1.6;margin-top:10px}
+.ty-box{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:11px 13px;font-size:12px;color:#15803d;font-weight:600;text-align:left;margin-bottom:18px;line-height:1.6}
 @media(max-width:767px){
   .hero-h1,.sec-h2{text-align:center}
   .hero-kicker{justify-content:center}
@@ -840,13 +824,56 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="modal-step hidden" id="modal-step-3">
       <div class="success-wrap">
         <svg class="tick" viewBox="0 0 52 52" fill="none"><circle class="tick-circle" cx="26" cy="26" r="25" stroke="#16a34a" stroke-width="2"/><path class="tick-check" d="M14 27l8 8 16-16" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div class="ty-title" id="ty-title">भुगतान सफल!</div>
-        <div class="ty-line1" id="ty-line1">आपका भुगतान सफलतापूर्वक हो गया है।</div>
+        <div class="ty-title">🎉 Order Confirmed!</div>
+        <div class="ty-line1">आपका भुगतान सफलतापूर्वक हो गया है।</div>
         <div class="ty-divider"></div>
-        <div class="ty-payment-id" id="ty-payment-id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Payment ID: <code id="ty-payment-id-val"></code></div>
-        <div class="ty-msg">आपका ऑर्डर जल्द ही भेजा जाएगा।<br>हमारी टीम डिलीवरी के लिए आपसे संपर्क करेगी।</div>
-        <div class="ty-box"><span>🌿</span><span>Shree Narayan Ayurveda के उत्पाद का उपयोग करने के लिए आपका बहुत-बहुत धन्यवाद!</span></div>
-        <button class="btn-close-success" onclick="closePaymentModal();clearCart()">बंद करें</button>
+
+        <div class="order-confirm-card" id="order-confirm-card">
+          <div class="occ-header">
+            <div class="occ-logo-row">
+              <img src="https://i.ibb.co/fYQdWNBJ/logo.png" alt="Logo" style="height:32px;width:auto">
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:15px;color:var(--gd)">Shree Narayan Ayurveda</div>
+                <div style="font-size:9px;color:var(--txl);letter-spacing:.1em;text-transform:uppercase">Order Confirmation</div>
+              </div>
+            </div>
+            <div class="occ-order-no" id="occ-order-no">—</div>
+          </div>
+
+          <div class="occ-section">
+            <div class="occ-label">📦 Products Ordered</div>
+            <div id="occ-items"></div>
+          </div>
+
+          <div class="occ-divider"></div>
+
+          <div class="occ-row-total"><span>Delivery</span><span class="occ-free">FREE ✓</span></div>
+          <div class="occ-row-total occ-grand"><span>Total Paid</span><span id="occ-total">₹0</span></div>
+
+          <div class="occ-divider"></div>
+
+          <div class="occ-section">
+            <div class="occ-label">👤 Customer Details</div>
+            <div class="occ-detail-row"><span>Name</span><span id="occ-name">—</span></div>
+            <div class="occ-detail-row"><span>WhatsApp</span><span id="occ-phone">—</span></div>
+            <div class="occ-detail-row occ-addr-row"><span>Address</span><span id="occ-address">—</span></div>
+          </div>
+
+          <div class="occ-divider"></div>
+
+          <div class="occ-section">
+            <div class="occ-label">💳 Payment Info</div>
+            <div class="occ-detail-row"><span>Payment ID</span><code id="occ-payment-id" style="font-size:10px;background:#f0f7ff;padding:2px 7px;border-radius:5px;color:#1e40af">—</code></div>
+            <div class="occ-detail-row"><span>Method</span><span>Razorpay · Online</span></div>
+            <div class="occ-detail-row"><span>Date &amp; Time</span><span id="occ-datetime">—</span></div>
+            <div class="occ-detail-row"><span>Status</span><span class="occ-status-badge">✓ Paid</span></div>
+          </div>
+
+          <div class="occ-note">🚚 आपका ऑर्डर 3-5 कार्यदिवसों में डिलीवर किया जाएगा। डिलीवरी के लिए हमारी टीम आपसे संपर्क करेगी।</div>
+        </div>
+
+        <div class="ty-box" style="margin-top:14px"><span>🌿</span><span>Shree Narayan Ayurveda के उत्पाद का उपयोग करने के लिए आपका बहुत-बहुत धन्यवाद!</span></div>
+        <button class="btn-close-success" onclick="closePaymentModal();clearCart()">बंद करें / Close</button>
       </div>
     </div>
   </div>
@@ -854,131 +881,507 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-var MERCHANT={waPhone:'919428686034',razorpayKey:'rzp_live_Smry3dqE17zuAn'};
-var SHEET_URL='https://script.google.com/macros/s/AKfycbzOQeWTtLfg-ZAheqMpL1dtPXvwvSU4krw8Ouvig1KapEJeivC3jRWmmdM3CJslB_bBmA/exec';
-var PRICES={joint:300,hair:150};
-var cart={joint:0,hair:0};
-var cust={name:'',phone:'',address:''};
+/* ============================================================
+   CONFIG
+   ============================================================ */
+var MERCHANT = {
+  waPhone: '919428686034',
+  razorpayKey: 'rzp_live_Smry3dqE17zuAn'
+};
 
-window.addEventListener('scroll',function(){document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwoGpDLS3C_A-PbghSsQJVt7BzCoxNieDWkTslUbA0_v1EjFf7yvlaY_oJqRxjA4uq9/exec';
 
-function addToCart(t){cart[t]++;refreshCartUI();openCart();}
-function changeQty(t,d){cart[t]=Math.max(0,cart[t]+d);refreshCartUI();}
-function removeFromCart(t){cart[t]=0;refreshCartUI();}
-function clearCart(){cart.joint=0;cart.hair=0;refreshCartUI();}
-function getTotal(){return cart.joint*PRICES.joint+cart.hair*PRICES.hair;}
-function getItemsDesc(){var p=[];if(cart.joint>0)p.push('Sandhibhadra Ghrit x'+cart.joint);if(cart.hair>0)p.push('Kesh Kalyani Tel x'+cart.hair);return p.join(', ')||'Ayurvedic Products';}
+var PRICES = { joint: 300, hair: 150 };
+var PRODUCT_NAMES = {
+  joint: 'Sandhibhadra Ghrit',
+  hair: 'Kesh Kalyani Tel'
+};
 
-function refreshCartUI(){
-  var has=cart.joint>0||cart.hair>0,total=getTotal(),count=cart.joint+cart.hair;
-  var badge=document.getElementById('cart-count');badge.textContent=count;badge.style.display=count>0?'flex':'none';
-  document.getElementById('cart-empty').classList.toggle('hidden',has);
-  document.getElementById('cart-has-items').classList.toggle('hidden',!has);
-  var jr=document.getElementById('cart-joint-row');jr.style.display=cart.joint>0?'flex':'none';
-  if(cart.joint>0){document.getElementById('qty-joint').textContent=cart.joint;document.getElementById('total-joint').textContent='₹'+(cart.joint*PRICES.joint);}
-  var hr=document.getElementById('cart-hair-row');hr.style.display=cart.hair>0?'flex':'none';
-  if(cart.hair>0){document.getElementById('qty-hair').textContent=cart.hair;document.getElementById('total-hair').textContent='₹'+(cart.hair*PRICES.hair);}
-  var se=document.getElementById('cart-summary'),ce=document.getElementById('checkout-btn');
-  if(has){se.classList.remove('hidden');ce.classList.remove('hidden');document.getElementById('subtotal-val').textContent='₹'+total;document.getElementById('total-val').textContent='₹'+total;}
-  else{se.classList.add('hidden');ce.classList.add('hidden');}
+var cart = { joint: 0, hair: 0 };
+var cust = { name: '', phone: '', address: '' };
+var currentOrderNo = '';
+
+/* ============================================================
+   ORDER NUMBER GENERATOR — SNA-YYYYMMDD-XXXX
+   ============================================================ */
+function generateOrderNo() {
+  var d = new Date();
+  var datePart = d.getFullYear().toString()
+    + ('0' + (d.getMonth() + 1)).slice(-2)
+    + ('0' + d.getDate()).slice(-2);
+  var seq = parseInt(localStorage.getItem('sna_order_seq') || '0') + 1;
+  localStorage.setItem('sna_order_seq', seq);
+  return 'SNA-' + datePart + '-' + ('0000' + seq).slice(-4);
 }
 
-function openCart(){document.getElementById('cart-drawer').classList.add('open');document.getElementById('cart-overlay').classList.add('open');document.body.style.overflow='hidden';}
-function closeCart(){document.getElementById('cart-drawer').classList.remove('open');document.getElementById('cart-overlay').classList.remove('open');document.body.style.overflow='';}
-function openPaymentModal(){closeCart();showStep(1);document.getElementById('payment-modal').classList.add('open');document.body.style.overflow='hidden';}
-function closePaymentModal(){document.getElementById('payment-modal').classList.remove('open');document.body.style.overflow='';setTimeout(function(){showStep(1);},300);}
+/* ============================================================
+   NAV SCROLL
+   ============================================================ */
+window.addEventListener('scroll', function() {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-function showStep(n){
-  for(var i=1;i<=3;i++){document.getElementById('modal-step-'+i).classList.toggle('hidden',i!==n);var si=document.getElementById('s'+i);si.classList.remove('active','done');if(i<n)si.classList.add('done');if(i===n)si.classList.add('active');}
-  document.getElementById('line12').classList.toggle('done',n>=2);
-  document.getElementById('line23').classList.toggle('done',n>=3);
+/* ============================================================
+   CART LOGIC
+   ============================================================ */
+function addToCart(t) { cart[t]++; refreshCartUI(); openCart(); }
+function changeQty(t, d) { cart[t] = Math.max(0, cart[t] + d); refreshCartUI(); }
+function removeFromCart(t) { cart[t] = 0; refreshCartUI(); }
+function clearCart() { cart.joint = 0; cart.hair = 0; refreshCartUI(); }
+function getTotal() { return cart.joint * PRICES.joint + cart.hair * PRICES.hair; }
+
+function getItemsSummary() {
+  var items = [];
+  if (cart.joint > 0) items.push(PRODUCT_NAMES.joint + ' x' + cart.joint);
+  if (cart.hair > 0)  items.push(PRODUCT_NAMES.hair + ' x' + cart.hair);
+  return items.join(', ') || 'Ayurvedic Products';
 }
 
-function goToPaymentStep(){
-  var name=document.getElementById('cust-name').value.trim(),phone=document.getElementById('cust-phone').value.trim(),address=document.getElementById('cust-address').value.trim(),err=document.getElementById('details-error');
-  if(!name||!phone||!address){err.textContent='कृपया सभी आवश्यक फ़ील्ड भरें।';err.style.display='block';return;}
-  if(!/^[6-9]\d{9}$/.test(phone)){err.textContent='कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें।';err.style.display='block';return;}
-  err.style.display='none';
-  cust.name=name;cust.phone=phone;cust.address=address;
-  var total=getTotal();document.getElementById('rzp-pay-amount').textContent='₹'+total;
-  var s='<div class="pay-summary-title">Order Summary</div>';
-  if(cart.joint>0)s+='<div class="pay-item-row"><span class="pay-item-name">Sandhibhadra Ghrit</span><span class="pay-item-qty">x'+cart.joint+'</span><span class="pay-item-amt">₹'+(cart.joint*PRICES.joint)+'</span></div>';
-  if(cart.hair>0)s+='<div class="pay-item-row"><span class="pay-item-name">Kesh Kalyani Tel</span><span class="pay-item-qty">x'+cart.hair+'</span><span class="pay-item-amt">₹'+(cart.hair*PRICES.hair)+'</span></div>';
-  s+='<div class="pay-total-divider"></div><div class="pay-total-row"><span>Total</span><span>₹'+total+'</span></div>';
-  document.getElementById('pay-order-summary').innerHTML=s;
+function refreshCartUI() {
+  var has = cart.joint > 0 || cart.hair > 0;
+  var total = getTotal();
+  var count = cart.joint + cart.hair;
+
+  var badge = document.getElementById('cart-count');
+  badge.textContent = count;
+  badge.style.display = count > 0 ? 'flex' : 'none';
+
+  document.getElementById('cart-empty').classList.toggle('hidden', has);
+  document.getElementById('cart-has-items').classList.toggle('hidden', !has);
+
+  var jr = document.getElementById('cart-joint-row');
+  jr.style.display = cart.joint > 0 ? 'flex' : 'none';
+  if (cart.joint > 0) {
+    document.getElementById('qty-joint').textContent = cart.joint;
+    document.getElementById('total-joint').textContent = '\u20B9' + (cart.joint * PRICES.joint);
+  }
+
+  var hr = document.getElementById('cart-hair-row');
+  hr.style.display = cart.hair > 0 ? 'flex' : 'none';
+  if (cart.hair > 0) {
+    document.getElementById('qty-hair').textContent = cart.hair;
+    document.getElementById('total-hair').textContent = '\u20B9' + (cart.hair * PRICES.hair);
+  }
+
+  var se = document.getElementById('cart-summary');
+  var ce = document.getElementById('checkout-btn');
+  if (has) {
+    se.classList.remove('hidden');
+    ce.classList.remove('hidden');
+    document.getElementById('subtotal-val').textContent = '\u20B9' + total;
+    document.getElementById('total-val').textContent = '\u20B9' + total;
+  } else {
+    se.classList.add('hidden');
+    ce.classList.add('hidden');
+  }
+}
+
+/* ============================================================
+   CART DRAWER
+   ============================================================ */
+function openCart() {
+  document.getElementById('cart-drawer').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart() {
+  document.getElementById('cart-drawer').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ============================================================
+   PAYMENT MODAL
+   ============================================================ */
+function openPaymentModal() {
+  closeCart();
+  showStep(1);
+  document.getElementById('payment-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePaymentModal() {
+  document.getElementById('payment-modal').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(function() { showStep(1); }, 300);
+}
+
+function showStep(n) {
+  for (var i = 1; i <= 3; i++) {
+    document.getElementById('modal-step-' + i).classList.toggle('hidden', i !== n);
+    var si = document.getElementById('s' + i);
+    si.classList.remove('active', 'done');
+    if (i < n) si.classList.add('done');
+    if (i === n) si.classList.add('active');
+  }
+  document.getElementById('line12').classList.toggle('done', n >= 2);
+  document.getElementById('line23').classList.toggle('done', n >= 3);
+}
+
+/* ============================================================
+   STEP 1 → STEP 2 : VALIDATE + SHOW SUMMARY
+   ============================================================ */
+function goToPaymentStep() {
+  var name    = document.getElementById('cust-name').value.trim();
+  var phone   = document.getElementById('cust-phone').value.trim();
+  var address = document.getElementById('cust-address').value.trim();
+  var err     = document.getElementById('details-error');
+
+  if (!name || !phone || !address) {
+    err.textContent = 'कृपया सभी आवश्यक फ़ील्ड भरें।';
+    err.style.display = 'block';
+    return;
+  }
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    err.textContent = 'कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें।';
+    err.style.display = 'block';
+    return;
+  }
+
+  err.style.display = 'none';
+  cust.name    = name;
+  cust.phone   = phone;
+  cust.address = address;
+
+  var total = getTotal();
+  document.getElementById('rzp-pay-amount').textContent = '\u20B9' + total;
+
+  // Build order summary
+  var html = '<div class="pay-summary-title">Order Summary</div>';
+  if (cart.joint > 0)
+    html += '<div class="pay-item-row"><span class="pay-item-name">\uD83E\uDDB4 ' + PRODUCT_NAMES.joint + '</span><span class="pay-item-qty">x' + cart.joint + '</span><span class="pay-item-amt">\u20B9' + (cart.joint * PRICES.joint) + '</span></div>';
+  if (cart.hair > 0)
+    html += '<div class="pay-item-row"><span class="pay-item-name">\uD83D\uDC86 ' + PRODUCT_NAMES.hair + '</span><span class="pay-item-qty">x' + cart.hair + '</span><span class="pay-item-amt">\u20B9' + (cart.hair * PRICES.hair) + '</span></div>';
+  html += '<div class="pay-total-divider"></div><div class="pay-total-row"><span>Total</span><span>\u20B9' + total + '</span></div>';
+
+  document.getElementById('pay-order-summary').innerHTML = html;
   showStep(2);
 }
 
-function logOrder(paymentId,method){
-  fetch(SHEET_URL,{method:'POST',body:JSON.stringify({name:cust.name,phone:cust.phone,address:cust.address,items:getItemsDesc(),total:'₹'+getTotal(),paymentId:paymentId,method:method})}).catch(function(){});
-}
+/* ============================================================
+   STEP 2 → RAZORPAY CHECKOUT
+   ============================================================ */
+function payWithRazorpay() {
+  var total = getTotal();
+  if (total <= 0) return;
 
-function payWithRazorpay(){
-  var total=getTotal();if(total<=0)return;
-  var options={key:MERCHANT.razorpayKey,amount:total*100,currency:'INR',name:'Shree Narayan Ayurveda',description:getItemsDesc(),image:'https://i.ibb.co/fYQdWNBJ/logo.png',
-    handler:function(r){onPaymentSuccess(r.razorpay_payment_id||'N/A');},
-    prefill:{name:cust.name,contact:'91'+cust.phone},
-    notes:{address:cust.address,items:getItemsDesc()},
-    theme:{color:'#0f1f14'},
-    modal:{ondismiss:function(){}}
+  var options = {
+    key: MERCHANT.razorpayKey,
+    amount: total * 100,
+    currency: 'INR',
+    name: 'Shree Narayan Ayurveda',
+    description: getItemsSummary(),
+    image: 'https://i.ibb.co/fYQdWNBJ/logo.png',
+    handler: function(response) {
+      onPaymentSuccess(response.razorpay_payment_id || 'N/A');
+    },
+    prefill: {
+      name: cust.name,
+      contact: '91' + cust.phone
+    },
+    notes: {
+      address: cust.address,
+      items: getItemsSummary()
+    },
+    theme: { color: '#0f1f14' },
+    modal: { ondismiss: function() {} }
   };
-  try{var rzp=new Razorpay(options);rzp.on('payment.failed',function(r){alert('Payment failed: '+(r.error.description||'Please try again.'));});rzp.open();}
-  catch(e){alert('Unable to open payment. Please contact us on WhatsApp.');console.error(e);}
+
+  try {
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function(response) {
+      alert('Payment failed: ' + (response.error.description || 'Please try again.'));
+    });
+    rzp.open();
+  } catch (e) {
+    alert('Unable to open payment. Please contact us on WhatsApp.');
+    console.error(e);
+  }
 }
 
-function onPaymentSuccess(paymentId){
+/* ============================================================
+   STEP 3: ON PAYMENT SUCCESS
+   ============================================================ */
+function onPaymentSuccess(paymentId) {
+  currentOrderNo = generateOrderNo();
+
+  // 1. Populate the on-page confirmation card
+  populateConfirmationCard(paymentId);
+
+  // 2. Log to Google Sheet (8 fields only)
+  logOrderToSheet(paymentId);
+
+  // 3. Send WhatsApp notification
   sendWhatsAppWithPayment(paymentId);
-  logOrder(paymentId,'Razorpay Online');
-  document.getElementById('ty-payment-id-val').textContent=paymentId;
-  showStep(3);incrementOrderStat();
+
+  // 4. Show confirmation step
+  showStep(3);
+
+  // 5. Increment live order stat
+  incrementOrderStat();
 }
 
-function sendWhatsAppWithPayment(paymentId){
-  var total=getTotal(),note=(document.getElementById('order-note')||{value:''}).value.trim();
-  var lines=['✅ *PAYMENT RECEIVED — Shree Narayan Ayurveda*','','🆔 *Payment ID:* '+paymentId,''];
-  if(cart.joint>0)lines.push('🦴 *Sandhibhadra Ghrit:* '+cart.joint+' नग × ₹'+PRICES.joint+' = ₹'+(cart.joint*PRICES.joint));
-  if(cart.hair>0)lines.push('💆 *Kesh Kalyani Tel:* '+cart.hair+' नग × ₹'+PRICES.hair+' = ₹'+(cart.hair*PRICES.hair));
-  lines.push('','👤 *नाम:* '+cust.name,'📞 *WhatsApp:* '+cust.phone,'💰 *कुल भुगतान:* ₹'+total,'📍 *पता:* '+cust.address);
-  if(note)lines.push('📝 *नोट:* '+note);
-  lines.push('','✅ _ऑनलाइन भुगतान प्राप्त हो गया है। कृपया ऑर्डर भेजें।_');
-  window.open('https://wa.me/'+MERCHANT.waPhone+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
+/* ============================================================
+   POPULATE ORDER CONFIRMATION CARD
+   ============================================================ */
+function populateConfirmationCard(paymentId) {
+  var total = getTotal();
+  var now   = new Date();
+
+  var dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  var timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+  // Order number
+  document.getElementById('occ-order-no').textContent = currentOrderNo;
+
+  // Products list
+  var itemsHtml = '';
+  if (cart.joint > 0) {
+    itemsHtml += '<div class="occ-item-row">'
+      + '<div><div class="occ-item-name">\uD83E\uDDB4 ' + PRODUCT_NAMES.joint + '</div>'
+      + '<div class="occ-item-meta">' + cart.joint + ' x \u20B9' + PRICES.joint + ' per bottle</div></div>'
+      + '<div class="occ-item-price">\u20B9' + (cart.joint * PRICES.joint) + '</div></div>';
+  }
+  if (cart.hair > 0) {
+    itemsHtml += '<div class="occ-item-row">'
+      + '<div><div class="occ-item-name">\uD83D\uDC86 ' + PRODUCT_NAMES.hair + '</div>'
+      + '<div class="occ-item-meta">' + cart.hair + ' x \u20B9' + PRICES.hair + ' per bottle</div></div>'
+      + '<div class="occ-item-price">\u20B9' + (cart.hair * PRICES.hair) + '</div></div>';
+  }
+  document.getElementById('occ-items').innerHTML = itemsHtml;
+
+  // Totals
+  document.getElementById('occ-total').textContent = '\u20B9' + total;
+
+  // Customer details
+  document.getElementById('occ-name').textContent    = cust.name;
+  document.getElementById('occ-phone').textContent   = '+91 ' + cust.phone;
+  document.getElementById('occ-address').textContent  = cust.address;
+
+  // Payment info
+  document.getElementById('occ-payment-id').textContent = paymentId;
+  document.getElementById('occ-datetime').textContent   = dateStr + ' at ' + timeStr;
 }
 
-function switchTab(tab,btn){document.querySelectorAll('.how-tab').forEach(function(b){b.classList.remove('active');});document.querySelectorAll('.how-content').forEach(function(c){c.classList.remove('active');});btn.classList.add('active');document.getElementById('htab-'+tab).classList.add('active');}
+/* ============================================================
+   LOG ORDER TO GOOGLE SHEET — 8 FIELDS ONLY
+   Headers: Date | Name | Phone | Address | Items | Total | Payment ID | Method
+   ============================================================ */
+function logOrderToSheet(paymentId) {
+  var payload = {
+    timestamp: new Date().toISOString(),
+    name:      cust.name,
+    phone:     cust.phone,
+    address:   cust.address,
+    items:     getItemsSummary(),
+    total:     getTotal(),
+    paymentId: paymentId,
+    method:    'Razorpay Online'
+  };
 
-(function(){
-  var today=new Date().toISOString().slice(0,10),sd=localStorage.getItem('sna_day');
-  if(sd!==today){localStorage.setItem('sna_day',today);localStorage.removeItem('sna_visitors');localStorage.removeItem('sna_orders');}
-  function hc(s){var h=0;for(var i=0;i<s.length;i++){h=Math.imul(31,h)+s.charCodeAt(i)|0;}return h;}
-  var bv=80+Math.floor(Math.abs(hc(today))%120),sv=parseInt(localStorage.getItem('sna_visitors')||'0')+1;localStorage.setItem('sna_visitors',sv);
-  var tv=bv+sv,ao=Math.floor(tv*.07),so=parseInt(localStorage.getItem('sna_orders')||'0'),to=Math.max(so,ao);
-  var ds=Math.floor((new Date()-new Date('2024-01-01'))/86400000),hc2=Math.max(500,2000+Math.floor(ds*1.2));
-  function anim(el,t,suf,dur){var s=0,st=Math.ceil(t/(dur/16)),tm=setInterval(function(){s=Math.min(s+st,t);el.innerHTML=s.toLocaleString('en-IN')+(suf||'');if(s>=t)clearInterval(tm);},16);}
-  window.addEventListener('DOMContentLoaded',function(){
-    var ec=document.getElementById('stat-customers'),ev=document.getElementById('stat-visitors'),eo=document.getElementById('stat-orders');
-    if(ec)anim(ec,hc2,'<span>+</span>',1800);if(ev)anim(ev,tv,'',1400);if(eo)anim(eo,to,'',1200);
+  // Primary attempt: fetch with no-cors
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function() {
+    console.log('Order logged to Google Sheet:', currentOrderNo);
+  }).catch(function(err) {
+    console.warn('Fetch failed, trying sendBeacon...', err);
+    // Fallback: sendBeacon
+    try {
+      var blob = new Blob([JSON.stringify(payload)], { type: 'text/plain' });
+      navigator.sendBeacon(SHEET_URL, blob);
+      console.log('Order sent via sendBeacon:', currentOrderNo);
+    } catch (e2) {
+      console.error('sendBeacon also failed:', e2);
+    }
   });
-  setInterval(function(){var v=parseInt(localStorage.getItem('sna_visitors')||'0')+1;localStorage.setItem('sna_visitors',v);var el=document.getElementById('stat-visitors');if(el)el.textContent=(bv+v).toLocaleString('en-IN');},45000);
-  setInterval(function(){var o=parseInt(localStorage.getItem('sna_orders')||'0')+1;localStorage.setItem('sna_orders',o);var el=document.getElementById('stat-orders');if(el)el.textContent=Math.max(o,ao)+'';},240000);
-  window.incrementOrderStat=function(){var o=parseInt(localStorage.getItem('sna_orders')||'0')+1;localStorage.setItem('sna_orders',o);var el=document.getElementById('stat-orders');if(el)el.textContent=Math.max(o,ao)+'';};
+}
+
+/* ============================================================
+   SEND WHATSAPP NOTIFICATION
+   ============================================================ */
+function sendWhatsAppWithPayment(paymentId) {
+  var total = getTotal();
+  var note  = (document.getElementById('order-note') || {}).value || '';
+  note = note.trim();
+
+  var now     = new Date();
+  var dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  var timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+  var lines = [
+    '\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550',
+    '\u2705 *NEW ORDER \u2014 Shree Narayan Ayurveda*',
+    '\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550',
+    '',
+    '\uD83D\uDCCB *Order No:* ' + currentOrderNo,
+    '\uD83D\uDCC5 *Date:* ' + dateStr + ' at ' + timeStr,
+    '\uD83C\uDD94 *Payment ID:* ' + paymentId,
+    '',
+    '\u2500\u2500\u2500 *PRODUCTS* \u2500\u2500\u2500'
+  ];
+
+  if (cart.joint > 0)
+    lines.push('\uD83E\uDDB4 ' + PRODUCT_NAMES.joint + ': ' + cart.joint + ' \u0928\u0917 \u00D7 \u20B9' + PRICES.joint + ' = *\u20B9' + (cart.joint * PRICES.joint) + '*');
+  if (cart.hair > 0)
+    lines.push('\uD83D\uDC86 ' + PRODUCT_NAMES.hair + ': ' + cart.hair + ' \u0928\u0917 \u00D7 \u20B9' + PRICES.hair + ' = *\u20B9' + (cart.hair * PRICES.hair) + '*');
+
+  lines.push(
+    '',
+    '\u2500\u2500\u2500 *CUSTOMER* \u2500\u2500\u2500',
+    '\uD83D\uDC64 *\u0928\u093E\u092E:* ' + cust.name,
+    '\uD83D\uDCDE *WhatsApp:* +91 ' + cust.phone,
+    '\uD83D\uDCCD *\u092A\u0924\u093E:* ' + cust.address,
+    '',
+    '\u2500\u2500\u2500 *PAYMENT* \u2500\u2500\u2500',
+    '\uD83D\uDCB0 *\u0915\u0941\u0932 \u092D\u0941\u0917\u0924\u093E\u0928:* \u20B9' + total,
+    '\u2705 *Status:* PAID (Online)',
+    '\uD83D\uDCB3 *Method:* Razorpay'
+  );
+
+  if (note) lines.push('\uD83D\uDCDD *\u0928\u094B\u091F:* ' + note);
+  lines.push('', '\u2705 _\u0911\u0928\u0932\u093E\u0907\u0928 \u092D\u0941\u0917\u0924\u093E\u0928 \u092A\u094D\u0930\u093E\u092A\u094D\u0924 \u0939\u094B \u0917\u092F\u093E \u0939\u0948\u0964 \u0915\u0943\u092A\u092F\u093E \u0911\u0930\u094D\u0921\u0930 \u092D\u0947\u091C\u0947\u0902\u0964_');
+
+  window.open('https://wa.me/' + MERCHANT.waPhone + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+}
+
+/* ============================================================
+   TABS (How to Use)
+   ============================================================ */
+function switchTab(tab, btn) {
+  document.querySelectorAll('.how-tab').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.how-content').forEach(function(c) { c.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('htab-' + tab).classList.add('active');
+}
+
+/* ============================================================
+   STATS ANIMATION
+   ============================================================ */
+(function() {
+  var today = new Date().toISOString().slice(0, 10);
+  var sd    = localStorage.getItem('sna_day');
+
+  if (sd !== today) {
+    localStorage.setItem('sna_day', today);
+    localStorage.removeItem('sna_visitors');
+    localStorage.removeItem('sna_orders');
+    localStorage.removeItem('sna_order_seq');
+  }
+
+  function hc(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = Math.imul(31, h) + s.charCodeAt(i) | 0; } return h; }
+
+  var bv = 80 + Math.floor(Math.abs(hc(today)) % 120);
+  var sv = parseInt(localStorage.getItem('sna_visitors') || '0') + 1;
+  localStorage.setItem('sna_visitors', sv);
+
+  var tv = bv + sv;
+  var ao = Math.floor(tv * 0.07);
+  var so = parseInt(localStorage.getItem('sna_orders') || '0');
+  var to = Math.max(so, ao);
+
+  var ds = Math.floor((new Date() - new Date('2024-01-01')) / 86400000);
+  var hc2 = Math.max(500, 2000 + Math.floor(ds * 1.2));
+
+  function anim(el, t, suf, dur) {
+    var s = 0;
+    var st = Math.ceil(t / (dur / 16));
+    var tm = setInterval(function() {
+      s = Math.min(s + st, t);
+      el.innerHTML = s.toLocaleString('en-IN') + (suf || '');
+      if (s >= t) clearInterval(tm);
+    }, 16);
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    var ec = document.getElementById('stat-customers');
+    var ev = document.getElementById('stat-visitors');
+    var eo = document.getElementById('stat-orders');
+    if (ec) anim(ec, hc2, '<span>+</span>', 1800);
+    if (ev) anim(ev, tv, '', 1400);
+    if (eo) anim(eo, to, '', 1200);
+  });
+
+  setInterval(function() {
+    var v = parseInt(localStorage.getItem('sna_visitors') || '0') + 1;
+    localStorage.setItem('sna_visitors', v);
+    var el = document.getElementById('stat-visitors');
+    if (el) el.textContent = (bv + v).toLocaleString('en-IN');
+  }, 45000);
+
+  setInterval(function() {
+    var o = parseInt(localStorage.getItem('sna_orders') || '0') + 1;
+    localStorage.setItem('sna_orders', o);
+    var el = document.getElementById('stat-orders');
+    if (el) el.textContent = Math.max(o, ao) + '';
+  }, 240000);
+
+  window.incrementOrderStat = function() {
+    var o = parseInt(localStorage.getItem('sna_orders') || '0') + 1;
+    localStorage.setItem('sna_orders', o);
+    var el = document.getElementById('stat-orders');
+    if (el) el.textContent = Math.max(o, ao) + '';
+  };
 })();
 
-document.getElementById('mobile-menu-btn').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('open');});
-function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');}
-document.getElementById('open-cart-btn').addEventListener('click',openCart);
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+document.getElementById('open-cart-btn').addEventListener('click', openCart);
 
-(function(){
-  var track=document.querySelector('.vtrack');if(!track)return;
-  var tx=0,tt=0;
-  track.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;tt=Date.now();track.style.animationPlayState='paused';},{passive:true});
-  track.addEventListener('touchend',function(e){track.style.animationPlayState='running';if(Math.abs(e.changedTouches[0].clientX-tx)<8&&Date.now()-tt<300){var card=e.target.closest('.vcard');if(card&&card.dataset.videoid)openVideoModal(card.dataset.videoid);}},{passive:true});
-  track.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});
-  track.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});
-  track.addEventListener('click',function(e){var card=e.target.closest('.vcard');if(card&&card.dataset.videoid)openVideoModal(card.dataset.videoid);});
+/* ============================================================
+   VIDEO TRACK
+   ============================================================ */
+(function() {
+  var track = document.querySelector('.vtrack');
+  if (!track) return;
+  var tx = 0, tt = 0;
+
+  track.addEventListener('touchstart', function(e) {
+    tx = e.touches[0].clientX;
+    tt = Date.now();
+    track.style.animationPlayState = 'paused';
+  }, { passive: true });
+
+  track.addEventListener('touchend', function(e) {
+    track.style.animationPlayState = 'running';
+    if (Math.abs(e.changedTouches[0].clientX - tx) < 8 && Date.now() - tt < 300) {
+      var card = e.target.closest('.vcard');
+      if (card && card.dataset.videoid) openVideoModal(card.dataset.videoid);
+    }
+  }, { passive: true });
+
+  track.addEventListener('mouseenter', function() { track.style.animationPlayState = 'paused'; });
+  track.addEventListener('mouseleave', function() { track.style.animationPlayState = 'running'; });
+
+  track.addEventListener('click', function(e) {
+    var card = e.target.closest('.vcard');
+    if (card && card.dataset.videoid) openVideoModal(card.dataset.videoid);
+  });
 })();
-function openVideoModal(id){document.getElementById('video-modal-iframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';document.getElementById('video-modal').classList.add('open');document.body.style.overflow='hidden';}
-function closeVideoModal(e){if(e&&e.target!==document.getElementById('video-modal'))return;document.getElementById('video-modal-iframe').src='';document.getElementById('video-modal').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeCart();closePaymentModal();closeVideoModal();}});
+
+function openVideoModal(id) {
+  document.getElementById('video-modal-iframe').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+  document.getElementById('video-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal(e) {
+  if (e && e.target !== document.getElementById('video-modal')) return;
+  document.getElementById('video-modal-iframe').src = '';
+  document.getElementById('video-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeCart(); closePaymentModal(); closeVideoModal(); }
+});
 </script>
 </body>
 </html>
